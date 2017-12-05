@@ -366,7 +366,7 @@ int main()
         //final code: >+<[->-<]>
     }
     
-    //if(false)
+    if(false)
     {
         //OR gate
         //require 4 cells
@@ -402,6 +402,34 @@ int main()
         bin0test<<">";
         
         //final result: [->+>>+<<<]+>[-<->]<[->>[->+<]<<]>>[-]>
+    }
+    
+    //if(false)
+    {
+        //AND gate
+        //require 3 cells
+        
+        //cell 0 and 1 are input
+        bin0test<<">";
+        //go to cell 0
+        bin0test<<"<";
+        
+        //if cell 0 is true
+        bin0test<<"[-";
+        //go to cell 1
+        bin0test<<">";
+        //copy cell 1 to cell 2
+        bin0test<<"[->+<]";
+        //go to cell 0
+        bin0test<<"<";
+        bin0test<<"]";
+        
+        //clear cell 1
+        bin0test<<">[-]";
+        //go to cell 2
+        bin0test<<">";
+        
+        //final result: [->[->+<]<]>[-]>
     }
     
     if(false)
