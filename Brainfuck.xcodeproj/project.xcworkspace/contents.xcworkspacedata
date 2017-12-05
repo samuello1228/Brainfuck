@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Brainfuck.xcodeproj">
+      location = "group:../Debug/data">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
