@@ -12,6 +12,30 @@
 #include <vector>
 using namespace std;
 
+void print(vector<int>& array)
+{
+    for(unsigned int i=0;i<array.size();i++)
+    {
+        if(array[i]==0)
+        {
+            cout<<"000 ";
+        }
+        else if(array[i]<10)
+        {
+            cout<<"00"<<array[i]<<" ";
+        }
+        else if(array[i]<100)
+        {
+            cout<<"0"<<array[i]<<" ";
+        }
+        else if(array[i]<1000)
+        {
+            cout<<array[i]<<" ";
+        }
+    }
+    cout<<endl;
+}
+
 void Run(string code,string input,string output)
 {
     //input source code
@@ -30,6 +54,7 @@ void Run(string code,string input,string output)
         }
         
         int srcCellInt = int(srcCellChar);
+        //cout<<srcCellChar<<" "<<srcCellInt<<endl;
         if(srcCellInt==43 ||
            srcCellInt==44 ||
            srcCellInt==45 ||
@@ -81,13 +106,22 @@ void Run(string code,string input,string output)
     ofstream fout(output.c_str());
     int binPointer = 0;
     bool inputIsEnd = false;
+    bool isPrint = 1;
     
     vector<int> array;
     array.reserve(5000);
     array.push_back(0);
     int cellPointer = 0;
+    
+    if(isPrint)
+    {
+        cout<<"    : "<<cellPointer<<" ";
+        print(array);
+    }
     while(true)
     {
+        if(isPrint) cout<<binPointer<<" "<<char(binary[binPointer])<<" : ";
+        
         if(binary[binPointer]==43)
         {
             //+
@@ -263,6 +297,12 @@ void Run(string code,string input,string output)
             }
         }
         
+        if(isPrint)
+        {
+            cout<<cellPointer<<" ";
+            print(array);
+        }
+        
         if(binPointer == binary.size())
         {
             cout<<"Info: The program is ended."<<endl;
@@ -284,7 +324,152 @@ int main()
     src1<<",[.,]";
     src1.close();
     
-    Run("data/bin0.cpp","data/src1.cpp","data/bin1.cpp");
-    //Run("data/bin1.cpp","data/src2.cpp","data/bin2.cpp");
+    ofstream bin0test("data/bin0test.cpp");
+    //cell 1: bool for left/right cell for special character; 0 is left; 1 is right
+    //cell 2: bool for matching a character; first bit is special character; second bit is input character
+    //cell 3: left plus
+    //cell 4: right plus
+    //cell 5: input character
+    /*
+    bin0test<<">>+++++++++++++++++++++++++++++++++++++++++++";
+    bin0test<<">>,";
+    bin0test<<"";
+    */
+    
+    if(false)
+    {
+        //int to bool
+        //require 4 cells
+        //cell 0: always 0; for synchronizing the pointer after loop
+        //cell 1: input cell, constant
+        bin0test<<">,";
+        //cell 2: bool result
+        //cell 3: set 0 for stopping the loop
+        bin0test<<"[>+>]";
+        //if input is zero; go to cell 0
+        //if input is not zero; avoid 0 at cell 3; go to cell 2 and value is 1
+        bin0test<<"<";
+        //go to cell 0 by loop; synchronization
+        bin0test<<"[<]";
+        //go to cell 2; output result
+        bin0test<<">>.";
+        
+        //final code: >,[>+>]<[<]>>.
+    }
+    
+    if(false)
+    {
+        //NOT gate
+        //require 4 cells
+        //similar for "int to bool"
+        bin0test<<">,[>+>]<[<]>>";
+        //set 1 at cell 3
+        bin0test<<">+";
+        //go to cell 2
+        bin0test<<"<";
+        //cell 3 subtract by cell 2
+        bin0test<<"[->-<]";
+        //go to cell 3; output result
+        bin0test<<">.";
+    }
+    
+    //if(false)
+    {
+        //generator
+        //do it for 2 times
+        //bin0test<<">";
+        
+        //cell 0: bool for cell 4 is filled
+        //cell 1: aux bool for cell 4 is filled
+        bin0test<<"+";
+        //cell 2: bool for cell 5 is filled
+        //cell 3: aux bool for cell 5 is filled
+        
+        //cell 4: input cell
+        bin0test<<">>>>,";
+        //cell 5: another input cell
+        
+        //go to cell 0
+        bin0test<<"<<<<";
+        
+        //do it for 2 times
+        //bin0test<<"<";
+        //bin0test<<"++";
+        //bin0test<<"[-";
+        //bin0test<<">";
+        
+        {
+            //if cell 0 is true, copy cell 4 to cell 5 and somewhere (cell 6)
+            bin0test<<"[";
+            //set cell 0 to false, set aux cell 1 to true
+            bin0test<<"->+";
+            //go to cell 4
+            bin0test<<">>>";
+            //copy cell 4 to cell 5 and somewhere (cell 6)
+            bin0test<<"[->+>+<<]";
+            //go to cell 0
+            bin0test<<"<<<<";
+            bin0test<<"]";
+        }
+        
+        {
+            //if cell 2 is true, copy cell 5 to cell 4 and somewhere (cell 6)
+            bin0test<<">>[";
+            //set cell 2 to false, set aux cell 3 to true
+            bin0test<<"->+";
+            //go to cell 5
+            bin0test<<">>";
+            //copy cell 5 to cell 4 and somewhere (cell 6)
+            bin0test<<"[-<+>>+<]";
+            //go to cell 2
+            bin0test<<"<<<";
+            bin0test<<"]";
+            
+            //go to cell 0
+            bin0test<<"<<";
+        }
+        
+        {
+            //go to aux cell 1
+            bin0test<<">";
+            //if cell 1 is true; set cell 1 to false; set cell 2 to true
+            bin0test<<"[->+<]";
+            
+            //go to aux cell 3
+            bin0test<<">>";
+            //if cell 3 is true; set cell 3 to false; set cell 0 to true
+            bin0test<<"[-<<<+>>>]";
+            
+            //go to cell 0
+            bin0test<<"<<<";
+        }
+        
+        //clean somewhere (cell 6)
+        bin0test<<">>>>>>[-]<<<<<<";
+        
+        //do it for 2 times
+        //bin0test<<"<]";
+    }
+    
+    if(false)
+    {
+        //OR gate
+        //cell 1 and 2 are input
+        bin0test<<"+>+<";
+        //copy cell 1 to cell 3
+        bin0test<<"[>>+<<-]";
+        //move and add cell 2 to cell 3
+        bin0test<<">[>+<-]";
+    }
+    bin0test.close();
+    
+    ofstream src1test("data/src1test.cpp");
+    //src1test<<"*";
+    src1test<<"+";
+    //src1test<<"0";
+    src1test.close();
+    
+    //Run("data/bin0.cpp","data/src1.cpp","data/bin1.cpp");
+    Run("data/bin0test.cpp","data/src1test.cpp","data/bin1test.cpp");
     return 0;
 }
