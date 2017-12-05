@@ -325,16 +325,6 @@ int main()
     src1.close();
     
     ofstream bin0test("data/bin0test.cpp");
-    //cell 1: bool for left/right cell for special character; 0 is left; 1 is right
-    //cell 2: bool for matching a character; first bit is special character; second bit is input character
-    //cell 3: left plus
-    //cell 4: right plus
-    //cell 5: input character
-    /*
-    bin0test<<">>+++++++++++++++++++++++++++++++++++++++++++";
-    bin0test<<">>,";
-    bin0test<<"";
-    */
     
     if(false)
     {
@@ -360,9 +350,10 @@ int main()
     if(false)
     {
         //NOT gate
-        //require 4 cells
         //similar for "int to bool"
         bin0test<<">,[>+>]<[<]>>";
+        
+        //require 2 cells
         //set 1 at cell 3
         bin0test<<">+";
         //go to cell 2
@@ -371,11 +362,53 @@ int main()
         bin0test<<"[->-<]";
         //go to cell 3; output result
         bin0test<<">.";
+        
+        //final code: >+<[->-<]>
     }
     
     //if(false)
     {
+        //OR gate
+        //require 4 cells
+        
+        //cell 0 and 2 are input
+        //cell 1 is aux cell for cell 0
+        bin0test<<">>";
+        //go to cell 0
+        bin0test<<"<<";
+        
+        //if cell 0 is true
+        bin0test<<"[";
+        //copy cell 0 to aux cell 1 and cell 3
+        bin0test<<"->+>>+<<<";
+        bin0test<<"]";
+        
+        //cell 0 is NOT GATE of cell 1
+        bin0test<<"+>[-<->]<";
+        
+        //if cell 0 is true
+        bin0test<<"[-";
+        //go to cell 2
+        bin0test<<">>";
+        //copy cell 2 to cell 3
+        bin0test<<"[->+<]";
+        //go to cell 0
+        bin0test<<"<<";
+        bin0test<<"]";
+        
+        //clear cell 2
+        bin0test<<">>[-]";
+        //go to cell 3
+        bin0test<<">";
+        
+        //final result: [->+>>+<<<]+>[-<->]<[->>[->+<]<<]>>[-]>
+    }
+    
+    if(false)
+    {
         //generator
+        //require 6 cells
+        
         //do it for 2 times
         //bin0test<<">";
         
@@ -406,6 +439,7 @@ int main()
             //go to cell 4
             bin0test<<">>>";
             //copy cell 4 to cell 5 and somewhere (cell 6)
+            //bin0test<<"[->+>n+<<n]";
             bin0test<<"[->+>+<<]";
             //go to cell 0
             bin0test<<"<<<<";
@@ -449,23 +483,43 @@ int main()
         
         //do it for 2 times
         //bin0test<<"<]";
+        
+        //final result: initialize: +>>>>,<<<<
+        //final result: apply: [->+>>>[->+>n+<<n]<<<<]>>[->+>>[-<+>>n+<n]<<<]<<>[->+<]>>[-<<<+>>>]<<<
+        //n=1 for next to the generator (right to the generator)
     }
     
     if(false)
     {
-        //OR gate
-        //cell 1 and 2 are input
-        bin0test<<"+>+<";
-        //copy cell 1 to cell 3
-        bin0test<<"[>>+<<-]";
-        //move and add cell 2 to cell 3
-        bin0test<<">[>+<-]";
+        //cell 0-5: generator for plus sign
+        //initialize generator for plus sign
+        bin0test<<"+>>>>+++++++++++++++++++++++++++++++++++++++++++";
+        
+        //cell 6-8: cell for input character
+        //go to cell 7
+        bin0test<<">>>";
+        //input
+        bin0test<<",";
+        //copy cell 7 to cell 6 and cell 8
+        bin0test<<"[-<+>>+<]";
+        
+        //go to generator (cell 0)
+        bin0test<<"<<<<<<<";
+        //apply generator to cell 9; n=4
+        //bin0test<<"[->+>>>[->+>>>>+<<<<<]<<<<]>>[->+>>[-<+>>>>>+<<<<]<<<]<<>[->+<]>>[-<<<+>>>]<<<";
+        
+        //cell 9: bool for matching a character; first bit is special character; second bit is input character
+        
+        
+        bin0test<<"";
     }
+    
     bin0test.close();
     
+    
     ofstream src1test("data/src1test.cpp");
-    //src1test<<"*";
-    src1test<<"+";
+    src1test<<"*";
+    //src1test<<"+";
     //src1test<<"0";
     src1test.close();
     
