@@ -833,13 +833,40 @@ int main()
         //generator: update value
         if(false)
         {
-            //update value
+            //update value from input
             bin0test<<"[->+>>>[-]>>[-]<,[-<+>>+<]<<<<<]>>[->+>>[-]>[-]<<,[->+>+<<]><<<]<<>[-<+>]>>[-<+>]<<<";
         }
         
         //go to cell 0
         bin0test<<"<";
         bin0test<<"]";
+    }
+    
+    if(false)
+    {
+        //copyer by using generator
+        //cell 0 to 6 is input generator
+        //initialize generator
+        bin0test<<"+>>>>>,[-<+>>+<]<<<<<";
+        
+        //go to cell 6
+        bin0test<<">>>>>>";
+        
+        {
+            //while loop
+            bin0test<<"[";
+            
+            //output cell 6
+            bin0test<<".";
+            
+            //go to cell 0
+            bin0test<<"<<<<<<";
+            //update value from input
+            bin0test<<"[->+>>>[-]>>[-]<,[-<+>>+<]<<<<<]>>[->+>>[-]>[-]<<,[->+>+<<]><<<]<<>[-<+>]>>[-<+>]<<<";
+            //go to cell 6
+            bin0test<<">>>>>>";
+            bin0test<<"]";
+        }
     }
     
     if(false)
