@@ -366,6 +366,37 @@ int main()
         //final code: >+<[->-<]>
     }
     
+    //if(false)
+    {
+        //if-else
+        //require 2 cells
+        
+        //cell 0 is input
+        //cell 1 is aux cell for cell 0
+        bin0test<<"+";
+        
+        //if cell 0 is true
+        bin0test<<"[";
+        //set cell 0 to false, set aux cell 1 to true
+        bin0test<<"->+<";
+        //do if-part
+        bin0test<<">>++++++++<<";
+        //go to cell 0
+        bin0test<<"]";
+        
+        //cell 0 is NOT GATE of cell 1
+        bin0test<<"+>[-<->]<";
+        
+        //if cell 0 is true
+        bin0test<<"[-";
+        //go else-part
+        bin0test<<">>>++++++++++++++<<<";
+        //go to cell 0
+        bin0test<<"]";
+        
+        //final code: +[->+< (if-part) ]+>[-<->]<[- (else-part) ]
+    }
+    
     if(false)
     {
         //OR gate
@@ -404,7 +435,7 @@ int main()
         //final result: [->+>>+<<<]+>[-<->]<[->>[->+<]<<]>>[-]>
     }
     
-    //if(false)
+    if(false)
     {
         //AND gate
         //require 3 cells
