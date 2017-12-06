@@ -608,28 +608,34 @@ int main()
         //bin0test<<">+[->>->>>-<<<<>[>+>]<[<]>>>>[>+>]<[<]>>[-<<<[-<<<+>>>]>>>]<<<[-]<<<]>>[>+>]<[<]>[-]>>>[>+>]<[<]>[-]<+<[->-<]>>>>+<[->-<]>[-<<<[-<<<<<+>>>>>]>>>]<<<[-]<<<<<";
     }
     
-    if(false)
+    //if(false)
     {
         //initialize generator
-        //require 6 cells
+        //require 7 cells
         
         //cell 0: bool for cell 4 is filled
-        //cell 1: aux bool for cell 4 is filled
         bin0test<<"+";
+        //cell 1: aux bool for cell 4 is filled
         //cell 2: bool for cell 5 is filled
         //cell 3: aux bool for cell 5 is filled
         
-        //cell 4: input cell
-        bin0test<<">>>>,";
-        //cell 5: another input cell
+        //cell 4: value cell
+        //cell 5: another value cell for copying
+        //cell 6: constant value cell: bool for loop or output
+        
+        //go to cell 5, write
+        bin0test<<">>>>>,";
+        
+        //copy cell 5 to cell 4 and 6
+        bin0test<<"[-<+>>+<]";
         
         //go to cell 0
-        bin0test<<"<<<<";
+        bin0test<<"<<<<<";
         
         //final result:
-        //require 6 cells
+        //require 7 cells
         //At cell 0
-        //bin0test<<"+>>>>,<<<<";
+        //bin0test<<"+>>>>>,[-<+>>+<]<<<<<";
     }
     
     if(false)
@@ -726,7 +732,7 @@ int main()
         }
         
         //generator: update value
-        //if(false)
+        if(false)
         {
             //update value
             bin0test<<"[->+>>>,<<<<]>>[->+>>,<<<]<[-<+>]>>[-<+>]<<<";
