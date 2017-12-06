@@ -331,42 +331,74 @@ int main()
         //int to bool
         //require 4 cells
         //cell 0: always 0; for synchronizing the pointer after loop
-        //cell 1: input cell, constant
+        //cell 1: input cell (not destructive)
         bin0test<<">,";
         //cell 2: bool result
         //cell 3: set 0 for stopping the loop
-        bin0test<<"[>+>]";
-        //if input is zero; go to cell 0
-        //if input is not zero; avoid 0 at cell 3; go to cell 2 and value is 1
-        bin0test<<"<";
-        //go to cell 0 by loop; synchronization
-        bin0test<<"[<]";
-        //go to cell 2; output result
-        bin0test<<">>.";
         
-        //final code: >,[>+>]<[<]>>.
+        //go to cell 0
+        bin0test<<"<";
+        
+        {
+            //go to cell 1
+            bin0test<<">";
+            
+            {
+                //if cell 1 is non-zero
+                bin0test<<"[";
+                //go to cell 2
+                bin0test<<">";
+                //set cell 2 to true
+                bin0test<<"+";
+                //go to cell 3 to stop the loop
+                bin0test<<">]";
+            }
+            
+            //if input is zero; go to cell 0
+            //if input is not zero; avoid 0 at cell 3; go to cell 2 and its value must be 1
+            bin0test<<"<";
+            //go to cell 0 by loop; synchronization
+            bin0test<<"[<]";
+        }
+        
+        //final result:
+        //require 4 cells
+        //At cell 0
+        //cell 0 and 3 is zero
+        //cell 1 is input (not destructive)
+        //cell 2 is output
+        //bin0test<<">[>+>]<[<]"
     }
     
     if(false)
     {
         //NOT gate
-        //similar for "int to bool"
-        bin0test<<">,[>+>]<[<]>>";
-        
         //require 2 cells
-        //set 1 at cell 3
-        bin0test<<">+";
-        //go to cell 2
-        bin0test<<"<";
-        //cell 3 subtract by cell 2
-        bin0test<<"[->-<]";
-        //go to cell 3; output result
-        bin0test<<">.";
+        //cell 0 is input
+        bin0test<<"+";
+        //go to cell 1
+        bin0test<<">";
         
-        //final code: >+<[->-<]>
+        {
+            //set 1 at cell 1
+            bin0test<<"+";
+            //go to cell 0
+            bin0test<<"<";
+            //subtract cell 0 by cell 1
+            bin0test<<"[->-<]";
+            //go to cell 1;
+            bin0test<<">";
+        }
+        
+        //final result:
+        //require 2 cells
+        //At cell 1
+        //cell 0 is input (destructive)
+        //cell 1 is output
+        //bin0test<<"+<[->-<]>";
     }
     
-    //if(false)
+    if(false)
     {
         //if-else
         //require 2 cells
