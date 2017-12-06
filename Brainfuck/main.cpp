@@ -699,7 +699,106 @@ int main()
         //n=1 for next to the generator (right to the generator)
     }
     
-    //if(false)
+    if(false)
+    {
+        //generator: update value in generator
+        
+        //initialize generator
+        bin0test<<"+>>>>>,[-<+>>+<]<<<<<";
+        
+        {
+            {
+                //if cell 0 is true;
+                bin0test<<"[";
+                //set cell 0 to false; set aux cell 1 to true
+                bin0test<<"->+";
+                //go to cell 4
+                bin0test<<">>>";
+                
+                //update the value
+                {
+                    //clear cell 4
+                    bin0test<<"[-]";
+                    //go to cell 6
+                    bin0test<<">>";
+                    //clear cell 6
+                    bin0test<<"[-]";
+                    
+                    //go to cell 5
+                    bin0test<<"<";
+                    //input
+                    bin0test<<",";
+                    //copy cell 5 to cell 4 and 6
+                    bin0test<<"[-<+>>+<]";
+                    
+                    //go to cell 4
+                    bin0test<<"<";
+                }
+                
+                //go to cell 0
+                bin0test<<"<<<<";
+                bin0test<<"]";
+            }
+            
+            {
+                //if cell 2 is true;
+                bin0test<<">>[";
+                //set cell 2 to false; set aux cell 3 to true
+                bin0test<<"->+";
+                //go to cell 5
+                bin0test<<">>";
+                
+                //update the value
+                {
+                    //clear cell 5
+                    bin0test<<"[-]";
+                    //go to cell 6
+                    bin0test<<">";
+                    //clear cell 6
+                    bin0test<<"[-]";
+                    
+                    //go to cell 4
+                    bin0test<<"<<";
+                    //input
+                    bin0test<<",";
+                    //copy cell 4 to cell 5 and 6
+                    bin0test<<"[->+>+<<]";
+                    
+                    //go to cell 5
+                    bin0test<<">";
+                }
+                
+                //go to cell 2
+                bin0test<<"<<<";
+                bin0test<<"]";
+                
+                //go to cell 0
+                bin0test<<"<<";
+            }
+            
+            {
+                //go to aux cell 1
+                bin0test<<">";
+                //if cell 1 is true; set cell 1 to false; set cell 0 to true
+                bin0test<<"[-<+>]";
+                
+                //go to aux cell 3
+                bin0test<<">>";
+                //if cell 3 is true; set cell 3 to false; set cell 2 to true
+                bin0test<<"[-<+>]";
+                
+                //go to cell 0
+                bin0test<<"<<<";
+            }
+        }
+        
+        //final result:
+        //At cell 0
+        //bin0test<<"[->+>>>[-]>>[-]<,[-<+>>+<]<<<<<]>>[->+>>[-]>[-]<<,[->+>+<<]><<<]<<>[-<+>]>>[-<+>]<<<";
+    }
+    
+    //test generator
+    if(false)
     {
         //cell 0 is counter
         //do it for 2 times
@@ -735,7 +834,7 @@ int main()
         if(false)
         {
             //update value
-            bin0test<<"[->+>>>,<<<<]>>[->+>>,<<<]<[-<+>]>>[-<+>]<<<";
+            bin0test<<"[->+>>>[-]>>[-]<,[-<+>>+<]<<<<<]>>[->+>>[-]>[-]<<,[->+>+<<]><<<]<<>[-<+>]>>[-<+>]<<<";
         }
         
         //go to cell 0
@@ -772,7 +871,7 @@ int main()
     
     
     ofstream src1test("data/src1test.cpp");
-    src1test<<"*";
+    src1test<<"*+";
     //src1test<<"+";
     //src1test<<"0";
     src1test.close();
