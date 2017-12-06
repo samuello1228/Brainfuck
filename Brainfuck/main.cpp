@@ -638,7 +638,7 @@ int main()
         //bin0test<<"+>>>>>,[-<+>>+<]<<<<<";
     }
     
-    //if(false)
+    if(false)
     {
         //generator: copy to somewhere (cell 7)
         
@@ -707,9 +707,9 @@ int main()
         
         //go to cell 1
         bin0test<<">";
-        //cell 1 to 6 is generator
+        //cell 1 to 7 is generator
         //initialize generator
-        bin0test<<"+>>>>,<<<<";
+        bin0test<<"+>>>>>,[-<+>>+<]<<<<<";
         
         //go to cell 0
         bin0test<<"<";
@@ -721,14 +721,14 @@ int main()
         //generator: copy value
         if(false)
         {
-            //copy to cell 7
-            bin0test<<"[->+>>>[->+>+<<]<<<<]>>[->+>>[-<+>>+<]<<<]<<>[->+<]>>[-<<<+>>>]<<<";
-            //go to cell 7
-            bin0test<<">>>>>>";
-            //clean cell 7
+            //copy to cell 8
+            bin0test<<"[->+>>>[->+>>+<<<]<<<<]>>[->+>>[-<+>>>+<<]<<<]<<>[->+<]>>[-<<<+>>>]<<<";
+            //go to cell 8
+            bin0test<<">>>>>>>";
+            //clean cell 8
             bin0test<<"[-]";
             //go to cell 1
-            bin0test<<"<<<<<<";
+            bin0test<<"<<<<<<<";
         }
         
         //generator: update value
