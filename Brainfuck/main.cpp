@@ -610,11 +610,8 @@ int main()
     
     if(false)
     {
-        //generator
+        //initialize generator
         //require 6 cells
-        
-        //do it for 2 times
-        //bin0test<<">";
         
         //cell 0: bool for cell 4 is filled
         //cell 1: aux bool for cell 4 is filled
@@ -629,16 +626,23 @@ int main()
         //go to cell 0
         bin0test<<"<<<<";
         
-        //do it for 2 times
-        //bin0test<<"<";
-        //bin0test<<"++";
-        //bin0test<<"[-";
-        //bin0test<<">";
+        //final result:
+        //require 6 cells
+        //At cell 0
+        //bin0test<<"+>>>>,<<<<";
+    }
+    
+    if(false)
+    {
+        //generator: copy to somewhere (cell 6)
+        
+        //initialize generator
+        bin0test<<"+>>>>,<<<<";
         
         {
-            //if cell 0 is true, copy cell 4 to cell 5 and somewhere (cell 6)
+            //if cell 0 is true; copy cell 4 to cell 5 and somewhere (cell 6)
             bin0test<<"[";
-            //set cell 0 to false, set aux cell 1 to true
+            //set cell 0 to false; set aux cell 1 to true
             bin0test<<"->+";
             //go to cell 4
             bin0test<<">>>";
@@ -651,13 +655,14 @@ int main()
         }
         
         {
-            //if cell 2 is true, copy cell 5 to cell 4 and somewhere (cell 6)
+            //if cell 2 is true; copy cell 5 to cell 4 and somewhere (cell 6)
             bin0test<<">>[";
-            //set cell 2 to false, set aux cell 3 to true
+            //set cell 2 to false; set aux cell 3 to true
             bin0test<<"->+";
             //go to cell 5
             bin0test<<">>";
             //copy cell 5 to cell 4 and somewhere (cell 6)
+            //bin0test<<"[-<+>>n+<n]";
             bin0test<<"[-<+>>+<]";
             //go to cell 2
             bin0test<<"<<<";
@@ -682,15 +687,41 @@ int main()
             bin0test<<"<<<";
         }
         
-        //clean somewhere (cell 6)
-        bin0test<<">>>>>>[-]<<<<<<";
-        
-        //do it for 2 times
-        //bin0test<<"<]";
-        
-        //final result: initialize: +>>>>,<<<<
-        //final result: apply: [->+>>>[->+>n+<<n]<<<<]>>[->+>>[-<+>>n+<n]<<<]<<>[->+<]>>[-<<<+>>>]<<<
+        //final result:
+        //bin0test<<"[->+>>>[->+>n+<<n]<<<<]>>[->+>>[-<+>>n+<n]<<<]<<>[->+<]>>[-<<<+>>>]<<<";
         //n=1 for next to the generator (right to the generator)
+    }
+    
+    //test generator
+    //if(false)
+    {
+        //cell 0 is counter
+        //do it for 2 times
+        bin0test<<"++";
+        
+        //go to cell 1
+        bin0test<<">";
+        //cell 1 to 6 is generator
+        //initialize generator
+        bin0test<<"+>>>>,<<<<";
+        
+        //go to cell 0
+        bin0test<<"<";
+        //for loop
+        bin0test<<"[-";
+        //go to cell 1
+        bin0test<<">";
+        
+        //copy to cell 7
+        bin0test<<"[->+>>>[->+>+<<]<<<<]>>[->+>>[-<+>>+<]<<<]<<>[->+<]>>[-<<<+>>>]<<<";
+        
+        //go to cell 7
+        bin0test<<">>>>>>";
+        //clean cell 7
+        bin0test<<"[-]";
+        
+        //copy to cell 0
+        bin0test<<"<<<<<<<]";
     }
     
     if(false)
