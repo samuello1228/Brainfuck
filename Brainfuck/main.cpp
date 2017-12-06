@@ -688,11 +688,11 @@ int main()
         }
         
         //final result:
+        //At cell 0
         //bin0test<<"[->+>>>[->+>n+<<n]<<<<]>>[->+>>[-<+>>n+<n]<<<]<<>[->+<]>>[-<<<+>>>]<<<";
         //n=1 for next to the generator (right to the generator)
     }
     
-    //test generator
     //if(false)
     {
         //cell 0 is counter
@@ -712,16 +712,29 @@ int main()
         //go to cell 1
         bin0test<<">";
         
-        //copy to cell 7
-        bin0test<<"[->+>>>[->+>+<<]<<<<]>>[->+>>[-<+>>+<]<<<]<<>[->+<]>>[-<<<+>>>]<<<";
+        //generator: copy value
+        if(false)
+        {
+            //copy to cell 7
+            bin0test<<"[->+>>>[->+>+<<]<<<<]>>[->+>>[-<+>>+<]<<<]<<>[->+<]>>[-<<<+>>>]<<<";
+            //go to cell 7
+            bin0test<<">>>>>>";
+            //clean cell 7
+            bin0test<<"[-]";
+            //go to cell 1
+            bin0test<<"<<<<<<";
+        }
         
-        //go to cell 7
-        bin0test<<">>>>>>";
-        //clean cell 7
-        bin0test<<"[-]";
+        //generator: update value
+        //if(false)
+        {
+            //update value
+            bin0test<<"[->+>>>,<<<<]>>[->+>>,<<<]<[-<+>]>>[-<+>]<<<";
+        }
         
-        //copy to cell 0
-        bin0test<<"<<<<<<<]";
+        //go to cell 0
+        bin0test<<"<";
+        bin0test<<"]";
     }
     
     if(false)
