@@ -465,6 +465,90 @@ int main()
     
     if(false)
     {
+        //compare same
+        //cell 0: bool result
+        //cell 1: bool for while loop
+        //cell 2;5;8 are 0
+        //cell 3;6 are input
+        bin0test<<">>>+++++>>>++++++>>";
+        
+        //go to cell 1
+        bin0test<<"<<<<<<<";
+        
+        //subtraction
+        {
+            //while loop
+            bin0test<<"+[-";
+            
+            //go to cell 3
+            bin0test<<">>";
+            //subtract by 1
+            bin0test<<"-";
+            
+            //go to cell 6
+            bin0test<<">>>";
+            //subtract by 1
+            bin0test<<"-";
+            
+            //go to cell 2
+            bin0test<<"<<<<";
+            //int to bool for cell 3
+            bin0test<<">[>+>]<[<]";
+            
+            //go to cell 5
+            bin0test<<">>>";
+            //int to bool for cell 6
+            bin0test<<">[>+>]<[<]";
+            
+            //go to cell 7
+            bin0test<<">>";
+            //cell 1 is AND gate of cell 4 and 7
+            bin0test<<"[-<<<[-<<<+>>>]>>>]<<<[-]<<<";
+            //at cell 1
+            
+            //end while loop
+            bin0test<<"]";
+        }
+        
+        //int to bool for cell 3 and 5
+        {
+            //go to cell 2
+            bin0test<<">";
+            //int to bool for cell 3
+            bin0test<<">[>+>]<[<]";
+            //clear cell 3
+            bin0test<<">[-]";
+            
+            //go to cell 5
+            bin0test<<">>";
+            //int to bool for cell 6
+            bin0test<<">[>+>]<[<]";
+            //clear cell 6
+            bin0test<<">[-]";
+        }
+        
+        //NOT gate
+        {
+            //go to cell 5
+            bin0test<<"<";
+            //cell 5 is NOT gate for cell 4
+            bin0test<<"+<[->-<]>";
+            
+            //go to cell 8
+            bin0test<<">>>";
+            //cell 8 is NOT gate for cell 7
+            bin0test<<"+<[->-<]>";
+        }
+        
+        //go to cell 8
+        //cell 0 is AND Gate of cell 5 and 8
+        bin0test<<"[-<<<[-<<<<<+>>>>>]>>>]<<<[-]<<<<<";
+        
+        //final result: bin0test<<">+[->>->>>-<<<<>[>+>]<[<]>>>>[>+>]<[<]>>[-<<<[-<<<+>>>]>>>]<<<[-]<<<]>>[>+>]<[<]>[-]>>>[>+>]<[<]>[-]<+<[->-<]>>>>+<[->-<]>[-<<<[-<<<<<+>>>>>]>>>]<<<[-]<<<<<";
+    }
+    
+    if(false)
+    {
         //generator
         //require 6 cells
         
