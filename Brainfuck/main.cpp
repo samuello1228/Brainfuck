@@ -402,14 +402,13 @@ int main()
     {
         //if-else
         //require 2 cells
-        
-        //cell 0 is input
+        //cell 0 is input (destructive)
         //cell 1 is aux cell for cell 0
         bin0test<<"+";
         
         //if cell 0 is true
         bin0test<<"[";
-        //set cell 0 to false, set aux cell 1 to true
+        //set cell 0 to false; set aux cell 1 to true
         bin0test<<"->+<";
         //do if-part
         bin0test<<">>++++++++<<";
@@ -426,7 +425,12 @@ int main()
         //go to cell 0
         bin0test<<"]";
         
-        //final code: +[->+< (if-part) ]+>[-<->]<[- (else-part) ]
+        //final result:
+        //require 2 cells
+        //At cell 0
+        //cell 0 is input (destructive)
+        //cell 1 is aux cell
+        //bin0test<<"+[->+< (if-part) ]+>[-<->]<[- (else-part) ]";
     }
     
     if(false)
