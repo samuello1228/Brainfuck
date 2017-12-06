@@ -716,6 +716,8 @@ int main()
                 bin0test<<">>>";
                 
                 //update the value
+                //update by input
+                if(false)
                 {
                     //clear cell 4
                     bin0test<<"[-]";
@@ -735,6 +737,20 @@ int main()
                     bin0test<<"<";
                 }
                 
+                //subtract 1
+                if(false)
+                {
+                    //subtract cell 4 by 1
+                    bin0test<<"-";
+                    //go to cell 6
+                    bin0test<<">>";
+                    //subtract cell 6 by 1
+                    bin0test<<"-";
+                    
+                    //go to cell 4
+                    bin0test<<"<<";
+                }
+                
                 //go to cell 0
                 bin0test<<"<<<<";
                 bin0test<<"]";
@@ -749,6 +765,8 @@ int main()
                 bin0test<<">>";
                 
                 //update the value
+                //update by input
+                if(false)
                 {
                     //clear cell 5
                     bin0test<<"[-]";
@@ -766,6 +784,20 @@ int main()
                     
                     //go to cell 5
                     bin0test<<">";
+                }
+                
+                //subtract 1
+                if(false)
+                {
+                    //subtract cell 5 by 1
+                    bin0test<<"-";
+                    //go to cell 6
+                    bin0test<<">";
+                    //subtract cell 6 by 1
+                    bin0test<<"-";
+                    
+                    //go to cell 5
+                    bin0test<<"<";
                 }
                 
                 //go to cell 2
@@ -794,7 +826,12 @@ int main()
         
         //final result:
         //At cell 0
+        
+        //update by input
         //bin0test<<"[->+>>>[-]>>[-]<,[-<+>>+<]<<<<<]>>[->+>>[-]>[-]<<,[->+>+<<]><<<]<<>[-<+>]>>[-<+>]<<<";
+        
+        //subtract 1
+        //bin0test<<"[->+>>>->>-<<<<<<]>>[->+>>->-<<<<]<<>[-<+>]>>[-<+>]<<<";
     }
     
     //test generator
