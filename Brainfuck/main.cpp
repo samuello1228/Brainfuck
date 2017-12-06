@@ -329,7 +329,7 @@ int main()
     if(false)
     {
         //int to bool
-        //require 4 cells
+        //require 4 cells (continuous)
         //cell 0: always 0; for synchronizing the pointer after loop
         //cell 1: input cell (not destructive)
         bin0test<<">,";
@@ -373,7 +373,7 @@ int main()
     if(false)
     {
         //NOT gate
-        //require 2 cells
+        //require 2 cells (discrete)
         //cell 0 is input
         bin0test<<"+";
         //go to cell 1
@@ -401,112 +401,130 @@ int main()
     if(false)
     {
         //if-else
-        //require 2 cells
+        //require 2 cells (discrete)
         //cell 0 is input (destructive)
         //cell 1 is aux cell for cell 0
         bin0test<<"+";
         
-        //if cell 0 is true
-        bin0test<<"[";
-        //set cell 0 to false; set aux cell 1 to true
-        bin0test<<"->+<";
-        //do if-part
-        bin0test<<">>++++++++<<";
-        //go to cell 0
-        bin0test<<"]";
-        
-        //cell 0 is NOT GATE of cell 1
-        bin0test<<"+>[-<->]<";
-        
-        //if cell 0 is true
-        bin0test<<"[-";
-        //go else-part
-        bin0test<<">>>++++++++++++++<<<";
-        //go to cell 0
-        bin0test<<"]";
+        {
+            //if cell 0 is true
+            bin0test<<"[";
+            //set cell 0 to false; set aux cell 1 to true
+            bin0test<<"->+<";
+            //do if-part
+            bin0test<<">>++++++++<<";
+            //go to cell 0
+            bin0test<<"]";
+            
+            //cell 0 is NOT GATE of cell 1
+            bin0test<<"+>[-<->]<";
+            
+            //if cell 0 is true
+            bin0test<<"[-";
+            //go else-part
+            bin0test<<">>>++++++++++++++<<<";
+            //go to cell 0
+            bin0test<<"]";
+        }
         
         //final result:
         //require 2 cells
         //At cell 0
         //cell 0 is input (destructive)
         //cell 1 is aux cell
-        //bin0test<<"+[->+< (if-part) ]+>[-<->]<[- (else-part) ]";
+        //bin0test<<"[->+< (if-part) ]+>[-<->]<[- (else-part) ]";
     }
     
     if(false)
     {
         //OR gate
-        //require 4 cells
-        
-        //cell 0 and 2 are input
+        //require 4 cells (discrete)
+        //cell 0 and 2 are input (destructive)
         //cell 1 is aux cell for cell 0
-        bin0test<<">>";
+        bin0test<<"+>>+";
         //go to cell 0
         bin0test<<"<<";
         
-        //if cell 0 is true
-        bin0test<<"[";
-        //copy cell 0 to aux cell 1 and cell 3
-        bin0test<<"->+>>+<<<";
-        bin0test<<"]";
+        {
+            //if cell 0 is true
+            bin0test<<"[";
+            //copy cell 0 to aux cell 1 and cell 3
+            bin0test<<"->+>>+<<<";
+            bin0test<<"]";
+            
+            //cell 0 is NOT gate of cell 1
+            bin0test<<"+>[-<->]<";
+            
+            //if cell 0 is true
+            bin0test<<"[-";
+            //go to cell 2
+            bin0test<<">>";
+            //copy cell 2 to cell 3
+            bin0test<<"[->+<]";
+            //go to cell 0
+            bin0test<<"<<";
+            bin0test<<"]";
+            
+            //clear cell 2
+            bin0test<<">>[-]";
+            //go to cell 3
+            bin0test<<">";
+        }
         
-        //cell 0 is NOT GATE of cell 1
-        bin0test<<"+>[-<->]<";
-        
-        //if cell 0 is true
-        bin0test<<"[-";
-        //go to cell 2
-        bin0test<<">>";
-        //copy cell 2 to cell 3
-        bin0test<<"[->+<]";
-        //go to cell 0
-        bin0test<<"<<";
-        bin0test<<"]";
-        
-        //clear cell 2
-        bin0test<<">>[-]";
-        //go to cell 3
-        bin0test<<">";
-        
-        //final result: [->+>>+<<<]+>[-<->]<[->>[->+<]<<]>>[-]>
+        //final result:
+        //require 4 cells (discrete)
+        //initial at cell 0
+        //final at cell 3
+        //cell 0 and 2 are input (destructive)
+        //cell 1 is aux cell for cell 0
+        //cell 3 is output
+        //bin0test<<"[->+>>+<<<]+>[-<->]<[->>[->+<]<<]>>[-]>";
     }
     
     if(false)
     {
         //AND gate
-        //require 3 cells
-        
-        //cell 0 and 1 are input
-        bin0test<<">";
+        //require 3 cells (discrete)
+        //cell 0 and 1 are input (destructive)
+        bin0test<<"+>+";
         //go to cell 0
         bin0test<<"<";
         
-        //if cell 0 is true
-        bin0test<<"[-";
-        //go to cell 1
-        bin0test<<">";
-        //copy cell 1 to cell 2
-        bin0test<<"[->+<]";
-        //go to cell 0
-        bin0test<<"<";
-        bin0test<<"]";
+        {
+            //if cell 0 is true
+            bin0test<<"[-";
+            //go to cell 1
+            bin0test<<">";
+            //copy cell 1 to cell 2
+            bin0test<<"[->+<]";
+            //go to cell 0
+            bin0test<<"<";
+            bin0test<<"]";
+            
+            //clear cell 1
+            bin0test<<">[-]";
+            //go to cell 2
+            bin0test<<">";
+        }
         
-        //clear cell 1
-        bin0test<<">[-]";
-        //go to cell 2
-        bin0test<<">";
-        
-        //final result: [->[->+<]<]>[-]>
+        //final result:
+        //require 3 cells (discrete)
+        //initial at cell 0
+        //final at cell 2
+        //cell 0 and 1 is input (destructive)
+        //cell 2 is output
+        //bin0test<<"[->[->+<]<]>[-]>";
     }
     
     if(false)
     {
         //compare same
+        //require 9 cells  (continuous)
         //cell 0: bool result
         //cell 1: bool for while loop
-        //cell 2;5;8 are 0
-        //cell 3;6 are input
-        bin0test<<">>>+++++>>>++++++>>";
+        //cell 2 and 5 and 8 are 0
+        //cell 3 and 6 are input (destructive)
+        bin0test<<">>>+++++>>>+++++>>";
         
         //go to cell 1
         bin0test<<"<<<<<<<";
@@ -580,7 +598,14 @@ int main()
         //cell 0 is AND Gate of cell 5 and 8
         bin0test<<"[-<<<[-<<<<<+>>>>>]>>>]<<<[-]<<<<<";
         
-        //final result: bin0test<<">+[->>->>>-<<<<>[>+>]<[<]>>>>[>+>]<[<]>>[-<<<[-<<<+>>>]>>>]<<<[-]<<<]>>[>+>]<[<]>[-]>>>[>+>]<[<]>[-]<+<[->-<]>>>>+<[->-<]>[-<<<[-<<<<<+>>>>>]>>>]<<<[-]<<<<<";
+        //final result:
+        //require 9 cells (continuous)
+        //At cell 0
+        //cell 0: bool result
+        //cell 1: bool for while loop
+        //cell 2 and 5 and 8 are 0
+        //cell 3 and 6 are input (destructive)
+        //bin0test<<">+[->>->>>-<<<<>[>+>]<[<]>>>>[>+>]<[<]>>[-<<<[-<<<+>>>]>>>]<<<[-]<<<]>>[>+>]<[<]>[-]>>>[>+>]<[<]>[-]<+<[->-<]>>>>+<[->-<]>[-<<<[-<<<<<+>>>>>]>>>]<<<[-]<<<<<";
     }
     
     if(false)
