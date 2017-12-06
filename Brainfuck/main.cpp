@@ -1016,8 +1016,10 @@ int main()
         //bin0test<<">>[->>+<]<<[<]>>>>[->+++++++++++++++++++++++++++++++++++++++++++<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->++++++++++++++<]<<[->>+<]<<[<]>>>>[->++<]<<[->>+<]<<[<]>>>>[->+++++++++++++++++++++++++++++<]<<[->>+<]<<[<]>>>>[->++<]<<";
     }
     
-    if(false)
+    //if(false)
     {
+        //remove all comments
+        //remove all characters except the 8 special characters
         //cell 0-6: generator for input
         bin0test<<"+>>>>>,[-<+>>+<]>>";
         
@@ -1054,26 +1056,94 @@ int main()
             //for loop
             {
                 //At cell 13
-                bin0test<<"[";
+                bin0test<<"["; //p127
                 
                 {
                     //go to input (cell 0)
                     bin0test<<"<<<<<<<<<<<<<";
-                    //copy to cell 23
                     
+                    //copy to cell 23
+                    ////n = x minus 6 = 23  minus 6 = 17
+                    bin0test<<"[->+>>>[->+>";
+                    bin0test<<">>>>>>>>>>>>>>>>>";
+                    bin0test<<"+<<";
+                    bin0test<<"<<<<<<<<<<<<<<<<<";
+                    bin0test<<"]<<<<]>>[->+>>[-<+>>";
+                    bin0test<<">>>>>>>>>>>>>>>>>";
+                    bin0test<<"+<";
+                    bin0test<<"<<<<<<<<<<<<<<<<<";
+                    bin0test<<"]<<<]<<>[->+<]>>[-<<<+>>>]<<<";
                 }
                 
+                {
+                    //go to counter (cell 7)
+                    bin0test<<">>>>>>>"; //p281
+                    
+                    //copy to input for mapping (cell 16)
+                    ////n = x minus 13 = 16 minus 13 = 3
+                    bin0test<<"[->+>>>[->+>";
+                    bin0test<<">>>";
+                    bin0test<<"+<<";
+                    bin0test<<"<<<";
+                    bin0test<<"]<<<<]>>[->+>>[-<+>>";
+                    bin0test<<">>>";
+                    bin0test<<"+<";
+                    bin0test<<"<<<";
+                    bin0test<<"]<<<]<<>[->+<]>>[-<<<+>>>]<<<";
+                }
                 
+                {
+                    //go to mapping (cell 14)
+                    bin0test<<">>>>>>>"; //p366
+                    //do mapping
+                    bin0test<<">>[->>+<]<<[<]>>>>[->+++++++++++++++++++++++++++++++++++++++++++<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->++++++++++++++<]<<[->>+<]<<[<]>>>>[->++<]<<[->>+<]<<[<]>>>>[->+++++++++++++++++++++++++++++<]<<[->>+<]<<[<]>>>>[->++<]<<"; //p645
+                    //At cell 16
+                }
+                
+                {
+                    //go to result of mapping (cell 19)
+                    bin0test<<">>>";
+                    
+                    //destructive copy from cell 19 to cell 26
+                    bin0test<<"[-";
+                    bin0test<<">>>>>>>";
+                    bin0test<<"+";
+                    bin0test<<"<<<<<<<";
+                    bin0test<<"]"; //p666
+                }
+                
+                {
+                    //go to compare same (cell 20)
+                    bin0test<<">";
+                    //compare same
+                    bin0test<<">+[->>->>>-<<<<>[>+>]<[<]>>>>[>+>]<[<]>>[-<<<[-<<<+>>>]>>>]<<<[-]<<<]>>[>+>]<[<]>[-]>>>[>+>]<[<]>[-]<+<[->-<]>>>>+<[->-<]>[-<<<[-<<<<<+>>>>>]>>>]<<<[-]<<<<<"; //p823
+                    //go to compare resuit (cell 20)
+                    
+                    {
+                        //At cell 20
+                        //if compare resuit is true
+                        bin0test<<"[-";
+                        
+                        //go to constant value for input (cell 6)
+                        bin0test<<"<<<<<<<<<<<<<<";
+                        //output
+                        bin0test<<"."; //p840
+                        
+                        //go to cell 20
+                        bin0test<<">>>>>>>>>>>>>>";
+                        bin0test<<"]"; //p855
+                    }
+                }
                 
                 //go to counter (cell 7)
-                bin0test<<"<<<<<<";
+                bin0test<<"<<<<<<<<<<<<<";
                 //update value by subtract 1
                 bin0test<<"[->+>>>->>-<<<<<<]>>[->+>>->-<<<<]<<>[-<+>]>>[-<+>]<<<";
                 
                 //go to constant value for counter (cell 13)
                 bin0test<<">>>>>>";
                 //end for loop
-                bin0test<<"]";
+                bin0test<<"]"; //p929
             }
             
             //go to input (cell 0)
