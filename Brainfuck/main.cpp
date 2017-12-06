@@ -695,7 +695,17 @@ int main()
         
         //final result:
         //At cell 0
-        //bin0test<<"[->+>>>[->+>>n+<<<n]<<<<]>>[->+>>[-<+>>>n+<<n]<<<]<<>[->+<]>>[-<<<+>>>]<<<";
+        ///*
+        bin0test<<"[->+>>>[->+>";
+        bin0test<<">n";
+        bin0test<<"+<<";
+        bin0test<<"<n";
+        bin0test<<"]<<<<]>>[->+>>[-<+>>";
+        bin0test<<">n";
+        bin0test<<"+<";
+        bin0test<<"<n";
+        bin0test<<"]<<<]<<>[->+<]>>[-<<<+>>>]<<<";
+        //*/
         //n=1 for next to the generator (right to the generator)
     }
     
@@ -858,7 +868,17 @@ int main()
         if(false)
         {
             //copy to cell 8
-            bin0test<<"[->+>>>[->+>>+<<<]<<<<]>>[->+>>[-<+>>>+<<]<<<]<<>[->+<]>>[-<<<+>>>]<<<";
+            bin0test<<"[->+>>>[->+>";
+            bin0test<<">";
+            bin0test<<"+<<";
+            bin0test<<"<";
+            bin0test<<"]<<<<]>>[->+>>[-<+>>";
+            bin0test<<">";
+            bin0test<<"+<";
+            bin0test<<"<";
+            bin0test<<"]<<<]<<>[->+<]>>[-<<<+>>>]<<<";
+
+            
             //go to cell 8
             bin0test<<">>>>>>>";
             //clean cell 8
@@ -906,7 +926,7 @@ int main()
         }
     }
     
-    //if(false)
+    if(false)
     {
         //mapping for the 8 special characters
         //require 6 cells (continuous)
@@ -993,27 +1013,73 @@ int main()
     
     if(false)
     {
-        //cell 0-5: generator for plus sign
-        //initialize generator for plus sign
-        bin0test<<"+>>>>+++++++++++++++++++++++++++++++++++++++++++";
+        //cell 0-6: generator for input
+        bin0test<<"+>>>>>,[-<+>>+<]>>";
         
-        //cell 6-8: cell for input character
-        //go to cell 7
-        bin0test<<">>>";
-        //input
-        bin0test<<",";
-        //copy cell 7 to cell 6 and cell 8
-        bin0test<<"[-<+>>+<]";
-        
-        //go to generator (cell 0)
-        bin0test<<"<<<<<<<";
-        //apply generator to cell 9; n=4
-        //bin0test<<"[->+>>>[->+>>>>+<<<<<]<<<<]>>[->+>>[-<+>>>>>+<<<<]<<<]<<>[->+<]>>[-<<<+>>>]<<<";
-        
-        //cell 9: bool for matching a character; first bit is special character; second bit is input character
-        
-        
+        //cell 7-13: generator for counter
+        bin0test<<"+>>>>";
         bin0test<<"";
+        bin0test<<">>";
+        bin0test<<"";
+        bin0test<<">";
+        
+        //cell 14-19: mapping for the 8 special characters
+        bin0test<<">+";
+        
+        //cell 20-28: compare same
+        //cell 23: copy for input characters
+        //cell 26: copy for special characters
+        
+        //go to constant value for input (cell 6)
+        bin0test<<"<<<<<<<<<";
+        
+        //while(input)
+        {
+            //At cell 6
+            //if input is not zero
+            bin0test<<"[";
+            
+            //go to counter (cell 7)
+            bin0test<<">";
+            //update value by adding 8
+            bin0test<<"[->+>>>++++++++>>++++++++<<<<<<]>>[->+>>++++++++>++++++++<<<<]<<>[-<+>]>>[-<+>]<<<";
+            //go to constant value for counter (cell 13)
+            bin0test<<">>>>>>";
+            
+            //for loop
+            {
+                //At cell 13
+                bin0test<<"[";
+                
+                {
+                    //go to input (cell 0)
+                    bin0test<<"<<<<<<<<<<<<<";
+                    //copy to cell 23
+                    
+                }
+                
+                
+                
+                //go to counter (cell 7)
+                bin0test<<"<<<<<<";
+                //update value by subtract 1
+                bin0test<<"[->+>>>->>-<<<<<<]>>[->+>>->-<<<<]<<>[-<+>]>>[-<+>]<<<";
+                
+                //go to constant value for counter (cell 13)
+                bin0test<<">>>>>>";
+                //end for loop
+                bin0test<<"]";
+            }
+            
+            //go to input (cell 0)
+            bin0test<<"<<<<<<<<<<<<<";
+            //update value by input
+            bin0test<<"[->+>>>[-]>>[-]<,[-<+>>+<]<<<<<]>>[->+>>[-]>[-]<<,[->+>+<<]><<<]<<>[-<+>]>>[-<+>]<<<";
+            //go to constant value for input (cell 6)
+            bin0test<<">>>>>>";
+            //end while loop
+            bin0test<<"]";
+        }
     }
     
     bin0test.close();
