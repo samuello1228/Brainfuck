@@ -675,7 +675,10 @@ int main()
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/generator_initialize.cpp","data/v2/bin/generator_initialize.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/generator_update_by_input.cpp","data/v2/bin/generator_update_by_input.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/generator_update_by_subtract_one.cpp","data/v2/bin/generator_update_by_subtract_one.txt");
-    Run("data/v1/bin/next_compiler.txt","data/v2/src/generator_copy.cpp","data/v2/bin/generator_copy.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/generator_copy.cpp","data/v2/bin/generator_copy.txt");
+    Run("data/v1/bin/next_compiler.txt","data/v2/src/self_compiler.cpp","data/v2/bin/self_compiler.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
     
     //Run("data/bin0test.cpp","data/src1test.cpp","data/bin1test.cpp");
