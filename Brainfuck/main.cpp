@@ -327,29 +327,7 @@ int main()
     if(false)
     {
         //NOT gate
-        //require 2 cells (discrete)
-        //cell 0 is input
-        bin0test<<"+";
-        //go to cell 1
-        bin0test<<">";
-        
-        {
-            //set 1 at cell 1
-            bin0test<<"+";
-            //go to cell 0
-            bin0test<<"<";
-            //subtract cell 0 by cell 1
-            bin0test<<"[->-<]";
-            //go to cell 1;
-            bin0test<<">";
-        }
-        
-        //final result:
-        //require 2 cells
-        //At cell 1
-        //cell 0 is input (destructive)
-        //cell 1 is output
-        //bin0test<<"+<[->-<]>";
+        bin0test<<"+<[->-<]>";
     }
     
     if(false)
@@ -1139,6 +1117,7 @@ int main()
     
     //build for v2
     Run("data/v1/bin/next_compiler.cpp","data/v2/src/int_to_bool.cpp","data/v2/bin/int_to_bool.cpp");
+    Run("data/v1/bin/next_compiler.cpp","data/v2/src/NOT_gate.cpp","data/v2/bin/NOT_gate.cpp");
     
     //Run("data/bin0test.cpp","data/src1test.cpp","data/bin1test.cpp");
     return 0;
