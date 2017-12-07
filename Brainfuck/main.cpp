@@ -421,93 +421,7 @@ int main()
     
     if(false)
     {
-        //compare same
-        //require 9 cells  (continuous)
-        //cell 0: bool result
-        //cell 1: bool for while loop
-        //cell 2 and 5 and 8 are 0
-        //cell 3 and 6 are input (destructive)
-        bin0test<<">>>+++++>>>+++++>>";
-        
-        //go to cell 1
-        bin0test<<"<<<<<<<";
-        
-        //subtraction
-        {
-            //while loop
-            bin0test<<"+[-";
-            
-            //go to cell 3
-            bin0test<<">>";
-            //subtract by 1
-            bin0test<<"-";
-            
-            //go to cell 6
-            bin0test<<">>>";
-            //subtract by 1
-            bin0test<<"-";
-            
-            //go to cell 2
-            bin0test<<"<<<<";
-            //int to bool for cell 3
-            bin0test<<">[>+>]<[<]";
-            
-            //go to cell 5
-            bin0test<<">>>";
-            //int to bool for cell 6
-            bin0test<<">[>+>]<[<]";
-            
-            //go to cell 7
-            bin0test<<">>";
-            //cell 1 is AND gate of cell 4 and 7
-            bin0test<<"[-<<<[-<<<+>>>]>>>]<<<[-]<<<";
-            //at cell 1
-            
-            //end while loop
-            bin0test<<"]";
-        }
-        
-        //int to bool for cell 3 and 5
-        {
-            //go to cell 2
-            bin0test<<">";
-            //int to bool for cell 3
-            bin0test<<">[>+>]<[<]";
-            //clear cell 3
-            bin0test<<">[-]";
-            
-            //go to cell 5
-            bin0test<<">>";
-            //int to bool for cell 6
-            bin0test<<">[>+>]<[<]";
-            //clear cell 6
-            bin0test<<">[-]";
-        }
-        
-        //NOT gate
-        {
-            //go to cell 5
-            bin0test<<"<";
-            //cell 5 is NOT gate for cell 4
-            bin0test<<"+<[->-<]>";
-            
-            //go to cell 8
-            bin0test<<">>>";
-            //cell 8 is NOT gate for cell 7
-            bin0test<<"+<[->-<]>";
-        }
-        
-        //go to cell 8
-        //cell 0 is AND Gate of cell 5 and 8
-        bin0test<<"[-<<<[-<<<<<+>>>>>]>>>]<<<[-]<<<<<";
-        
-        //final result:
-        //require 9 cells (continuous)
-        //At cell 0
-        //cell 0: bool result
-        //cell 1: bool for while loop
-        //cell 2 and 5 and 8 are 0
-        //cell 3 and 6 are input (destructive)
+        //is_same
         //bin0test<<">+[->>->>>-<<<<>[>+>]<[<]>>>>[>+>]<[<]>>[-<<<[-<<<+>>>]>>>]<<<[-]<<<]>>[>+>]<[<]>[-]>>>[>+>]<[<]>[-]<+<[->-<]>>>>+<[->-<]>[-<<<[-<<<<<+>>>>>]>>>]<<<[-]<<<<<";
     }
     
@@ -1019,8 +933,8 @@ int main()
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/NOT_gate.cpp","data/v2/bin/NOT_gate.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/AND_gate.cpp","data/v2/bin/AND_gate.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/mapping_initialize.cpp","data/v2/bin/mapping_initialize.txt");
-    Run("data/v1/bin/next_compiler.txt","data/v2/src/mapping_run.cpp","data/v2/bin/mapping_run.txt");
-    //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/mapping_run.cpp","data/v2/bin/mapping_run.txt");
+    Run("data/v1/bin/next_compiler.txt","data/v2/src/is_same.cpp","data/v2/bin/is_same.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
     
