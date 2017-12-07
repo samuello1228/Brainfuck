@@ -506,131 +506,6 @@ int main()
     if(false)
     {
         //generator: update value in generator
-        
-        //initialize generator
-        bin0test<<"+>>>>>,[-<+>>+<]<<<<<";
-        
-        {
-            {
-                //if cell 0 is true;
-                bin0test<<"[";
-                //set cell 0 to false; set aux cell 1 to true
-                bin0test<<"->+";
-                //go to cell 4
-                bin0test<<">>>";
-                
-                //update the value
-                //update by input
-                if(false)
-                {
-                    //clear cell 4
-                    bin0test<<"[-]";
-                    //go to cell 6
-                    bin0test<<">>";
-                    //clear cell 6
-                    bin0test<<"[-]";
-                    
-                    //go to cell 5
-                    bin0test<<"<";
-                    //input
-                    bin0test<<",";
-                    //copy cell 5 to cell 4 and 6
-                    bin0test<<"[-<+>>+<]";
-                    
-                    //go to cell 4
-                    bin0test<<"<";
-                }
-                
-                //subtract 1
-                if(false)
-                {
-                    //subtract cell 4 by 1
-                    bin0test<<"-";
-                    //go to cell 6
-                    bin0test<<">>";
-                    //subtract cell 6 by 1
-                    bin0test<<"-";
-                    
-                    //go to cell 4
-                    bin0test<<"<<";
-                }
-                
-                //go to cell 0
-                bin0test<<"<<<<";
-                bin0test<<"]";
-            }
-            
-            {
-                //if cell 2 is true;
-                bin0test<<">>[";
-                //set cell 2 to false; set aux cell 3 to true
-                bin0test<<"->+";
-                //go to cell 5
-                bin0test<<">>";
-                
-                //update the value
-                //update by input
-                if(false)
-                {
-                    //clear cell 5
-                    bin0test<<"[-]";
-                    //go to cell 6
-                    bin0test<<">";
-                    //clear cell 6
-                    bin0test<<"[-]";
-                    
-                    //go to cell 4
-                    bin0test<<"<<";
-                    //input
-                    bin0test<<",";
-                    //copy cell 4 to cell 5 and 6
-                    bin0test<<"[->+>+<<]";
-                    
-                    //go to cell 5
-                    bin0test<<">";
-                }
-                
-                //subtract 1
-                if(false)
-                {
-                    //subtract cell 5 by 1
-                    bin0test<<"-";
-                    //go to cell 6
-                    bin0test<<">";
-                    //subtract cell 6 by 1
-                    bin0test<<"-";
-                    
-                    //go to cell 5
-                    bin0test<<"<";
-                }
-                
-                //go to cell 2
-                bin0test<<"<<<";
-                bin0test<<"]";
-                
-                //go to cell 0
-                bin0test<<"<<";
-            }
-            
-            {
-                //go to aux cell 1
-                bin0test<<">";
-                //if cell 1 is true; set cell 1 to false; set cell 0 to true
-                bin0test<<"[-<+>]";
-                
-                //go to aux cell 3
-                bin0test<<">>";
-                //if cell 3 is true; set cell 3 to false; set cell 2 to true
-                bin0test<<"[-<+>]";
-                
-                //go to cell 0
-                bin0test<<"<<<";
-            }
-        }
-        
-        //final result:
-        //At cell 0
-        
         //update by input
         //bin0test<<"[->+>>>[-]>>[-]<,[-<+>>+<]<<<<<]>>[->+>>[-]>[-]<<,[->+>+<<]><<<]<<>[-<+>]>>[-<+>]<<<";
         
@@ -894,9 +769,9 @@ int main()
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/mapping_initialize.cpp","data/v2/bin/mapping_initialize.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/mapping_run.cpp","data/v2/bin/mapping_run.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/is_same.cpp","data/v2/bin/is_same.txt");
-    Run("data/v1/bin/next_compiler.txt","data/v2/src/generator_initialize.cpp","data/v2/bin/generator_initialize.txt");
-    //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
-    //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/generator_initialize.cpp","data/v2/bin/generator_initialize.txt");
+    Run("data/v1/bin/next_compiler.txt","data/v2/src/generator_update_by_input.cpp","data/v2/bin/generator_update_by_input.txt");
+    Run("data/v1/bin/next_compiler.txt","data/v2/src/generator_update_by_subtract_one.cpp","data/v2/bin/generator_update_by_subtract_one.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
     
