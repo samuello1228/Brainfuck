@@ -106,7 +106,7 @@ void Run(string code,string input,string output)
     ofstream fout(output.c_str());
     int binPointer = 0;
     bool inputIsEnd = false;
-    bool isPrint = 1;
+    bool isPrint = 0;
     
     vector<int> array;
     array.reserve(5000);
@@ -317,16 +317,7 @@ void Run(string code,string input,string output)
 
 int main()
 {
-    ofstream bin0("data/bin0.cpp");
-    bin0<<",[.,]";
-    bin0.close();
-    
-    ofstream src1("data/src1.cpp");
-    src1<<",[.,]";
-    src1.close();
-    
     ofstream bin0test("data/bin0test.cpp");
-    
     if(false)
     {
         //int to bool
@@ -1177,7 +1168,10 @@ int main()
     //src1test<<"0";
     src1test.close();
     
-    //Run("data/bin0.cpp","data/src1.cpp","data/bin1.cpp");
-    Run("data/bin0test.cpp","data/src1test.cpp","data/bin1test.cpp");
+    //Run("data/v0/bin/next_compiler.cpp","data/v1/src/self_compiler.cpp","data/v1/bin/self_compiler.cpp");
+    //Run("data/v0/bin/next_compiler.cpp","data/v1/src/next_compiler.cpp","data/v1/bin/next_compiler.cpp");
+    Run("data/v1/bin/next_compiler.cpp","data/v1/src/next_compiler.cpp","data/v1/rbin/next_compiler.cpp");
+    
+    //Run("data/bin0test.cpp","data/src1test.cpp","data/bin1test.cpp");
     return 0;
 }
