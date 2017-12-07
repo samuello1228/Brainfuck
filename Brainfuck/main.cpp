@@ -113,6 +113,7 @@ void Run(string code,string input,string output)
     array.push_back(0);
     int cellPointer = 0;
     
+    cout<<"Info: The program is started."<<endl;
     if(isPrint)
     {
         cout<<"    : "<<cellPointer<<" ";
@@ -1124,14 +1125,24 @@ int main()
                         //if compare resuit is true
                         bin0test<<"[-";
                         
-                        //go to constant value for input (cell 6)
-                        bin0test<<"<<<<<<<<<<<<<<";
-                        //output
-                        bin0test<<"."; //p840
+                        {
+                            //go to constant value for input (cell 6)
+                            bin0test<<"<<<<<<<<<<<<<<";
+                            //output
+                            bin0test<<"."; //p840
+                        }
+                        
+                        //break
+                        {
+                            //go to counter (cell 7)
+                            bin0test<<">";
+                            //update value to 1
+                            bin0test<<"[->+>>>[-]>>[-]<+[-<+>>+<]<<<<<]>>[->+>>[-]>[-]<<+[->+>+<<]><<<]<<>[-<+>]>>[-<+>]<<<";
+                        }
                         
                         //go to cell 20
-                        bin0test<<">>>>>>>>>>>>>>";
-                        bin0test<<"]"; //p855
+                        bin0test<<">>>>>>>>>>>>>";
+                        bin0test<<"]"; //p939
                     }
                 }
                 
@@ -1143,11 +1154,11 @@ int main()
                 //go to constant value for counter (cell 13)
                 bin0test<<">>>>>>";
                 //end for loop
-                bin0test<<"]"; //p929
+                bin0test<<"]"; //p1013
             }
             
             //go to input (cell 0)
-            bin0test<<"<<<<<<<<<<<<<";
+            bin0test<<"<<<<<<<<<<<<<";//p1026
             //update value by input
             bin0test<<"[->+>>>[-]>>[-]<,[-<+>>+<]<<<<<]>>[->+>>[-]>[-]<<,[->+>+<<]><<<]<<>[-<+>]>>[-<+>]<<<";
             //go to constant value for input (cell 6)
