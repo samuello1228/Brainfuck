@@ -78,11 +78,8 @@
 }
 
 {
-    //go to cell 0
-    <<
-    
     //go to aux cell 1
-    >
+    <
     //if cell 1 is true; set cell 1 to false; set cell 2 to true
     [->+<]
     
