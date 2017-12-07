@@ -428,31 +428,7 @@ int main()
     if(false)
     {
         //initialize generator
-        //require 7 cells
-        
-        //cell 0: bool for cell 4 is filled
-        bin0test<<"+";
-        //cell 1: aux bool for cell 4 is filled
-        //cell 2: bool for cell 5 is filled
-        //cell 3: aux bool for cell 5 is filled
-        
-        //cell 4: value cell
-        //cell 5: another value cell for copying
-        //cell 6: constant value cell: bool for loop or output
-        
-        //go to cell 5, write
-        bin0test<<">>>>>,";
-        
-        //copy cell 5 to cell 4 and 6
-        bin0test<<"[-<+>>+<]";
-        
-        //go to cell 0
-        bin0test<<"<<<<<";
-        
-        //final result:
-        //require 7 cells
-        //At cell 0
-        //bin0test<<"+>>>>>,[-<+>>+<]<<<<<";
+        //bin0test<<"+";
     }
     
     if(false)
@@ -719,33 +695,6 @@ int main()
     
     if(false)
     {
-        //copyer by using generator
-        //cell 0 to 6 is input generator
-        //initialize generator
-        bin0test<<"+>>>>>,[-<+>>+<]<<<<<";
-        
-        //go to cell 6
-        bin0test<<">>>>>>";
-        
-        {
-            //while loop
-            bin0test<<"[";
-            
-            //output cell 6
-            bin0test<<".";
-            
-            //go to cell 0
-            bin0test<<"<<<<<<";
-            //update value from input
-            bin0test<<"[->+>>>[-]>>[-]<,[-<+>>+<]<<<<<]>>[->+>>[-]>[-]<<,[->+>+<<]><<<]<<>[-<+>]>>[-<+>]<<<";
-            //go to cell 6
-            bin0test<<">>>>>>";
-            bin0test<<"]";
-        }
-    }
-    
-    if(false)
-    {
         //mapping for the 8 special characters
         
         //for plus
@@ -763,27 +712,37 @@ int main()
     
     //if(false)
     {
-        //remove all comments
         //remove all characters except the 8 special characters
-        //cell 0-6: generator for input
-        bin0test<<"+>>>>>,[-<+>>+<]>>";
+        //include is_same
+        //include mapping_initialize
+        //include mapping_run
+        //include generator_initialize
         
-        //cell 7-13: generator for counter
-        bin0test<<"+>>>>";
-        bin0test<<"";
-        bin0test<<">>";
-        bin0test<<"";
-        bin0test<<">";
+        //cell 0 to 6: generator for input
+        //go to cell 0
+        //initialize generator
+        bin0test<<"+";
+        //update value by input
+        bin0test<<"[->+>>>[-]>>[-]<,[-<+>>+<]<<<<<]>>[->+>>[-]>[-]<<,[->+>+<<]><<<]<<>[-<+>]>>[-<+>]<<<";
         
-        //cell 14-19: mapping for the 8 special characters
-        bin0test<<">+";
+        //cell 7 to 13: generator for counter
+        //go to cell 7
+        bin0test<<">>>>>>>";
+        //initialize generator
+        bin0test<<"+";
         
-        //cell 20-28: compare same
+        //cell 14 to 19: mapping for the 8 special characters
+        //go to cell 14
+        bin0test<<">>>>>>>";
+        //initialize mapping
+        bin0test<<">+<";
+        
+        //cell 20 to 28: is_same
         //cell 23: copy for input characters
         //cell 26: copy for special characters
         
-        //go to constant value for input (cell 6)
-        bin0test<<"<<<<<<<<<";
+        //go to constant value cell for input (cell 6)
+        bin0test<<"<<<<<<<<";
         
         //while(input)
         {
@@ -795,20 +754,20 @@ int main()
             bin0test<<">";
             //update value by adding 8
             bin0test<<"[->+>>>++++++++>>++++++++<<<<<<]>>[->+>>++++++++>++++++++<<<<]<<>[-<+>]>>[-<+>]<<<";
-            //go to constant value for counter (cell 13)
+            //go to constant value cell for counter (cell 13)
             bin0test<<">>>>>>";
             
             //for loop
             {
                 //At cell 13
-                bin0test<<"["; //p127
+                bin0test<<"["; //p201
                 
                 {
                     //go to input (cell 0)
                     bin0test<<"<<<<<<<<<<<<<";
                     
                     //copy to cell 23
-                    ////n = x minus 6 = 23  minus 6 = 17
+                    //n = x minus 6 = 23 minus 6 = 17
                     bin0test<<"[->+>>>[->+>";
                     bin0test<<">>>>>>>>>>>>>>>>>";
                     bin0test<<"+<<";
@@ -822,10 +781,10 @@ int main()
                 
                 {
                     //go to counter (cell 7)
-                    bin0test<<">>>>>>>"; //p281
+                    bin0test<<">>>>>>>"; //p355
                     
                     //copy to input for mapping (cell 16)
-                    ////n = x minus 13 = 16 minus 13 = 3
+                    //n = x minus 13 = 16 minus 13 = 3
                     bin0test<<"[->+>>>[->+>";
                     bin0test<<">>>";
                     bin0test<<"+<<";
@@ -839,9 +798,9 @@ int main()
                 
                 {
                     //go to mapping (cell 14)
-                    bin0test<<">>>>>>>"; //p366
+                    bin0test<<">>>>>>>"; //p440
                     //do mapping
-                    bin0test<<">>[->>+<]<<[<]>>>>[->+++++++++++++++++++++++++++++++++++++++++++<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->++++++++++++++<]<<[->>+<]<<[<]>>>>[->++<]<<[->>+<]<<[<]>>>>[->+++++++++++++++++++++++++++++<]<<[->>+<]<<[<]>>>>[->++<]<<"; //p645
+                    bin0test<<">>[->>+<]<<[<]>>>>[->+++++++++++++++++++++++++++++++++++++++++++<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->++++++++++++++<]<<[->>+<]<<[<]>>>>[->++<]<<[->>+<]<<[<]>>>>[->+++++++++++++++++++++++++++++<]<<[->>+<]<<[<]>>>>[->++<]<<"; //p719
                     //At cell 16
                 }
                 
@@ -854,14 +813,14 @@ int main()
                     bin0test<<">>>>>>>";
                     bin0test<<"+";
                     bin0test<<"<<<<<<<";
-                    bin0test<<"]"; //p666
+                    bin0test<<"]"; //p740
                 }
                 
                 {
-                    //go to compare same (cell 20)
+                    //go to is_same (cell 20)
                     bin0test<<">";
-                    //compare same
-                    bin0test<<">+[->>->>>-<<<<>[>+>]<[<]>>>>[>+>]<[<]>>[-<<<[-<<<+>>>]>>>]<<<[-]<<<]>>[>+>]<[<]>[-]>>>[>+>]<[<]>[-]<+<[->-<]>>>>+<[->-<]>[-<<<[-<<<<<+>>>>>]>>>]<<<[-]<<<<<"; //p823
+                    //run is_same
+                    bin0test<<">+[->>->>>-<<<<>[>+>]<[<]>>>>[>+>]<[<]>>[-<<<[-<<<+>>>]>>>]<<<[-]<<<]>>[>+>]<[<]>[-]>>>[>+>]<[<]>[-]<+<[->-<]>>>>+<[->-<]>[-<<<[-<<<<<+>>>>>]>>>]<<<[-]<<<<<"; //p897
                     //go to compare resuit (cell 20)
                     
                     {
@@ -870,10 +829,10 @@ int main()
                         bin0test<<"[-";
                         
                         {
-                            //go to constant value for input (cell 6)
+                            //go to constant value cell for input (cell 6)
                             bin0test<<"<<<<<<<<<<<<<<";
                             //output
-                            bin0test<<"."; //p840
+                            bin0test<<"."; //p914
                         }
                         
                         //break
@@ -886,7 +845,7 @@ int main()
                         
                         //go to cell 20
                         bin0test<<">>>>>>>>>>>>>";
-                        bin0test<<"]"; //p939
+                        bin0test<<"]"; //p1013
                     }
                 }
                 
@@ -895,20 +854,20 @@ int main()
                 //update value by subtract 1
                 bin0test<<"[->+>>>->>-<<<<<<]>>[->+>>->-<<<<]<<>[-<+>]>>[-<+>]<<<";
                 
-                //go to constant value for counter (cell 13)
+                //go to constant value cell for counter (cell 13)
                 bin0test<<">>>>>>";
                 //end for loop
-                bin0test<<"]"; //p1013
+                bin0test<<"]"; //p1087
             }
             
             //go to input (cell 0)
-            bin0test<<"<<<<<<<<<<<<<";//p1026
+            bin0test<<"<<<<<<<<<<<<<"; //p1100
             //update value by input
             bin0test<<"[->+>>>[-]>>[-]<,[-<+>>+<]<<<<<]>>[->+>>[-]>[-]<<,[->+>+<<]><<<]<<>[-<+>]>>[-<+>]<<<";
-            //go to constant value for input (cell 6)
+            //go to constant value cell for input (cell 6)
             bin0test<<">>>>>>";
             //end while loop
-            bin0test<<"]";
+            bin0test<<"]"; //p1191
         }
     }
     
@@ -934,7 +893,10 @@ int main()
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/AND_gate.cpp","data/v2/bin/AND_gate.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/mapping_initialize.cpp","data/v2/bin/mapping_initialize.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/mapping_run.cpp","data/v2/bin/mapping_run.txt");
-    Run("data/v1/bin/next_compiler.txt","data/v2/src/is_same.cpp","data/v2/bin/is_same.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/is_same.cpp","data/v2/bin/is_same.txt");
+    Run("data/v1/bin/next_compiler.txt","data/v2/src/generator_initialize.cpp","data/v2/bin/generator_initialize.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
     
