@@ -321,45 +321,7 @@ int main()
     if(false)
     {
         //int to bool
-        //require 4 cells (continuous)
-        //cell 0: always 0; for synchronizing the pointer after loop
-        //cell 1: input cell (not destructive)
-        bin0test<<">,";
-        //cell 2: bool result
-        //cell 3: set 0 for stopping the loop
-        
-        //go to cell 0
-        bin0test<<"<";
-        
-        {
-            //go to cell 1
-            bin0test<<">";
-            
-            {
-                //if cell 1 is non-zero
-                bin0test<<"[";
-                //go to cell 2
-                bin0test<<">";
-                //set cell 2 to true
-                bin0test<<"+";
-                //go to cell 3 to stop the loop
-                bin0test<<">]";
-            }
-            
-            //if input is zero; go to cell 0
-            //if input is not zero; avoid 0 at cell 3; go to cell 2 and its value must be 1
-            bin0test<<"<";
-            //go to cell 0 by loop; synchronization
-            bin0test<<"[<]";
-        }
-        
-        //final result:
-        //require 4 cells
-        //At cell 0
-        //cell 0 and 3 is zero
-        //cell 1 is input (not destructive)
-        //cell 2 is output
-        //bin0test<<">[>+>]<[<]"
+        bin0test<<">[>+>]<[<]";
     }
     
     if(false)
@@ -1168,9 +1130,15 @@ int main()
     //src1test<<"0";
     src1test.close();
     
+    //build for v1
     //Run("data/v0/bin/next_compiler.cpp","data/v1/src/self_compiler.cpp","data/v1/bin/self_compiler.cpp");
     //Run("data/v0/bin/next_compiler.cpp","data/v1/src/next_compiler.cpp","data/v1/bin/next_compiler.cpp");
-    Run("data/v1/bin/next_compiler.cpp","data/v1/src/next_compiler.cpp","data/v1/rbin/next_compiler.cpp");
+    
+    //rebuild for v1
+    //Run("data/v1/bin/next_compiler.cpp","data/v1/src/next_compiler.cpp","data/v1/rbin/next_compiler.cpp");
+    
+    //build for v2
+    Run("data/v1/bin/next_compiler.cpp","data/v2/src/int_to_bool.cpp","data/v2/bin/int_to_bool.cpp");
     
     //Run("data/bin0test.cpp","data/src1test.cpp","data/bin1test.cpp");
     return 0;
