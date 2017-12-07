@@ -499,6 +499,7 @@ int main()
     //Run("data/v0/bin/next_compiler.txt","data/v1/src/next_compiler.cpp","data/v1/bin/next_compiler.txt");
     
     //rebuild for v1
+    //Run("data/v1/bin/next_compiler.txt","data/v1/src/self_compiler.cpp","data/v1/rbin/self_compiler.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v1/src/next_compiler.cpp","data/v1/rbin/next_compiler.txt");
     
     //build for v2
@@ -512,7 +513,7 @@ int main()
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/generator_update_by_input.cpp","data/v2/bin/generator_update_by_input.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/generator_update_by_subtract_one.cpp","data/v2/bin/generator_update_by_subtract_one.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/generator_copy.cpp","data/v2/bin/generator_copy.txt");
-    Run("data/v1/bin/next_compiler.txt","data/v2/src/self_compiler.cpp","data/v2/bin/self_compiler.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/self_compiler.cpp","data/v2/bin/self_compiler.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
