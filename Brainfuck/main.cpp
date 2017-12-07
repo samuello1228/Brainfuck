@@ -416,36 +416,7 @@ int main()
     if(false)
     {
         //AND gate
-        //require 3 cells (discrete)
-        //cell 0 and 1 are input (destructive)
-        bin0test<<"+>+";
-        //go to cell 0
-        bin0test<<"<";
-        
-        {
-            //if cell 0 is true
-            bin0test<<"[-";
-            //go to cell 1
-            bin0test<<">";
-            //copy cell 1 to cell 2
-            bin0test<<"[->+<]";
-            //go to cell 0
-            bin0test<<"<";
-            bin0test<<"]";
-            
-            //clear cell 1
-            bin0test<<">[-]";
-            //go to cell 2
-            bin0test<<">";
-        }
-        
-        //final result:
-        //require 3 cells (discrete)
-        //initial at cell 0
-        //final at cell 2
-        //cell 0 and 1 is input (destructive)
-        //cell 2 is output
-        //bin0test<<"[->[->+<]<]>[-]>";
+        bin0test<<"[->[->+<]<]>[-]>";
     }
     
     if(false)
@@ -1109,15 +1080,16 @@ int main()
     src1test.close();
     
     //build for v1
-    //Run("data/v0/bin/next_compiler.cpp","data/v1/src/self_compiler.cpp","data/v1/bin/self_compiler.cpp");
-    //Run("data/v0/bin/next_compiler.cpp","data/v1/src/next_compiler.cpp","data/v1/bin/next_compiler.cpp");
+    //Run("data/v0/bin/next_compiler.txt","data/v1/src/self_compiler.cpp","data/v1/bin/self_compiler.txt");
+    //Run("data/v0/bin/next_compiler.txt","data/v1/src/next_compiler.cpp","data/v1/bin/next_compiler.txt");
     
     //rebuild for v1
-    //Run("data/v1/bin/next_compiler.cpp","data/v1/src/next_compiler.cpp","data/v1/rbin/next_compiler.cpp");
+    //Run("data/v1/bin/next_compiler.txt","data/v1/src/next_compiler.cpp","data/v1/rbin/next_compiler.txt");
     
     //build for v2
-    Run("data/v1/bin/next_compiler.cpp","data/v2/src/int_to_bool.cpp","data/v2/bin/int_to_bool.cpp");
-    Run("data/v1/bin/next_compiler.cpp","data/v2/src/NOT_gate.cpp","data/v2/bin/NOT_gate.cpp");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/int_to_bool.cpp","data/v2/bin/int_to_bool.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/NOT_gate.cpp","data/v2/bin/NOT_gate.txt");
+    Run("data/v1/bin/next_compiler.txt","data/v2/src/AND_gate.cpp","data/v2/bin/AND_gate.txt");
     
     //Run("data/bin0test.cpp","data/src1test.cpp","data/bin1test.cpp");
     return 0;
