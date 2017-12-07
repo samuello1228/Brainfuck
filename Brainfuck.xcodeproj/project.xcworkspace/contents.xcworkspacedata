@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "group:../Products/Debug/data"
-      name = "data">
-      <FileRef
-         location = "group:bin0.cpp">
-      </FileRef>
-      <FileRef
-         location = "group:bin1.cpp">
-      </FileRef>
-      <FileRef
-         location = "group:src1.cpp">
-      </FileRef>
-   </Group>
    <FileRef
       location = "self:">
    </FileRef>

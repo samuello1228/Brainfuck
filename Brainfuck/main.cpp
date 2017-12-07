@@ -833,37 +833,9 @@ int main()
     if(false)
     {
         //mapping for the 8 special characters
-        //require 6 cells (continuous)
-        //cell 0: always 0 for synchronization
-        //cell 1: always 1 for synchronization
-        bin0test<<">+";
-        //cell 2: input (destructive)
-        bin0test<<">++++++++";
-        //cell 3: always 0 for stopping the loop
-        //cell 4: bool
-        //cell 5: output
         
         //for plus
         {
-            //if cell 2 is not zero; set cell 4 to true
-            bin0test<<"[->>+";
-            //go to cell 3 to stop the loop
-            bin0test<<"<]";
-            //synchronization, go to cell 0
-            bin0test<<"<<[<]";
-            
-            //go to cell 4
-            bin0test<<">>>>";
-            //if cell 4 is true
-            bin0test<<"[-";
-            //got to cell 5
-            bin0test<<">";
-            //add 43
-            bin0test<<"+++++++++++++++++++++++++++++++++++++++++++";
-            //go to cell 4, end loop
-            bin0test<<"<]";
-            //go to cell 2
-            bin0test<<"<<";
             
             //final result for one special character:
             //bin0test<<"[->>+<]<<[<]>>>>[->";
@@ -871,50 +843,6 @@ int main()
             //bin0test<<"<]<<";
         }
         
-        //for comma
-        bin0test<<"[->>+<]<<[<]>>>>[->";
-        bin0test<<"+";
-        bin0test<<"<]<<";
-        
-        //for minus
-        bin0test<<"[->>+<]<<[<]>>>>[->";
-        bin0test<<"+";
-        bin0test<<"<]<<";
-        
-        //for dot
-        bin0test<<"[->>+<]<<[<]>>>>[->";
-        bin0test<<"+";
-        bin0test<<"<]<<";
-        
-        //for left arrow
-        bin0test<<"[->>+<]<<[<]>>>>[->";
-        bin0test<<"++++++++++++++";
-        bin0test<<"<]<<";
-        
-        //for right arrow
-        bin0test<<"[->>+<]<<[<]>>>>[->";
-        bin0test<<"++";
-        bin0test<<"<]<<";
-        
-        //for left square
-        bin0test<<"[->>+<]<<[<]>>>>[->";
-        bin0test<<"+++++++++++++++++++++++++++++";
-        bin0test<<"<]<<";
-        
-        //for right square
-        bin0test<<"[->>+<]<<[<]>>>>[->";
-        bin0test<<"++";
-        bin0test<<"<]<<";
-        
-        //final result:
-        //require 6 cells (continuous)
-        //initialize
-        //bin0test<<">+<";
-        
-        //initial at cell 0
-        //final at cell 2
-        //cell 2 is input (destructive)
-        //cell 5 is output
         //Run
         //bin0test<<">>[->>+<]<<[<]>>>>[->+++++++++++++++++++++++++++++++++++++++++++<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->++++++++++++++<]<<[->>+<]<<[<]>>>>[->++<]<<[->>+<]<<[<]>>>>[->+++++++++++++++++++++++++++++<]<<[->>+<]<<[<]>>>>[->++<]<<";
     }
@@ -1089,7 +1017,12 @@ int main()
     //build for v2
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/int_to_bool.cpp","data/v2/bin/int_to_bool.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/NOT_gate.cpp","data/v2/bin/NOT_gate.txt");
-    Run("data/v1/bin/next_compiler.txt","data/v2/src/AND_gate.cpp","data/v2/bin/AND_gate.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/AND_gate.cpp","data/v2/bin/AND_gate.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/mapping_initialize.cpp","data/v2/bin/mapping_initialize.txt");
+    Run("data/v1/bin/next_compiler.txt","data/v2/src/mapping_run.cpp","data/v2/bin/mapping_run.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
     
     //Run("data/bin0test.cpp","data/src1test.cpp","data/bin1test.cpp");
     return 0;
