@@ -107,6 +107,7 @@ void Run(string code,string input,string output)
     int binPointer = 0;
     bool inputIsEnd = false;
     bool isPrint = 0;
+    //isPrint = 1;
     
     vector<int> array;
     array.reserve(5000);
@@ -494,6 +495,10 @@ int main()
     src1test<<"]";
     src1test.close();
     
+    ofstream test("data/v2/src/test.cpp");
+    test<<">>[->>+<]<<[<]>>";
+    test.close();
+    
     //build for v1
     //Run("data/v0/bin/next_compiler.txt","data/v1/src/self_compiler.cpp","data/v1/bin/self_compiler.txt");
     //Run("data/v0/bin/next_compiler.txt","data/v1/src/next_compiler.cpp","data/v1/bin/next_compiler.txt");
@@ -514,7 +519,10 @@ int main()
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/generator_update_by_subtract_one.cpp","data/v2/bin/generator_update_by_subtract_one.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/generator_copy.cpp","data/v2/bin/generator_copy.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/self_compiler.cpp","data/v2/bin/self_compiler.txt");
-    //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
+    
+    Run("data/v1/bin/next_compiler.txt","data/v2/src/next_compiler.cpp","data/v2/bin/next_compiler.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v2/src/next_compiler.cpp","data/v2/rbin/next_compiler.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v2/src/test.cpp","data/v2/rbin/test.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/.cpp","data/v2/bin/.txt");
     
