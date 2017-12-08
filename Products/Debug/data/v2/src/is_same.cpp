@@ -34,12 +34,12 @@
         "<<<<"
         //int to bool for cell 3
         ">[>+>]<[<]"
-      
+        
         //go to cell 5
         ">>>"
         //int to bool for cell 6
         ">[>+>]<[<]"
-      
+        
         //go to cell 7
         ">>"
         //cell 1 is AND gate of cell 4 and 7
