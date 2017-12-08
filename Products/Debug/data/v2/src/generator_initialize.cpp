@@ -3,7 +3,7 @@
 //require 7 cells
 
 //cell 0: bool for cell 4 is filled
-+
+"+"
 //cell 1: aux bool for cell 4 is filled
 //cell 2: bool for cell 5 is filled
 //cell 3: aux bool for cell 5 is filled
