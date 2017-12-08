@@ -64,7 +64,7 @@
         ">>>>>>"
         //if cell 32 is true
         "["
-        //set cell 32 to false; set cell 33 to true;
+        //set cell 32 to false; set cell 33 to true
         "->+"
         
         //check whether the first input is /
@@ -149,9 +149,19 @@
                 ">>>>>"
                 "[-"
                 
-                //continue
-                //do nothing
-                //keep aux bool cell 33 to true;
+                //go to aux bool cell 33
+                "<<"
+                //set aux bool cell 33 to false
+                "-"
+                
+                //go to aux bool cell 30
+                "<<<"
+                //set aux bool cell 30 to true
+                "+"
+                //change to the case that the input character is line comment
+                
+                //go to cell 35
+                ">>>>>"
                 "]" //p664
             }
             
@@ -161,14 +171,14 @@
                 ">"
                 "[-"
                 
-                //go to aux bool cell 33;
+                //go to aux bool cell 33
                 "<<<"
-                //set aux bool cell 33 to false;
+                //set aux bool cell 33 to false
                 "-"
                 
                 //go to aux bool cell 34
                 ">"
-                //set aux bool cell 34 to true;
+                //set aux bool cell 34 to true
                 "+"
                 //For running the following case that the input character is not line comment
                 
@@ -189,12 +199,12 @@
         ">>"
         //if cell 34 is true
         "["
-        //set aux bool cell 34 to false;
+        //set aux bool cell 34 to false
         "-"
         
         //go to aux bool cell 32
         "<<"
-        //set aux bool cell 32 to true;
+        //set aux bool cell 32 to true
         "+"
         
         //go to aux bool cell 34
@@ -208,7 +218,7 @@
         "<<"
         //if cell 32 is true
         "["
-        //set cell 32 to false; set cell 33 to true;
+        //set cell 32 to false; set cell 33 to true
         "->+"
         
         //go to counter (cell 7) (minus 26)
@@ -331,11 +341,83 @@
     
     //For the case that the input character is line comment
     {
+        //go to cell 29
+        "<<<"
+        //if cell 29 is true
+        "["
+        
+        //set cell 29 to false; set cell 30 to true
+        "->+"
+        
+        //check whether the first input is newline
+        {
+            {
+                //go to input (cell 0)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<" //p210
+                
+                //copy to cell 23
+                //n = x minus 6 = 23 minus 6 = 17
+                "[->+>>>[->+>"
+                ">>>>>>>>>>>>>>>>>"
+                "+"
+                "<<<<<<<<<<<<<<<<<"
+                "<<]<<<<]>>[->+>>[-<+>>"
+                ">>>>>>>>>>>>>>>>>"
+                "+"
+                "<<<<<<<<<<<<<<<<<"
+                "<]<<<]<[->+<]>>[-<<<+>>>]<<<" //p341
+            }
+            
+            {
+                //go to cell 26
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>"
+                //set to 10 for newline
+                "++++++++++" //p414
+            }
+            
+            {
+                //go to is_same (cell 20)
+                "<<<<<<"
+                //run is_same
+                ">+[->>->>>-<<<<>[>+>]<[<]>>>>[>+>]<[<]>>[-<<<[-<<<+>>>]>>>]<<<[-]<<<]>>[>+>]<[<]>[-]>>>[>+>]<[<]>[-]<+<[->-<]>>>>+<[->-<]>[-<<<[-<<<<<+>>>>>]>>>]<<<[-]<<<<<" //p576
+                //go to compare resuit (cell 20)
+            }
+        }
+        
+        {
+            //At cell 20
+            //if compare resuit is true
+            "[-"
+            
+            //go to aux bool cell 30
+            ">>>>>>>>>>"
+            //set aux bool cell 30 to false
+            "-"
+            
+            //go to aux bool cell 33
+            ">>>"
+            //set aux bool cell 33 to true
+            "+"
+            //change to the case that the input character is not line comment
+            
+            //go to cell 20
+            "<<<<<<<<<<"
+            "<<<"
+            "]" //p1598
+        }
+        
+        //go to cell 29
+        ">>>>>>>>>"
+        "]"
     }
     
     {
         //go to aux cell 30
-        "<<"
+        ">"
         //if cell 30 is true; set cell 30 to false; set cell 29 to true
         "[-<+>]"
         
