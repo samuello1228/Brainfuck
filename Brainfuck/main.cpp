@@ -449,23 +449,6 @@ int main()
         //bin0test<<"[->+>>>++++++++>>++++++++<<<<<<]>>[->+>>++++++++>++++++++<<<<]<[-<+>]>>[-<+>]<<<";
     }
     
-    if(false)
-    {
-        //mapping for the 8 special characters
-        
-        //for plus
-        {
-            
-            //final result for one special character:
-            //bin0test<<"[->>+<]<<[<]>>>>[->";
-            //bin0test<<"+"; //n times
-            //bin0test<<"<]<<";
-        }
-        
-        //Run
-        //bin0test<<">>[->>+<]<<[<]>>>>[->+++++++++++++++++++++++++++++++++++++++++++<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->++++++++++++++<]<<[->>+<]<<[<]>>>>[->++<]<<[->>+<]<<[<]>>>>[->+++++++++++++++++++++++++++++<]<<[->>+<]<<[<]>>>>[->++<]<<";
-    }
-    
     bin0test.close();
     
     ofstream src1test("data/src1test.cpp");
@@ -510,9 +493,9 @@ int main()
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/int_to_bool.cpp","data/v3/bin/int_to_bool.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/NOT_gate.cpp","data/v3/bin/NOT_gate.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/AND_gate.cpp","data/v3/bin/AND_gate.txt");
-    Run("data/v2/bin/next_compiler.txt","data/v3/src/is_same.cpp","data/v3/bin/is_same.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v3/src/is_same.cpp","data/v3/bin/is_same.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_initialize.cpp","data/v3/bin/mapping_initialize.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_run.cpp","data/v3/bin/mapping_run.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
