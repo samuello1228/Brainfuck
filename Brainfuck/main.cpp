@@ -42,6 +42,8 @@ void Run(string code,string input,string output)
     ifstream src(code.c_str());
     vector<int> binary;
     binary.reserve(5000);
+    vector<bool> isCout;
+    isCout.reserve(5000);
     int loopCheck = 0;
     while(true)
     {
@@ -80,6 +82,12 @@ void Run(string code,string input,string output)
             }
             
             binary.push_back(srcCellInt);
+            isCout.push_back(false);
+        }
+        else if(srcCellInt==99)
+        {
+            //c
+            isCout[isCout.size() -1] = true;
         }
         else
         {
@@ -106,8 +114,10 @@ void Run(string code,string input,string output)
     ofstream fout(output.c_str());
     int binPointer = 0;
     bool inputIsEnd = false;
-    bool isPrint = 0;
-    //isPrint = 1;
+    bool isPrintAll = 0;
+    bool isPrintC = 0;
+    //isPrintAll = 1;
+    //isPrintC = 1;
     
     vector<int> array;
     array.reserve(5000);
@@ -115,6 +125,7 @@ void Run(string code,string input,string output)
     int cellPointer = 0;
     
     cout<<"Info: The program is started."<<endl;
+    bool isPrint = isPrintAll || isPrintC;
     if(isPrint)
     {
         cout<<"    : "<<cellPointer<<" ";
@@ -122,6 +133,7 @@ void Run(string code,string input,string output)
     }
     while(true)
     {
+        isPrint = isPrintAll || (isPrintC && isCout[binPointer]);
         if(isPrint) cout<<binPointer<<" "<<char(binary[binPointer])<<" : ";
         
         if(binary[binPointer]==43)
@@ -429,22 +441,30 @@ int main()
     
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/next_compiler.cpp","data/v2/bin/next_compiler.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v2/src/next_compiler.cpp","data/v2/rbin/next_compiler.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v2/src/test.cpp","data/v2/rbin/test.txt");
     
-    //build for v2
+    //build for v3
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/int_to_bool.cpp","data/v3/bin/int_to_bool.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/NOT_gate.cpp","data/v3/bin/NOT_gate.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/AND_gate.cpp","data/v3/bin/AND_gate.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/is_same.cpp","data/v3/bin/is_same.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_initialize.cpp","data/v3/bin/mapping_initialize.txt");
-    Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_run.cpp","data/v3/bin/mapping_run.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_run.cpp","data/v3/bin/mapping_run.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_initialize.cpp","data/v3/bin/generator_initialize.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_update.cpp","data/v3/bin/generator_update.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_copy.cpp","data/v3/bin/generator_copy.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
+    
+    //Run("data/v2/bin/next_compiler.txt","data/v3/src/next_compiler.cpp","data/v3/bin/next_compiler.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v3/src/next_compiler.cpp","data/v3/rbin/next_compiler.txt");
+    
+    //build for v4
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/self_compiler.cpp","data/v4/bin/self_compiler.txt");
+    //Run("data/v4/bin/self_compiler.txt","data/v4/src/test.cpp","data/v4/output/test.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
     
     return 0;
 }
