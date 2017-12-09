@@ -452,11 +452,11 @@ int main()
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_run.cpp","data/v3/bin/mapping_run.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_initialize.cpp","data/v3/bin/generator_initialize.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_update.cpp","data/v3/bin/generator_update.txt");
-    Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_copy.cpp","data/v3/bin/generator_copy.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_copy.cpp","data/v3/bin/generator_copy.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
 
     
     //Run("data/bin0test.cpp","data/src1test.cpp","data/bin1test.cpp");
