@@ -405,12 +405,6 @@ int main()
     
     if(false)
     {
-        //initialize generator
-        //bin0test<<"+";
-    }
-    
-    if(false)
-    {
         //generator: copy to somewhere (cell 7)
         
         //final result:
@@ -428,25 +422,6 @@ int main()
         */
         //n=1 for next to the generator (right to the generator)
         //n = x minus 6
-    }
-    
-    if(false)
-    {
-        //generator: update value in generator
-        //update by input
-        //bin0test<<"[->+>>>[-]>>[-]<,[-<+>>+<]<<<<<]>>[->+>>[-]>[-]<<,[->+>+<<]><<<]<[-<+>]>>[-<+>]<<<";
-        
-        //update value to 0
-        //bin0test<<"[->+>>>[-]>>[-]<<<<<<]>>[->+>>[-]>[-]<<<<]<[-<+>]>>[-<+>]<<<";
-        
-        //update value to 1
-        //bin0test<<"[->+>>>[-]+>>[-]+<<<<<<]>>[->+>>[-]+>[-]+<<<<]<[-<+>]>>[-<+>]<<<";
-        
-        //subtract 1
-        //bin0test<<"[->+>>>->>-<<<<<<]>>[->+>>->-<<<<]<[-<+>]>>[-<+>]<<<";
-        
-        //add 8
-        //bin0test<<"[->+>>>++++++++>>++++++++<<<<<<]>>[->+>>++++++++>++++++++<<<<]<[-<+>]>>[-<+>]<<<";
     }
     
     bin0test.close();
@@ -495,9 +470,9 @@ int main()
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/AND_gate.cpp","data/v3/bin/AND_gate.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/is_same.cpp","data/v3/bin/is_same.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_initialize.cpp","data/v3/bin/mapping_initialize.txt");
-    Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_run.cpp","data/v3/bin/mapping_run.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_run.cpp","data/v3/bin/mapping_run.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_initialize.cpp","data/v3/bin/generator_initialize.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_update.cpp","data/v3/bin/generator_update.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
