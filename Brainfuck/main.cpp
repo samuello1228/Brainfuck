@@ -437,11 +437,11 @@ int main()
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/AND_gate.cpp","data/v3/bin/AND_gate.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/is_same.cpp","data/v3/bin/is_same.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_initialize.cpp","data/v3/bin/mapping_initialize.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_run.cpp","data/v3/bin/mapping_run.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_run.cpp","data/v3/bin/mapping_run.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_initialize.cpp","data/v3/bin/generator_initialize.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_update.cpp","data/v3/bin/generator_update.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_copy.cpp","data/v3/bin/generator_copy.txt");
-    Run("data/v2/bin/next_compiler.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
