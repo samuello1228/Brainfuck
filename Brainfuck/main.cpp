@@ -318,7 +318,7 @@ void Run(string code,string input,string output)
 
 int main()
 {
-    ofstream bin0test("data/bin0test.cpp");
+    ofstream test("data/v3/src/test.cpp");
     
     if(false)
     {
@@ -326,27 +326,27 @@ int main()
         //require 2 cells (discrete)
         //cell 0 is input (destructive)
         //cell 1 is aux cell for cell 0
-        bin0test<<"+";
+        test<<"+";
         
         {
             //if cell 0 is true
-            bin0test<<"[";
+            test<<"[";
             //set cell 0 to false; set aux cell 1 to true
-            bin0test<<"->+<";
+            test<<"->+<";
             //do if-part
-            bin0test<<">>++++++++<<";
+            test<<">>++++++++<<";
             //go to cell 0
-            bin0test<<"]";
+            test<<"]";
             
             //cell 0 is NOT GATE of cell 1
-            bin0test<<"+>[-<->]<";
+            test<<"+>[-<->]<";
             
             //if cell 0 is true
-            bin0test<<"[-";
+            test<<"[-";
             //go else-part
-            bin0test<<">>>++++++++++++++<<<";
+            test<<">>>++++++++++++++<<<";
             //go to cell 0
-            bin0test<<"]";
+            test<<"]";
         }
         
         //final result:
@@ -354,7 +354,7 @@ int main()
         //At cell 0
         //cell 0 is input (destructive)
         //cell 1 is aux cell
-        //bin0test<<"[->+< (if-part) ]+>[-<->]<[- (else-part) ]";
+        //"[->+< (if-part) ]+>[-<->]<[- (else-part) ]"
     }
     
     if(false)
@@ -363,34 +363,34 @@ int main()
         //require 4 cells (discrete)
         //cell 0 and 2 are input (destructive)
         //cell 1 is aux cell for cell 0
-        bin0test<<"+>>+";
+        test<<"+>>+";
         //go to cell 0
-        bin0test<<"<<";
+        test<<"<<";
         
         {
             //if cell 0 is true
-            bin0test<<"[";
+            test<<"[";
             //copy cell 0 to aux cell 1 and cell 3
-            bin0test<<"->+>>+<<<";
-            bin0test<<"]";
+            test<<"->+>>+<<<";
+            test<<"]";
             
             //cell 0 is NOT gate of cell 1
-            bin0test<<"+>[-<->]<";
+            test<<"+>[-<->]<";
             
             //if cell 0 is true
-            bin0test<<"[-";
+            test<<"[-";
             //go to cell 2
-            bin0test<<">>";
+            test<<">>";
             //copy cell 2 to cell 3
-            bin0test<<"[->+<]";
+            test<<"[->+<]";
             //go to cell 0
-            bin0test<<"<<";
-            bin0test<<"]";
+            test<<"<<";
+            test<<"]";
             
             //clear cell 2
-            bin0test<<">>[-]";
+            test<<">>[-]";
             //go to cell 3
-            bin0test<<">";
+            test<<">";
         }
         
         //final result:
@@ -400,21 +400,9 @@ int main()
         //cell 0 and 2 are input (destructive)
         //cell 1 is aux cell for cell 0
         //cell 3 is output
-        //bin0test<<"[->+>>+<<<]+>[-<->]<[->>[->+<]<<]>>[-]>";
+        //"[->+>>+<<<]+>[-<->]<[->>[->+<]<<]>>[-]>"
     }
-    
-    bin0test.close();
-    
-    ofstream src1test("data/src1test.cpp");
-    src1test<<"]";
-    src1test.close();
-    
-    ofstream test("data/v2/src/test.cpp");
-    test<<"/+"<<endl;
-    test<<"]"<<endl;
-    test<<"/+"<<endl;
-    test<<"]"<<endl;
-    test<<"/+"<<endl;
+
     test<<"]"<<endl;
     test.close();
     
@@ -457,8 +445,6 @@ int main()
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
-
     
-    //Run("data/bin0test.cpp","data/src1test.cpp","data/bin1test.cpp");
     return 0;
 }
