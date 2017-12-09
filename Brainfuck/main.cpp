@@ -403,27 +403,6 @@ int main()
         //bin0test<<"[->+>>+<<<]+>[-<->]<[->>[->+<]<<]>>[-]>";
     }
     
-    if(false)
-    {
-        //generator: copy to somewhere (cell 7)
-        
-        //final result:
-        //At cell 0
-        /*
-        bin0test<<"[->+>>>[->+>";
-        bin0test<<">n";
-        bin0test<<"+";
-        bin0test<<"<n";
-        bin0test<<"<<]<<<<]>>[->+>>[-<+>>";
-        bin0test<<">n";
-        bin0test<<"+";
-        bin0test<<"<n";
-        bin0test<<"<]<<<]<[->+<]>>[-<<<+>>>]<<<";
-        */
-        //n=1 for next to the generator (right to the generator)
-        //n = x minus 6
-    }
-    
     bin0test.close();
     
     ofstream src1test("data/src1test.cpp");
@@ -472,8 +451,8 @@ int main()
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_initialize.cpp","data/v3/bin/mapping_initialize.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_run.cpp","data/v3/bin/mapping_run.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_initialize.cpp","data/v3/bin/generator_initialize.txt");
-    Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_update.cpp","data/v3/bin/generator_update.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_update.cpp","data/v3/bin/generator_update.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_copy.cpp","data/v3/bin/generator_copy.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/.cpp","data/v3/bin/.txt");
