@@ -6,7 +6,7 @@
 
 //cell 0 to 3n-1: for each bit,
 //cell 0, boundary cell, always 1 for looping
-//cell 1, the value bit
+//cell 1, the bit value
 //cell 2, aux cell for the value, the NOT gate of cell 1
 
 //cell 3n: always 0 for looping
