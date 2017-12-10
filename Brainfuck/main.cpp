@@ -463,6 +463,7 @@ int main()
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/self_compiler.cpp","data/v4/bin/self_compiler.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_initialize.cpp","data/v4/bin/binary_initialize.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_add_one.cpp","data/v4/bin/binary_add_one.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_subtract_one.cpp","data/v4/bin/binary_subtract_one.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
