@@ -117,7 +117,7 @@ void Run(string code,string input,string output)
     bool isPrintAll = 0;
     bool isPrintC = 0;
     //isPrintAll = 1;
-    //isPrintC = 1;
+    isPrintC = 1;
     
     vector<int> array;
     array.reserve(5000);
@@ -330,6 +330,7 @@ void Run(string code,string input,string output)
 
 int main()
 {
+    /*
     ofstream test("data/v4/src/test.cpp");
     
     if(false)
@@ -417,6 +418,7 @@ int main()
 
     test<<"]"<<endl;
     test.close();
+    */
     
     //build for v1
     //Run("data/v0/bin/next_compiler.txt","data/v1/src/self_compiler.cpp","data/v1/bin/self_compiler.txt");
@@ -458,13 +460,15 @@ int main()
     //Run("data/v3/bin/next_compiler.txt","data/v3/src/next_compiler.cpp","data/v3/rbin/next_compiler.txt");
     
     //build for v4
-    Run("data/v3/bin/next_compiler.txt","data/v4/src/self_compiler.cpp","data/v4/bin/self_compiler.txt");
-    Run("data/v4/bin/self_compiler.txt","data/v4/src/test.cpp","data/v4/output/test.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/self_compiler.cpp","data/v4/bin/self_compiler.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_initialize.cpp","data/v4/bin/binary_initialize.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_add_one.cpp","data/v4/bin/binary_add_one.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
-    //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
-    //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
+    //Run("data/v4/bin/self_compiler.txt","data/v4/src/test.cpp","data/v4/bin/test.txt");
+    Run("data/v4/bin/test.txt","data/v4/input/test.cpp","data/v4/output/test.txt");
+    
     
     return 0;
 }
