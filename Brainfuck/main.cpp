@@ -32,6 +32,10 @@ void print(vector<int>& array)
         {
             cout<<array[i]<<" ";
         }
+        
+        if(i == 24) cout<<endl;
+        if(i == 49) cout<<endl;
+        if(i == 74) cout<<endl;
     }
     cout<<endl;
 }
@@ -314,6 +318,7 @@ void Run(string code,string input,string output)
         if(isPrint)
         {
             cout<<cellPointer<<" ";
+            cout<<endl;
             print(array);
         }
         
