@@ -33,9 +33,9 @@ void print(vector<int>& array)
             cout<<array[i]<<" ";
         }
         
-        if(i == 24) cout<<endl;
-        if(i == 49) cout<<endl;
-        if(i == 74) cout<<endl;
+        if(i == 15) cout<<endl;
+        if(i == 16) cout<<endl;
+        if(i == 41) cout<<endl;
     }
     cout<<endl;
 }
@@ -473,9 +473,9 @@ int main()
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_copy_half.cpp","data/v4/bin/binary_copy_half.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_is_same_initialize.cpp","data/v4/bin/binary_is_same_initialize.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_is_same_run.cpp","data/v4/bin/binary_is_same_run.txt");
-    //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
-    //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
-    //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/mapping_initialize.cpp","data/v4/bin/mapping_initialize.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/mapping_run.cpp","data/v4/bin/mapping_run.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_move_half.cpp","data/v4/bin/binary_move_half.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/.cpp","data/v4/bin/.txt");
     Run("data/v4/bin/self_compiler.txt","data/v4/src/test.cpp","data/v4/bin/test.txt");
     Run("data/v4/bin/test.txt","data/v4/input/test.cpp","data/v4/output/test.txt");

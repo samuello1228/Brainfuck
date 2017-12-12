@@ -30,7 +30,7 @@
         "-"
         
         {
-            //go to the bit value
+            //go to the bit cell
             ">"
             //if it is one
             "["
@@ -50,19 +50,19 @@
             //move left 2 times
             "<<"
             
-            //go to the bit value
+            //go to the bit cell
             "]"
         }
         
         {
-            //go the boundary cell cell
+            //go the boundary cell
             "<"
             //if it is true
             "["
-            //set it to false, set the bit value to one
+            //set it to false, set the bit cell to one
             "->+<"
             
-            //go the boundary cell cell
+            //go the boundary cell
             "]"
         }
         
