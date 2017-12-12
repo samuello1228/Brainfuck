@@ -1,4 +1,4 @@
-//binary_copy_half
+//binary_move_half
 //only move the bit value to cell x
 
 //n is the number of bit
