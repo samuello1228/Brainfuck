@@ -58,14 +58,33 @@
         //At cell 3n+3
     }
     
-    //go to cell 3n+2
-    "<"
-    //set it to one
-    "+"
-    //go to cell 3n+3
-    ">"
+    //set it to zero
+    {
+        //go to cell 3n+2
+        "<"
+        //set it to one
+        "+"
+        //go to cell 3n+3
+        ">"
+    }
+    
+//    //set it to one
+//    {
+//        //go to cell 3n-1
+//        "<<<<"
+//        //set it to one
+//        "+>+>+"
+//        //go to cell 3n+3
+//        ">>"
+//    }
+
 }
 
 //final result:
 //At cell 3n+3
+
+//set it to zero
 //"<<<[<<<]>>[-]>[->[-]>[-]>]<+>"
+
+//set it to one
+//"<<<[<<<]>>[-]>[->[-]>[-]>]<<<<+>+>+>>"
