@@ -475,6 +475,7 @@ int main()
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_subtract_one.cpp","data/v4/bin/binary_subtract_one.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_clear.cpp","data/v4/bin/binary_clear.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_copy_half.cpp","data/v4/bin/binary_copy_half.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_copy_full.cpp","data/v4/bin/binary_copy_full.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_is_same_initialize.cpp","data/v4/bin/binary_is_same_initialize.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_is_same_run.cpp","data/v4/bin/binary_is_same_run.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/mapping_initialize.cpp","data/v4/bin/mapping_initialize.txt");
