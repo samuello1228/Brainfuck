@@ -50,6 +50,8 @@ void Run(string code,string input,string output)
     ifstream src(code.c_str());
     vector<int> binary;
     binary.reserve(5000);
+    vector<int> bracket;
+    bracket.reserve(5000);
     vector<bool> isCout;
     isCout.reserve(5000);
     int loopCheck = 0;
@@ -117,6 +119,81 @@ void Run(string code,string input,string output)
     }
     src.close();
     
+    //match square bracket
+    for(int i=0;i<binary.size();i++)
+    {
+        if(binary[i]==91)
+        {
+            int binPointerTemp = i;
+            int count = 0;
+            while(true)
+            {
+                binPointerTemp++;
+                if(binPointerTemp == binary.size())
+                {
+                    cout<<"Error: The corresponding ] cannot be found, for the [ at "<<i<<endl;
+                    return;
+                }
+                
+                if(binary[binPointerTemp]==91)
+                {
+                    count++;
+                }
+                else if(binary[binPointerTemp]==93)
+                {
+                    if(count == 0)
+                    {
+                        bracket[i] = binPointerTemp;
+                        break;
+                    }
+                    else
+                    {
+                        count--;
+                    }
+                }
+            }
+        }
+        else if(binary[i]==93)
+        {
+            int binPointerTemp = i;
+            int count = 0;
+            while(true)
+            {
+                binPointerTemp--;
+                if(binPointerTemp == -1)
+                {
+                    cout<<"Error: The corresponding [ cannot be found, for the ] at "<<i<<endl;
+                    return;
+                }
+                
+                if(binary[binPointerTemp]==91)
+                {
+                    if(count == 0)
+                    {
+                        if(bracket[binPointerTemp] != i)
+                        {
+                            cout<<"Error: The corresponding ] is set wrongly, for the [ at "<<binPointerTemp<<endl;
+                            return;
+                        }
+                        else
+                        {
+                            bracket[i] = binPointerTemp;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        count--;
+                    }
+                }
+                else if(binary[binPointerTemp]==93)
+                {
+                    count++;
+                }
+            }
+        }
+    }
+    
     //Run
     ifstream fin(input.c_str());
     ofstream fout(output.c_str());
@@ -128,7 +205,7 @@ void Run(string code,string input,string output)
     isPrintC = 1;
     
     vector<int> array;
-    array.reserve(5000);
+    array.reserve(500);
     array.push_back(0);
     int cellPointer = 0;
     
@@ -245,34 +322,7 @@ void Run(string code,string input,string output)
             //[
             if(array[cellPointer]==0)
             {
-                int binPointerTemp = binPointer;
-                int count = 0;
-                while(true)
-                {
-                    binPointerTemp++;
-                    if(binPointerTemp == binary.size())
-                    {
-                        cout<<"Error: The corresponding ] cannot be found, for the [ at "<<binPointer<<endl;
-                        return;
-                    }
-                    
-                    if(binary[binPointerTemp]==91)
-                    {
-                        count++;
-                    }
-                    else if(binary[binPointerTemp]==93)
-                    {
-                        if(count == 0)
-                        {
-                            binPointer = binPointerTemp+1;
-                            break;
-                        }
-                        else
-                        {
-                            count--;
-                        }
-                    }
-                }
+                binPointer = bracket[binPointer]+1;
             }
             else
             {
@@ -288,34 +338,7 @@ void Run(string code,string input,string output)
             }
             else
             {
-                int binPointerTemp = binPointer;
-                int count = 0;
-                while(true)
-                {
-                    binPointerTemp--;
-                    if(binPointerTemp == -1)
-                    {
-                        cout<<"Error: The corresponding [ cannot be found, for the ] at "<<binPointer<<endl;
-                        return;
-                    }
-                    
-                    if(binary[binPointerTemp]==91)
-                    {
-                        if(count == 0)
-                        {
-                            binPointer = binPointerTemp+1;
-                            break;
-                        }
-                        else
-                        {
-                            count--;
-                        }
-                    }
-                    else if(binary[binPointerTemp]==93)
-                    {
-                        count++;
-                    }
-                }
+                binPointer = bracket[binPointer]+1;
             }
         }
         
