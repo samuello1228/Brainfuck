@@ -1,6 +1,7 @@
 //remove line comment (remove any character between / and newline)
 //output all character between quotes (if it is not line comment)
 
+//include NOT_gate
 //include binary_initialize
 //include binary_add_one
 //include binary_clear
