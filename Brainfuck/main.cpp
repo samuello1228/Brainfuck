@@ -605,12 +605,12 @@ int main()
     //build for v2
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/NOT_gate.cpp","data/v2/bin/NOT_gate.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/AND_gate.cpp","data/v2/bin/AND_gate.txt");
-    Run("data/v1/bin/next_compiler.txt","data/v2/src/binary_initialize.cpp","data/v2/bin/binary_initialize.txt");
-    Run("data/v1/bin/next_compiler.txt","data/v2/src/binary_add_one.cpp","data/v2/bin/binary_add_one.txt");
-    Run("data/v1/bin/next_compiler.txt","data/v2/src/binary_clear.cpp","data/v2/bin/binary_clear.txt");
-    Run("data/v1/bin/next_compiler.txt","data/v2/src/binary_copy_half.cpp","data/v2/bin/binary_copy_half.txt");
-    Run("data/v1/bin/next_compiler.txt","data/v2/src/binary_is_same_initialize.cpp","data/v2/bin/binary_is_same_initialize.txt");
-    Run("data/v1/bin/next_compiler.txt","data/v2/src/binary_is_same_run.cpp","data/v2/bin/binary_is_same_run.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/binary_initialize.cpp","data/v2/bin/binary_initialize.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/binary_add_one.cpp","data/v2/bin/binary_add_one.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/binary_clear.cpp","data/v2/bin/binary_clear.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/binary_copy_half.cpp","data/v2/bin/binary_copy_half.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/binary_is_same_initialize.cpp","data/v2/bin/binary_is_same_initialize.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/binary_is_same_run.cpp","data/v2/bin/binary_is_same_run.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/self_compiler.cpp","data/v2/bin/self_compiler.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/next_compiler.cpp","data/v2/bin/next_compiler.txt");
     
@@ -630,7 +630,7 @@ int main()
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_is_same_initialize.cpp","data/v3/bin/binary_is_same_initialize.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_is_same_run.cpp","data/v3/bin/binary_is_same_run.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_move_half.cpp","data/v3/bin/binary_move_half.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
     
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/next_compiler.cpp","data/v3/bin/next_compiler.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v3/src/next_compiler.cpp","data/v3/rbin/next_compiler.txt");
