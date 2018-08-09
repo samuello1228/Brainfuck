@@ -39,30 +39,31 @@
     "<<<<<<"
     //get input
     ","
-    
-    //copy it to cell 50 and binary number
-    "[-<+"
-    //go to input (cell 49)
-    "<"
-    //add one
-    "<<[<<<]>-<<[->+>+<<]+>[-<->]<[->>+<<<+>]>>[-<<+>>]<+>>[>->+>]"
-    
-    //go to cell 51
-    ">>"
-    "]"
 }
 
 //while(input)
 {
-    //go to cell 46 (bool whether the input is not zero)
-    "<<<<<"
+    //At cell 51
     //if input is not zero
     "["
     
+    //copy it to cell 50 and binary number (cell 49)
+    {
+        "[-<+"
+        //go to input (cell 49)
+        "<"
+        //add one
+        "<<[<<<]>-<<[->+>+<<]+>[-<->]<[->>+<<<+>]>>[-<<+>>]<+>>[>->+>]"
+        
+        //go to cell 51
+        ">>"
+        "]"
+    }
+    
     //For the case that the input character is not line comment and outside quote
     {
-        //go to cell 55 (add 9)
-        ">>>>>>>>>"
+        //go to cell 55 (add 4)
+        ">>>>"
         //if cell 55 is true
         "[-"
         
@@ -600,37 +601,24 @@
         "[-<+>]"
     }
     
-    //go to input (cell 49) (minus 10)
-    "<<<<<<<<<<"
-    //clear
-    "<<<[<<<]>>[-]>[->[-]>[-]>]<+>"
-    
-    //go to cell 50
-    ">"
-    //clear
-    "[-]"
-    
     //update the value of input
     {
+        //go to input (cell 49) (minus 10)
+        "<<<<<<<<<<"
+        //clear
+        "<<<[<<<]>>[-]>[->[-]>[-]>]<+>"
+        
+        //go to cell 50
+        ">"
+        //clear
+        "[-]"
+        
         //go to cell 51
         ">"
         //get input
         ","
-        
-        //copy it to cell 50 and binary number
-        "[-<+"
-        //go to input (cell 49)
-        "<"
-        //add one
-        "<<[<<<]>-<<[->+>+<<]+>[-<->]<[->>+<<<+>]>>[-<<+>>]<+>>[>->+>]"
-        
-        //go to cell 51
-        ">>"
-        "]"
     }
     
-    //go to cell 56 (bool whether the input is not zero)
-    "<<<<<"
     //end while loop
     "]"
 }
