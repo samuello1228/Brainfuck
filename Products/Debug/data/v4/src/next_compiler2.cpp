@@ -64,15 +64,13 @@
         //go to cell 55 (add 9)
         ">>>>>>>>>"
         //if cell 55 is true
-        "["
-        //set cell 55 to false; set cell 56 to true
-        "->+"
+        "[-"
         
         //check whether the input is /
         {
             {
                 //go to input (cell 49)
-                "<<<<<<<"
+                "<<<<<<"
                 
                 //copy to cell 23
                 //k = 23 - 49 = -26
@@ -136,16 +134,11 @@
                 ">>"
                 "[-"
                 
-                //go to aux bool cell 56 (add 32)
+                //go to aux bool cell 53 (add 29)
                 ">>>>>>>>>>"
                 ">>>>>>>>>>"
-                ">>>>>>>>>>"
-                ">>"
-                //set aux bool cell 56 to false
-                "-"
+                ">>>>>>>>>"
                 
-                //go to aux bool cell 53
-                "<<<"
                 //set aux bool cell 53 to true
                 "+"
                 //change to the case that the input character is line comment
@@ -163,16 +156,12 @@
                 "<<"
                 "[-"
                 
-                //go to aux bool cell 56 (add 34)
+                //go to aux bool cell 57 (add 35)
                 ">>>>>>>>>>"
                 ">>>>>>>>>>"
                 ">>>>>>>>>>"
-                ">>>>"
-                //set aux bool cell 56 to false
-                "-"
+                ">>>>>"
                 
-                //go to aux bool cell 57
-                ">"
                 //set aux bool cell 57 to true
                 "+"
                 //For running the following case that the input character is not line comment
