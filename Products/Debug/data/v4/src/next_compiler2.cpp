@@ -1,6 +1,5 @@
 //remove line comment (remove any character between / and newline)
-//output all character between quote (if it is not line comment)
-//using binary number
+//output all character between quotes (if it is not line comment)
 
 //include binary_initialize
 //include binary_add_one
@@ -166,7 +165,7 @@
                 //set aux bool cell 57 to true
                 "+"
                 //For running the following case that the input character is not line comment
-                //Further check whether the input character is "
+                //Further check whether the input character is quote
                 
                 //go to cell 22 (minus 35)
                 "<<<<<<<<<<"
@@ -185,7 +184,7 @@
         "]"
     }
     
-    //For further checking whether the input character is ", if cell 57 is true
+    //For further checking whether the input character is quote, if cell 57 is true
     {
         //go to aux bool cell 57
         ">>"
@@ -204,14 +203,14 @@
         "]"
     }
     
-    //For further checking whether the input character is "
+    //For further checking whether the input character is quote
     {
         //go to cell 55
         "<<"
         //if cell 55 is true
         "[-"
         
-        //check whether the input is "
+        //check whether the input is quote
         {
             {
                 //go to input (cell 49)
@@ -242,7 +241,7 @@
                 "<<<<<<<<<<"
                 "<<<<<<<<<<"
                 "<<"
-                //set to 34 for " (00100010)
+                //set to 34 for quote (00100010)
                 "+"
                 ">>>"
                 ">>>"
@@ -274,7 +273,7 @@
             "+>[-<->]<"
             
             {
-                //For the case that input is "
+                //For the case that input is quote
                 //go to if bool cell (cell 24)
                 ">>"
                 "[-"
@@ -298,7 +297,7 @@
             }
             
             {
-                //For the case that input is not "
+                //For the case that input is not quote
                 //go to else bool cell 22
                 "<<"
                 "[-"
@@ -460,7 +459,7 @@
         //if cell 58 is true
         "[-"
         
-        //check whether the input is "
+        //check whether the input is quote
         {
             {
                 //go to input (cell 49) (minus 9)
@@ -491,7 +490,7 @@
                 "<<<<<<<<<<"
                 "<<<<<<<<<<"
                 "<<"
-                //set to 34 for " (00100010)
+                //set to 34 for quote (00100010)
                 "+"
                 ">>>"
                 ">>>"
@@ -524,7 +523,7 @@
             "+>[-<->]<"
             
             {
-                //For the case that input is "
+                //For the case that input is quote
                 //go to if bool cell (cell 24)
                 ">>"
                 "[-"
@@ -548,7 +547,7 @@
             }
             
             {
-                //For the case that input is not "
+                //For the case that input is not quote
                 //go to else bool cell 22
                 "<<"
                 "[-"
