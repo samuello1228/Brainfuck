@@ -34,13 +34,11 @@ void print(vector<int>& array)
             cout<<array[i]<<" ";
         }
         
-        if(i == 15) cout<<endl;
-        if(i == 31) cout<<endl;
-        if(i == 32) cout<<endl;
+        if(i == 24) cout<<endl;
+        if(i == 49) cout<<endl;
+        if(i == 51) cout<<endl;
+        if(i == 54) cout<<endl;
         if(i == 57) cout<<endl;
-        if(i == 82) cout<<endl;
-        if(i == 107) cout<<endl;
-        if(i == 109) cout<<endl;
     }
     cout<<endl;
 }
@@ -312,7 +310,7 @@ void Run(string code,string input,string output)
     bool isPrintAll = 0;
     bool isPrintC = 0;
     //isPrintAll = 1;
-    //isPrintC = 1;
+    isPrintC = 1;
     
     bool isPerformanceTest = true;
     int stepCount = 0;
@@ -324,7 +322,7 @@ void Run(string code,string input,string output)
     
     cout<<"Info: The program is started."<<endl;
     bool isPrint = isPrintAll || isPrintC;
-    if(isPrint)
+    if(isPrintAll || (isPrintC && isCout[binPointer]))
     {
         cout<<"    : "<<cellPointer<<" ";
         print(array);
@@ -652,8 +650,14 @@ int main()
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/mapping_initialize.cpp","data/v4/bin/mapping_initialize.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/mapping_run.cpp","data/v4/bin/mapping_run.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_move_half.cpp","data/v4/bin/binary_move_half.txt");
+    
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/next_compiler.cpp","data/v4/bin/next_compiler.txt");
-    Run("data/v4/bin/next_compiler.txt","data/v4/src/next_compiler.cpp","data/v4/rbin/next_compiler.txt");
+    //Run("data/v4/bin/next_compiler.txt","data/v4/src/self_compiler.cpp","data/v4/rbin/self_compiler.txt");
+    //Run("data/v4/bin/next_compiler.txt","data/v4/src/next_compiler.cpp","data/v4/rbin/next_compiler.txt");
+    
+    //Run("data/v4/bin/next_compiler.txt","data/v4/src/next_compiler2.cpp","data/v4/bin/next_compiler2.txt");
+    Run("data/v4/bin/next_compiler2.txt","data/v4/src/next_compiler.cpp","data/v5/rbin/next_compiler.txt");
+    
     //Run("data/v4/bin/next_compiler.txt","data/v4/src/test2.cpp","data/v4/output/test2.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/test.cpp","data/v4/bin/test.txt");
     //Run("data/v4/bin/test.txt","data/v4/input/test.cpp","data/v4/output/test.txt");
