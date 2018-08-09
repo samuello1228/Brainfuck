@@ -1,1 +1,1 @@
-remove all characters except the 8 special characters
+output all characters between quotes

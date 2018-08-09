@@ -1,172 +1,344 @@
-//remove all characters except the 8 special characters
-//include is_same
-//include mapping_initialize
-//include mapping_run
-//include generator_initialize
-//include generator_update
-//include generator_copy
+//output all characters between quotes
 
-//cell 0 to 6: generator for input
-//go to cell 0
-//initialize generator
-"+"
-//update value by input
-"[->+>>>[-]>>[-]<,[-<+>>+<]<<<<<]>>[->+>>[-]>[-]<<,[->+>+<<]><<<]<[-<+>]>>[-<+>]<<<"
+//include NOT_gate
+//include binary_initialize
+//include binary_add_one
+//include binary_clear
+//include binary_copy_half
+//include binary_is_same
 
-//cell 7 to 13: generator for counter
-//go to cell 7
-">>>>>>>"
-//initialize generator
-"+"
+//cell 0 to 24: is_same; 7 bit
+">>>+>>>+>>>+>>>+>>>+>>>+>>>+>>>"
 
-//cell 14 to 19: mapping for the 8 special characters
-//go to cell 14
-">>>>>>>"
-//initialize mapping
-">+<"
+//cell 25 to 49: input; 7 bit
+">"
+">>>>>>>>>>>>>>>>>>>>>>>+>"
 
-//cell 20 to 28: is_same
-//cell 23: copy for input characters
-//cell 26: copy for special characters
+//cell 50: input cell (copy)
+//cell 51: input cell (zero after copying)
+">>"
 
-//go to constant value cell for input (cell 6)
-"<<<<<<<<"
+//cell 52: bool for the case that the input character is outside quote
+//cell 53: aux cell for cell 52 (continues; not redo any 52 bool if block)
+//cell 54: aux cell for cell 52 (do other 52 bool if block)
+">+"
+
+//cell 55: bool for the case that the input character is inside quote
+//cell 56: aux cell for cell 55 (continues; not redo any 55 bool if block)
+//cell 57: aux cell for cell 55 (do other 55 bool if block)
+
+//fill the value of input
+{
+    //go to cell 51
+    "<"
+    //get input
+    ","
+}
 
 //while(input)
 {
-    //At cell 6
+    //At cell 51
     //if input is not zero
     "["
     
-    //go to counter (cell 7)
-    ">"
-    //update value by adding 8
-    "[->+>>>++++++++>>++++++++<<<<<<]>>[->+>>++++++++>++++++++<<<<]<[-<+>]>>[-<+>]<<<"
-    //go to constant value cell for counter (cell 13)
-    ">>>>>>"
-    
-    //for loop
+    //copy it to cell 50 and binary number (cell 49)
     {
-        //At cell 13
-        "["
-        //"c" //p197
+        "[-<+"
+        //go to input (cell 49)
+        "<"
+        //add one
+        "<<[<<<]>-<<[->+>+<<]+>[-<->]<[->>+<<<+>]>>[-<<+>>]<+>>[>->+>]"
         
-        {
-            //go to input (cell 0)
-            "<<<<<<<<<<<<<"
-            
-            //copy to cell 23
-            //n = x minus 6 = 23 minus 6 = 17
-            "[->+>>>[->+>"
-            ">>>>>>>>>>>>>>>>>"
-            "+"
-            "<<<<<<<<<<<<<<<<<"
-            "<<]<<<<]>>[->+>>[-<+>>"
-            ">>>>>>>>>>>>>>>>>"
-            "+"
-            "<<<<<<<<<<<<<<<<<"
-            "<]<<<]<[->+<]>>[-<<<+>>>]<<<"
-        }
+        //go to cell 51
+        ">>"
+        "]"
+    }
+    
+    //For the case that the input character is outside quote
+    {
+        //go to cell 52
+        ">"
+        //if cell 52 is true
+        "[-"
         
+        //check whether the input is quote
         {
-            //go to counter (cell 7)
-            ">>>>>>>"
-            //"c" //p349
-            
-            //copy to input for mapping (cell 16)
-            //n = x minus 13 = 16 minus 13 = 3
-            "[->+>>>[->+>"
-            ">>>"
-            "+"
-            "<<<"
-            "<<]<<<<]>>[->+>>[-<+>>"
-            ">>>"
-            "+"
-            "<<<"
-            "<]<<<]<[->+<]>>[-<<<+>>>]<<<"
-        }
-        
-        {
-            //go to mapping (cell 14)
-            ">>>>>>>"
-            //"c" //p432
-            
-            //do mapping
-            ">>[->>+<]<<[<]>>>>[->+++++++++++++++++++++++++++++++++++++++++++<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->+<]<<[->>+<]<<[<]>>>>[->++++++++++++++<]<<[->>+<]<<[<]>>>>[->++<]<<[->>+<]<<[<]>>>>[->+++++++++++++++++++++++++++++<]<<[->>+<]<<[<]>>>>[->++<]<<"
-            //"c" //p711
-            //At cell 16
-        }
-        
-        {
-            //go to result of mapping (cell 19)
-            ">>>"
-            
-            //destructive copy from cell 19 to cell 26
-            "[-"
-            ">>>>>>>"
-            "+"
-            "<<<<<<<"
-            "]"
-            //"c" //p732
-        }
-        
-        {
-            //go to is_same (cell 20)
-            ">"
-            //run is_same
-            ">+[->>->>>-<<<<>[>+>]<[<]>>>>[>+>]<[<]>>[-<<<[-<<<+>>>]>>>]<<<[-]<<<]>>[>+>]<[<]>[-]>>>[>+>]<[<]>[-]<+<[->-<]>>>>+<[->-<]>[-<<<[-<<<<<+>>>>>]>>>]<<<[-]<<<<<"
-            //"c" //p889
-            //At cell 20
+            {
+                //go to input (cell 49)
+                "<<<"
+                
+                //copy to cell 23
+                //k = 23 - 49 = -26
+                "<<<[->[-<+>>>"
+                
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<"
+                
+                "+"
+                
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>"
+                
+                "<<]<[->+<]+<<<]>>>[>>>]"
+                //At cell 49
+            }
             
             {
-                //At cell 20
-                //if compare resuit is true
-                "[-"
+                //go to cell 7 (minus 42)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<"
                 
-                {
-                    //go to constant value cell for input (cell 6)
-                    "<<<<<<<<<<<<<<"
-                    //output
-                    "."
-                    //"c" //p906
-                }
-                
-                //break
-                {
-                    //go to counter (cell 7)
-                    ">"
-                    //update value to 1
-                    "[->+>>>[-]+>>[-]+<<<<<<]>>[->+>>[-]+>[-]+<<<<]<[-<+>]>>[-<+>]<<<"
-                }
-                
-                //go to cell 20
-                ">>>>>>>>>>>>>"
-                "]"
-                //"c" //p985
+                //set to 34 for quote (00100010)
+                "+"
+                ">>>"
+                ">>>"
+                ">>>"
+                ">>>+"
+                ">>>"
+                //At cell 22
+            }
+            
+            {
+                //go to is_same (cell 0) (minus 22)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<"
+                //run is_same
+                ">+>>[->[-<<+>[-<->]<[->+<]>>]>[-<<<+>[-<->]<[->+<]>>>]<<[-<<[-]>>]<<[->>>+<<<]>>+>>>]"
+                //At cell 24
             }
         }
         
-        //go to counter (cell 7)
-        "<<<<<<<<<<<<<"
-        //update value by subtract 1
-        "[->+>>>->>-<<<<<<]>>[->+>>->-<<<<]<[-<+>]>>[-<+>]<<<"
+        {
+            //go to the compare result (cell 22)
+            "<<"
+            //copy it to cell 23 and 24
+            "[->+>+<<]"
+            
+            //go to cell 22
+            //cell 22 is NOT gate of cell 23
+            "+>[-<->]<"
+            
+            {
+                //For the case that input is quote
+                //go to if bool cell (cell 24)
+                ">>"
+                "[-"
+                
+                //go to aux bool cell 56 (add 32)
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>"
+                
+                //set aux bool cell 56 to true
+                "+"
+                //change to the case that the input character is inside quote
+                
+                //go to cell 24 (minus 32)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<"
+                "]"
+            }
+            
+            {
+                //For the case that input is not quote
+                //go to else bool cell 22
+                "<<"
+                "[-"
+                
+                //go to aux bool cell 53 (add 31)
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">"
+                
+                //set aux bool cell 53 to true
+                "+"
+                //change to the case that the input character is outside quote
+                
+                //go to cell 22 (minus 31)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<"
+                "]"
+            }
+        }
         
-        //go to constant value cell for counter (cell 13)
-        ">>>>>>"
-        //end for loop
+        //go to cell 52 (add 30)
+        ">>>>>>>>>>"
+        ">>>>>>>>>>"
+        ">>>>>>>>>>"
         "]"
-        //"c" //p1057
     }
     
-    //go to input (cell 0)
-    "<<<<<<<<<<<<<"
-    //"c" //p1070
+    //For the case that the input character is inside quote
+    {
+        //go to cell 55
+        ">>>"
+        //if cell 55 is true
+        "[-"
+        
+        //check whether the input is quote
+        {
+            {
+                //go to input (cell 49)
+                "<<<<<<"
+                
+                //copy to cell 23
+                //k = 23 - 49 = -26
+                "<<<[->[-<+>>>"
+                
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<"
+                
+                "+"
+                
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>"
+                
+                "<<]<[->+<]+<<<]>>>[>>>]"
+                //At cell 49
+            }
+            
+            {
+                //go to cell 7 (minus 42)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<"
+                
+                //set to 34 for quote (00100010)
+                "+"
+                ">>>"
+                ">>>"
+                ">>>"
+                ">>>+"
+                ">>>"
+                //At cell 22
+            }
+            
+            {
+                //go to is_same (cell 0) (minus 22)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<"
+                //run is_same
+                ">+>>[->[-<<+>[-<->]<[->+<]>>]>[-<<<+>[-<->]<[->+<]>>>]<<[-<<[-]>>]<<[->>>+<<<]>>+>>>]"
+                //At cell 24
+            }
+        }
+        
+        {
+            //go to the compare result (cell 22)
+            "<<"
+            //copy it to cell 23 and 24
+            "[->+>+<<]"
+            
+            //go to cell 22
+            //cell 22 is NOT gate of cell 23
+            "+>[-<->]<"
+            
+            {
+                //For the case that input is quote
+                //go to if bool cell (cell 24)
+                ">>"
+                "[-"
+                
+                //go to aux bool cell 53 (add 29)
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>>"
+                
+                //set aux bool cell 53 to true
+                "+"
+                //change to the case that the input character is outside quote
+                
+                //go to cell 24 (minus 29)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<"
+                "]"
+            }
+            
+            {
+                //For the case that input is not quote
+                //go to else bool cell 22
+                "<<"
+                "[-"
+                
+                //go to constant value cell for input (cell 50) (add 28)
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>"
+                //output
+                "."
+                
+                //go to aux bool cell 56
+                ">>>>>>"
+                //set aux bool cell 56 to true
+                "+"
+                //change to the case that the input character is inside quote
+                
+                //go to cell 22 (minus 34)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<"
+                "]"
+            }
+        }
+        
+        //go to cell 55 (add 33)
+        ">>>>>>>>>>"
+        ">>>>>>>>>>"
+        ">>>>>>>>>>"
+        ">>>"
+        "]"
+    }
     
-    //update value by input
-    "[->+>>>[-]>>[-]<,[-<+>>+<]<<<<<]>>[->+>>[-]>[-]<<,[->+>+<<]><<<]<[-<+>]>>[-<+>]<<<"
-    //go to constant value cell for input (cell 6)
-    ">>>>>>"
+    //reset all bool cells
+    {
+        //go to aux cell 53
+        "<<"
+        //if cell 53 is true; set cell 53 to false; set cell 52 to true
+        "[-<+>]"
+        
+        //go to aux cell 56
+        ">>>"
+        //if cell 56 is true; set cell 56 to false; set cell 55 to true
+        "[-<+>]"
+    }
+    
+    //update the value of input
+    {
+        //go to input (cell 49) (minus 10)
+        "<<<<<<<"
+        //clear
+        "<<<[<<<]>>[-]>[->[-]>[-]>]<+>"
+        
+        //go to cell 50
+        ">"
+        //clear
+        "[-]"
+        
+        //go to cell 51
+        ">"
+        //get input
+        ","
+    }
+    
     //end while loop
     "]"
-    //"c" //p1159
 }
