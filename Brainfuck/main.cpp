@@ -609,19 +609,21 @@ int main()
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/next_compiler.cpp","data/v2/bin/next_compiler.txt");
     
     //rebuild for v2
-    Run("data/v2/bin/next_compiler.txt","data/v2/src/self_compiler.cpp","data/v2/rbin/self_compiler.txt");
-    Run("data/v2/bin/next_compiler.txt","data/v2/src/next_compiler.cpp","data/v2/rbin/next_compiler.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v2/src/self_compiler.cpp","data/v2/rbin/self_compiler.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v2/src/next_compiler.cpp","data/v2/rbin/next_compiler.txt");
     
     //build for v3
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/int_to_bool.cpp","data/v3/bin/int_to_bool.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/NOT_gate.cpp","data/v3/bin/NOT_gate.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/AND_gate.cpp","data/v3/bin/AND_gate.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/is_same.cpp","data/v3/bin/is_same.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_initialize.cpp","data/v3/bin/mapping_initialize.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/mapping_run.cpp","data/v3/bin/mapping_run.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_initialize.cpp","data/v3/bin/generator_initialize.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_update.cpp","data/v3/bin/generator_update.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v3/src/generator_copy.cpp","data/v3/bin/generator_copy.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_initialize.cpp","data/v3/bin/binary_initialize.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_add_one.cpp","data/v3/bin/binary_add_one.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_subtract_one.cpp","data/v3/bin/binary_subtract_one.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_clear.cpp","data/v3/bin/binary_clear.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_copy_half.cpp","data/v3/bin/binary_copy_half.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_copy_full.cpp","data/v3/bin/binary_copy_full.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_is_same_initialize.cpp","data/v3/bin/binary_is_same_initialize.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_is_same_run.cpp","data/v3/bin/binary_is_same_run.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_move_half.cpp","data/v3/bin/binary_move_half.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
     
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/next_compiler.cpp","data/v3/bin/next_compiler.txt");
@@ -637,8 +639,6 @@ int main()
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_copy_full.cpp","data/v4/bin/binary_copy_full.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_is_same_initialize.cpp","data/v4/bin/binary_is_same_initialize.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_is_same_run.cpp","data/v4/bin/binary_is_same_run.txt");
-    //Run("data/v3/bin/next_compiler.txt","data/v4/src/mapping_initialize.cpp","data/v4/bin/mapping_initialize.txt");
-    //Run("data/v3/bin/next_compiler.txt","data/v4/src/mapping_run.cpp","data/v4/bin/mapping_run.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/binary_move_half.cpp","data/v4/bin/binary_move_half.txt");
     
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/next_compiler.cpp","data/v4/bin/next_compiler.txt");
