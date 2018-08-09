@@ -10,6 +10,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 void print(vector<int>& array)
@@ -194,6 +195,115 @@ void Run(string code,string input,string output)
         }
     }
     
+    //performance test
+    struct blockInfo
+    {
+        int rightBracket;
+        int numberOfCommand;
+        int numberOfExecute;
+    };
+    vector<blockInfo> BlockData;
+    BlockData.reserve(50);
+    
+    int BlockDataIndex[binary.size()];
+    
+    //For the top level
+    {
+        blockInfo element;
+        element.rightBracket = -1;
+        element.numberOfCommand = 0;
+        element.numberOfExecute = 1;
+        
+        int count = 0;
+        for(int i=0;i<binary.size();i++)
+        {
+            if(binary[i]==91)
+            {
+                if(count==0)
+                {
+                    element.numberOfCommand++;
+                }
+                
+                count++;
+            }
+            else if(binary[i]==93)
+            {
+                count--;
+            }
+            else
+            {
+                if(count==0)
+                {
+                    element.numberOfCommand++;
+                }
+            }
+        }
+        
+        BlockData.push_back(element);
+    }
+    
+    //for RightBracket
+    for(int i=0;i<binary.size();i++)
+    {
+        if(binary[i]==93)
+        {
+            blockInfo element;
+            element.rightBracket = i;
+            element.numberOfCommand = 1;
+            element.numberOfExecute = 0;
+            
+            BlockDataIndex[i] = int(BlockData.size());
+            
+            int binPointerTemp = i;
+            int count = 0;
+            while(true)
+            {
+                binPointerTemp--;
+                
+                if(binary[binPointerTemp]==91)
+                {
+                    if(count == 0)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        if(count==1)
+                        {
+                            element.numberOfCommand++;
+                        }
+                        
+                        count--;
+                    }
+                }
+                else if(binary[binPointerTemp]==93)
+                {
+                    count++;
+                }
+                else
+                {
+                    if(count==0)
+                    {
+                        element.numberOfCommand++;
+                    }
+                }
+            }
+            
+            BlockData.push_back(element);
+        }
+    }
+    
+    {
+        int sum = 0;
+        for(int i=0;i<BlockData.size();i++)
+        {
+            cout<<BlockData[i].rightBracket<<" "<<BlockData[i].numberOfCommand<<endl;
+            sum += BlockData[i].numberOfCommand;
+        }
+        cout<<sum<<endl;
+    }
+    
+    
     //Run
     ifstream fin(input.c_str());
     ofstream fout(output.c_str());
@@ -202,7 +312,10 @@ void Run(string code,string input,string output)
     bool isPrintAll = 0;
     bool isPrintC = 0;
     //isPrintAll = 1;
-    isPrintC = 1;
+    //isPrintC = 1;
+    
+    bool isPerformanceTest = true;
+    int stepCount = 0;
     
     vector<int> array;
     array.reserve(500);
@@ -218,6 +331,7 @@ void Run(string code,string input,string output)
     }
     while(true)
     {
+        if(isPerformanceTest) stepCount++;
         isPrint = isPrintAll || (isPrintC && isCout[binPointer]);
         if(isPrint) cout<<binPointer<<" "<<char(binary[binPointer])<<" : ";
         
@@ -332,6 +446,11 @@ void Run(string code,string input,string output)
         else if(binary[binPointer]==93)
         {
             //]
+            if(isPerformanceTest)
+            {
+                BlockData[BlockDataIndex[binPointer]].numberOfExecute++;
+            }
+            
             if(array[cellPointer]==0)
             {
                 binPointer++;
@@ -358,6 +477,35 @@ void Run(string code,string input,string output)
     
     fin.close();
     fout.close();
+    if(isPerformanceTest)
+    {
+        sort(BlockData.begin(), BlockData.end(), [](blockInfo a, blockInfo b)->bool{return a.numberOfCommand*a.numberOfExecute > b.numberOfCommand*b.numberOfExecute;});
+        
+        int sum = 0;
+        for(int i=0;i<BlockData.size();i++)
+        {
+            cout<<BlockData[i].rightBracket<<" ";
+            cout<<BlockData[i].numberOfCommand<<" ";
+            cout<<BlockData[i].numberOfExecute<<" ";
+            //cout<<BlockData[i].numberOfExecute/16334.0<<" ";
+            cout<<BlockData[i].numberOfCommand * BlockData[i].numberOfExecute <<" ";
+            //cout<<BlockData[i].numberOfCommand * BlockData[i].numberOfExecute /16334.0<<" ";
+            
+            if(BlockData[i].rightBracket != -1)
+            {
+                for(int j=BlockData[i].rightBracket-10;j<=BlockData[i].rightBracket;j++)
+                {
+                    cout<<char(binary[j]);
+                }
+            }
+            
+            cout<<endl;
+            sum += BlockData[i].numberOfCommand * BlockData[i].numberOfExecute;
+        }
+        cout<<sum<<endl;
+        
+        cout<<"Number of step: "<<stepCount<<endl;
+    }
 }
 
 int main()
