@@ -265,26 +265,60 @@
         {
             //go to the compare result (cell 22)
             "<<"
-            //if compare resuit is true
-            //For the case that input is "
-            "[-"
+            //copy it to cell 23 and 24
+            "[->+>+<<]"
             
-            //go to aux bool cell 59 (add 37)
-            ">>>>>>>>>>"
-            ">>>>>>>>>>"
-            ">>>>>>>>>>"
-            ">>>>>>>"
+            //go to cell 22
+            //cell 22 is NOT gate of cell 23
+            "+>[-<->]<"
             
-            //set aux bool cell 59 to true
-            "+"
-            //change to the case that the input character is not line comment and inside quote
+            {
+                //For the case that input is "
+                //go to if bool cell (cell 24)
+                ">>"
+                "[-"
+                
+                //go to aux bool cell 59 (add 35)
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>"
+                
+                //set aux bool cell 59 to true
+                "+"
+                //change to the case that the input character is not line comment and inside quote
+                
+                //go to cell 24 (minus 35)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<"
+                "]"
+            }
             
-            //go to cell 22 (minus 37)
-            "<<<<<<<<<<"
-            "<<<<<<<<<<"
-            "<<<<<<<<<<"
-            "<<<<<<<"
-            "]"
+            {
+                //For the case that input is not "
+                //go to else bool cell 22
+                "<<"
+                "[-"
+                
+                //go to aux bool cell 56 (add 34)
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>"
+                
+                //set aux bool cell 56 to true
+                "+"
+                //change to the case that the input character is not line comment and outside quote
+                
+                //go to cell 22 (minus 34)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<"
+                "]"
+            }
         }
         
         //go to cell 55 (add 33)
@@ -353,27 +387,62 @@
         }
         
         {
-            //go to cell 22
+            //go to the compare result (cell 22)
             "<<"
-            //if compare resuit is true
-            "[-"
+            //copy it to cell 23 and 24
+            "[->+>+<<]"
             
-            //go to aux bool cell 56 (add 34)
-            ">>>>>>>>>>"
-            ">>>>>>>>>>"
-            ">>>>>>>>>>"
-            ">>>>"
+            //go to cell 22
+            //cell 22 is NOT gate of cell 23
+            "+>[-<->]<"
             
-            //set aux bool cell 56 to true
-            "+"
-            //change to the case that the input character is not line comment and outside quote
+            {
+                //For the case that input is newline
+                //go to if bool cell (cell 24)
+                ">>"
+                "[-"
+                
+                //go to aux bool cell 56 (add 32)
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>"
+                
+                //set aux bool cell 56 to true
+                "+"
+                //change to the case that the input character is not line comment and outside quote
+                
+                //go to cell 24 (minus 32)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<"
+                "]"
+            }
             
-            //go to cell 22 (minus 34)
-            "<<<<<<<<<<"
-            "<<<<<<<<<<"
-            "<<<<<<<<<<"
-            "<<<<"
-            "]"
+            {
+                //For the case that input is not newline
+                //go to else bool cell 22
+                "<<"
+                "[-"
+                
+                //go to aux bool cell 53 (add 31)
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">"
+                
+                //set aux bool cell 53 to true
+                "+"
+                //change to the case that the input character is line comment
+                
+                //go to cell 22 (minus 31)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<"
+                "]"
+            }
         }
         
         //go to cell 52 (add 30)

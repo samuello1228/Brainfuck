@@ -655,8 +655,8 @@ int main()
     //Run("data/v4/bin/next_compiler.txt","data/v4/src/self_compiler.cpp","data/v4/rbin/self_compiler.txt");
     //Run("data/v4/bin/next_compiler.txt","data/v4/src/next_compiler.cpp","data/v4/rbin/next_compiler.txt");
     
-    //Run("data/v4/bin/next_compiler.txt","data/v4/src/next_compiler2.cpp","data/v4/bin/next_compiler2.txt");
-    Run("data/v4/bin/next_compiler2.txt","data/v4/src/next_compiler.cpp","data/v5/rbin/next_compiler.txt");
+    Run("data/v4/bin/next_compiler.txt","data/v4/src/next_compiler2.cpp","data/v4/bin/next_compiler2.txt");
+    Run("data/v4/bin/next_compiler2.txt","data/v4/src/next_compiler.cpp","data/v4/rbin/next_compiler.txt");
     
     //Run("data/v4/bin/next_compiler.txt","data/v4/src/test2.cpp","data/v4/output/test2.txt");
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/test.cpp","data/v4/bin/test.txt");
