@@ -605,10 +605,12 @@ int main()
     //build for v2
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/NOT_gate.cpp","data/v2/bin/NOT_gate.txt");
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/AND_gate.cpp","data/v2/bin/AND_gate.txt");
-    Run("data/v1/bin/next_compiler.txt","data/v2/src/self_compiler.cpp","data/v2/bin/self_compiler.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/self_compiler.cpp","data/v2/bin/self_compiler.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/next_compiler.cpp","data/v2/bin/next_compiler.txt");
     
-    Run("data/v1/bin/next_compiler.txt","data/v2/src/next_compiler.cpp","data/v2/bin/next_compiler.txt");
-    //Run("data/v2/bin/next_compiler.txt","data/v2/src/next_compiler.cpp","data/v2/rbin/next_compiler.txt");
+    //rebuild for v2
+    Run("data/v2/bin/next_compiler.txt","data/v2/src/self_compiler.cpp","data/v2/rbin/self_compiler.txt");
+    Run("data/v2/bin/next_compiler.txt","data/v2/src/next_compiler.cpp","data/v2/rbin/next_compiler.txt");
     
     //build for v3
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/int_to_bool.cpp","data/v3/bin/int_to_bool.txt");
