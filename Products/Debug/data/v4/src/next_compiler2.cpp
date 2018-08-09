@@ -208,15 +208,13 @@
         //go to cell 55
         "<<"
         //if cell 55 is true
-        "["
-        //set cell 55 to false; set cell 56 to true
-        "->+"
+        "[-"
         
         //check whether the input is "
         {
             {
                 //go to input (cell 49)
-                "<<<<<<<"
+                "<<<<<<"
                 
                 //copy to cell 23
                 //k = 23 - 49 = -26
@@ -271,16 +269,12 @@
             //For the case that input is "
             "[-"
             
-            //go to aux bool cell 56 (add 34)
+            //go to aux bool cell 59 (add 37)
             ">>>>>>>>>>"
             ">>>>>>>>>>"
             ">>>>>>>>>>"
-            ">>>>"
-            //set aux bool cell 56 to false
-            "-"
+            ">>>>>>>"
             
-            //go to aux bool cell 59
-            ">>>"
             //set aux bool cell 59 to true
             "+"
             //change to the case that the input character is not line comment and inside quote
@@ -306,16 +300,13 @@
         //go to cell 52
         "<<<"
         //if cell 52 is true
-        "["
-        
-        //set cell 52 to false; set cell 53 to true
-        "->+"
+        "[-"
         
         //check whether the input is newline
         {
             {
                 //go to input (cell 49)
-                "<<<<"
+                "<<<"
                 
                 //copy to cell 23
                 //k = 23 - 49 = -26
@@ -367,16 +358,12 @@
             //if compare resuit is true
             "[-"
             
-            //go to aux bool cell 53 (add 31)
+            //go to aux bool cell 56 (add 34)
             ">>>>>>>>>>"
             ">>>>>>>>>>"
             ">>>>>>>>>>"
-            ">"
-            //set aux bool cell 53 to false
-            "-"
+            ">>>>"
             
-            //go to aux bool cell 56
-            ">>>"
             //set aux bool cell 56 to true
             "+"
             //change to the case that the input character is not line comment and outside quote
@@ -401,16 +388,13 @@
         //go to cell 58
         ">>>>>>"
         //if cell 58 is true
-        "["
-        
-        //set cell 58 to false; set cell 59 to true
-        "->+"
+        "[-"
         
         //check whether the input is "
         {
             {
-                //go to input (cell 49) (minus 10)
-                "<<<<<<<<<<"
+                //go to input (cell 49) (minus 9)
+                "<<<<<<<<<"
                 
                 //copy to cell 23
                 //k = 23 - 49 = -26
@@ -475,16 +459,12 @@
                 ">>"
                 "[-"
                 
-                //go to aux bool cell 59 (add 35)
+                //go to aux bool cell 56 (add 32)
                 ">>>>>>>>>>"
                 ">>>>>>>>>>"
                 ">>>>>>>>>>"
-                ">>>>>"
-                //set aux bool cell 59 to false
-                "-"
+                ">>"
                 
-                //go to aux bool cell 56
-                "<<<"
                 //set aux bool cell 56 to true
                 "+"
                 //change to the case that the input character is not line comment and outside quote
@@ -510,10 +490,17 @@
                 //output
                 "."
                 
-                //go to cell 22 (minus 28)
+                //go to aux bool cell 59 (add 9)
+                ">>>>>>>>>"
+                //set aux bool cell 59 to true
+                "+"
+                //change to the case that the input character is not line comment and outside quote
+                
+                //go to cell 22 (minus 37)
                 "<<<<<<<<<<"
                 "<<<<<<<<<<"
-                "<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<"
                 "]"
             }
         }
