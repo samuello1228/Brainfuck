@@ -59,22 +59,22 @@
 //cell 96: no use
 ">>"
 
-//cell 97: bool for function 1: run the code in the first argument
-//cell 98: aux bool cell, the NOT gate of cell 100
-//cell 99: aux cell for cell 100 (continues; not redo any 100 bool if block)
-">+>>"
+//cell 97: no use
+//cell 98: initial value 0
+//cell 99: initial value 1
+">>>+"
 
-//cell 100: bool for function 2:
-//cell 101: similar to cell 101
-//cell 102: similar to cell 102
+//cell 100: bool for function 1: run the code in the first argument
+//cell 101: aux bool cell, the NOT gate of cell 100
+//cell 102: aux cell for cell 100 (continues; not redo any 100 bool if block)
 ">>+>"
 
-//cell 103: bool for function 3:
+//cell 103: bool for function 2:
 //cell 104: similar to cell 101
 //cell 105: similar to cell 102
 ">>+>"
 
-//cell 106: bool for function 4:
+//cell 106: bool for function 3:
 //cell 107: similar to cell 101
 //cell 108: similar to cell 102
 ">>+>"
@@ -593,17 +593,17 @@
                     ">>>>>>>>>>"
                     ">>>>>>>"
                     
-                    //go to left boundary of temp variable
+                    //go to leftmost boundary of temp variable
                     "[<<<]"
                     
                     //add boundary
                     "+"
-                    //set zero for left boundary
+                    //set zero for leftmost bit
                     "<+"
                     
                     //go to boundary
                     ">"
-                    //go to right boundary (cell 94)
+                    //go to rightmost boundary (cell 94)
                     "[>>>]"
                 }
                 
@@ -767,21 +767,21 @@
                     ">>>>>>>>>>"
                     ">>>>>>>"
                     
-                    //go to left boundary of temp variable
+                    //go to leftmost boundary of temp variable
                     "[<<<]"
                     
                     //add boundary
                     "+"
                     
-                    //add one
+                    //add one for leftmost bit
                     ">+>-<<"
                     
-                    //set zero for left boundary
+                    //set zero for sub-leftmost bit
                     "<+"
                     
                     //go to boundary
                     ">"
-                    //go to right boundary (cell 94)
+                    //go to rightmost boundary (cell 94)
                     "[>>>]"
                 }
                 
@@ -867,16 +867,11 @@
         
         //set the bool for function index
         {
-            //go to temp variable (cell 94) (add 36)
+            //go to bool cell of temp variable (cell 91) (add 33)
             ">>>>>>>>>>"
             ">>>>>>>>>>"
             ">>>>>>>>>>"
-            ">>>>>>"
-            //subtract one
-            "<[<<<]<-<<<<[->>>>+>+<<<<<]+>>>>[-<<<<->>>>]<<<<[->>->-<<<]>>>>>[-<<<<<+>>>>>]+>[>+>->]"
-            
-            //go to bool cell of temp variable (cell 91)
-            "<<<"
+            ">>>"
             
             //for loop
             "["
@@ -894,10 +889,10 @@
             "[>>>]"
             
             //set zero
-            "+<->"
+            "+>-"
             
             //set one
-            ">>+>-<<<"
+            ">>->+<<<<"
             
             //go to cell 95
             "[<<<]"
@@ -980,23 +975,49 @@
                 ">>"
                 "[-"
                 
-                //go to aux bool cell 68 (add 44)
-                ">>>>>>>>>>"
-                ">>>>>>>>>>"
-                ">>>>>>>>>>"
-                ">>>>>>>>>>"
-                ">>>>"
+                {
+                    //go to aux bool cell 67 (add 43)
+                    ">>>>>>>>>>"
+                    ">>>>>>>>>>"
+                    ">>>>>>>>>>"
+                    ">>>>>>>>>>"
+                    ">>>"
+                    
+                    //set aux bool cell 67 to true
+                    "+"
+                    //change to the case that the function is running
+                    //run it immediately
+                }
                 
-                //set aux bool cell 68 to true
-                "+"
-                //change to the case that the function is running
+                {
+                    //change the function index to run it immediately
+                    //For the case that the function has no argument
+                    //go to cell 98 (add 31)
+                    ">>>>>>>>>>"
+                    ">>>>>>>>>>"
+                    ">>>>>>>>>>"
+                    ">"
+                    
+                    //go to the current function index
+                    "[>>>]"
+                    
+                    //set it run immediately
+                    ">-<<+>"
+                    
+                    //go to cell 95
+                    "<<<"
+                    "[<<<]"
+                }
                 
-                //go to cell 24 (minus 44)
+                //go to cell 24 (minus 71)
                 "<<<<<<<<<<"
                 "<<<<<<<<<<"
                 "<<<<<<<<<<"
                 "<<<<<<<<<<"
-                "<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<"
                 "]"
             }
             
@@ -1032,42 +1053,482 @@
         "]"
     }
     
+    //For the case that the first argument is read
+    {
+        //go to cell 61
+        ">>>"
+        //if cell 61 is true
+        "[-"
+        
+        //check whether the input is quote
+        {
+            {
+                //go to input (cell 49) (minus 12)
+                "<<<<<<<<<<"
+                "<<"
+                
+                //copy to cell 23
+                //k = 23 - 49 = -26
+                "<<<[->[-<+>>>"
+                
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<"
+                
+                "+"
+                
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>"
+                
+                "<<]<[->+<]+<<<]>>>[>>>]"
+                //At cell 49
+            }
+            
+            {
+                //go to cell 7 (minus 42)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<"
+                
+                //set to 34 for quote (00100010)
+                "+"
+                ">>>"
+                ">>>"
+                ">>>"
+                ">>>+"
+                ">>>"
+                //At cell 22
+            }
+            
+            {
+                //go to is_same (cell 0) (minus 22)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<"
+                //run is_same
+                ">+>>[->[-<<+>[-<->]<[->+<]>>]>[-<<<+>[-<->]<[->+<]>>>]<<[-<<[-]>>]<<[->>>+<<<]>>+>>>]"
+                //At cell 24
+            }
+        }
+        
+        {
+            //go to the compare result (cell 22)
+            "<<"
+            //copy it to cell 23 and 24
+            "[->+>+<<]"
+            
+            //go to cell 22
+            //cell 22 is NOT gate of cell 23
+            "+>[-<->]<"
+            
+            {
+                //For the case that input is quote
+                //go to if bool cell (cell 24)
+                ">>"
+                "[-"
+                
+                //go to aux bool cell 67 (add 43)
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>"
+                
+                //set aux bool cell 67 to true
+                "+"
+                //change to the case that the function is running
+                //run it immediately
+                
+                //go to cell 24 (minus 43)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<"
+                "]"
+            }
+            
+            {
+                //For the case that input is not quote
+                //go to else bool cell 22
+                "<<"
+                "[-"
+                
+                //go to aux bool cell 63 (add 41)
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">"
+                //set aux bool cell 63 to true
+                "+"
+                //change to the case that the first argument is read
+                //further checking whether the input character is whitespace
+                
+                //go to cell 22 (minus 41)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<"
+                "]"
+            }
+        }
+        
+        //go to cell 61 (add 39)
+        ">>>>>>>>>>"
+        ">>>>>>>>>>"
+        ">>>>>>>>>>"
+        ">>>>>>>>>"
+        "]"
+    }
+    
+    //For further checking whether the input character is whitespace, if cell 63 is true
+    {
+        //go to aux bool cell 63
+        ">>"
+        //if cell 63 is true
+        "["
+        //set aux bool cell 63 to false
+        "-"
+        
+        //go to aux bool cell 61
+        "<<"
+        //set aux bool cell 61 to true
+        "+"
+        
+        //go to aux bool cell 63
+        ">>"
+        "]"
+    }
+    
+    //For the case that the first argument is read
+    //further check whether the input character is whitespace
+    {
+        //go to cell 61
+        "<<"
+        //if cell 61 is true
+        "[-"
+        
+        //check whether the input is whitespace
+        {
+            {
+                //go to input (cell 49) (minus 12)
+                "<<<<<<<<<<"
+                "<<"
+                
+                //copy to cell 23
+                //k = 23 - 49 = -26
+                "<<<[->[-<+>>>"
+                
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<"
+                
+                "+"
+                
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>"
+                
+                "<<]<[->+<]+<<<]>>>[>>>]"
+                //At cell 49
+            }
+            
+            {
+                //go to cell 7 (minus 42)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<"
+                
+                //set to 32 for whitespace (00100000)
+                "+"
+                ">>>"
+                ">>>"
+                ">>>"
+                ">>>"
+                ">>>"
+                //At cell 22
+            }
+            
+            {
+                //go to is_same (cell 0) (minus 22)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<"
+                //run is_same
+                ">+>>[->[-<<+>[-<->]<[->+<]>>]>[-<<<+>[-<->]<[->+<]>>>]<<[-<<[-]>>]<<[->>>+<<<]>>+>>>]"
+                //At cell 24
+            }
+        }
+        
+        {
+            //go to the compare result (cell 22)
+            "<<"
+            //copy it to cell 23 and 24
+            "[->+>+<<]"
+            
+            //go to cell 22
+            //cell 22 is NOT gate of cell 23
+            "+>[-<->]<"
+            
+            {
+                //For the case that input is whitespace
+                //go to if bool cell (cell 24)
+                ">>"
+                "[-"
+                
+                //go to aux bool cell 65 (add 41)
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">"
+                
+                //set aux bool cell 65 to true
+                "+"
+                //change to the case that the second argument is read
+                
+                //go to cell 24 (minus 41)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<"
+                "]"
+            }
+            
+            {
+                //For the case that input is not whitespace
+                //go to else bool cell 22
+                "<<"
+                "[-"
+                
+                //go to aux bool cell 63 (add 41)
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">>>>>>>>>>"
+                ">"
+                //set aux bool cell 63 to true
+                "+"
+                //change to the case that the first argument is read
+                //further get the first argument immediately
+                
+                //go to cell 22 (minus 41)
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<<<<<<<<<<"
+                "<"
+                "]"
+            }
+        }
+        
+        //go to cell 61 (add 39)
+        ">>>>>>>>>>"
+        ">>>>>>>>>>"
+        ">>>>>>>>>>"
+        ">>>>>>>>>"
+        "]"
+    }
+    
+    //For further get the first argument,  if cell 63 is true
+    {
+        //go to aux bool cell 63
+        ">>"
+        //if cell 63 is true
+        "["
+        //set aux bool cell 63 to false
+        "-"
+        
+        //go to aux bool cell 61
+        "<<"
+        //set aux bool cell 61 to true
+        "+"
+        
+        //go to aux bool cell 63
+        ">>"
+        "]"
+    }
+    
+    //For function 1: run the code in the first argument
+    {
+        //go to function index (cell 100) (add 37)
+        ">>>>>>>>>>"
+        ">>>>>>>>>>"
+        ">>>>>>>>>>"
+        ">>>>>>>"
+        
+        //if cell 100 is true
+        "[-"
+        
+        //get the first argument
+        {
+            //go to cell 61 (minus 39)
+            "<<<<<<<<<<"
+            "<<<<<<<<<<"
+            "<<<<<<<<<<"
+            "<<<<<<<<<"
+            
+            //if cell 61 is true
+            "[-"
+            
+            //go to constant value cell for input (cell 50) (minus 11)
+            "<<<<<<<<<<"
+            "<"
+            //output
+            "."
+            
+            //go to aux bool cell 102 (add 52)
+            ">>>>>>>>>>"
+            ">>>>>>>>>>"
+            ">>>>>>>>>>"
+            ">>>>>>>>>>"
+            ">>>>>>>>>>"
+            ">>"
+            
+            //set to true
+            "+"
+            
+            //go to aux bool cell 62 (minus 40)
+            "<<<<<<<<<<"
+            "<<<<<<<<<<"
+            "<<<<<<<<<<"
+            "<<<<<<<<<<"
+            //set it to true
+            "+"
+            
+            //go to cell 61 (minus 38)
+            "<"
+            "]"
+        }
+        
+        //For running
+        {
+            //go to cell 67
+            ">>>>>>"
+            
+            //if cell 67 is true
+            "[-"
+            
+            //reset function index
+            //go to cell 98 (add 31)
+            ">>>>>>>>>>"
+            ">>>>>>>>>>"
+            ">>>>>>>>>>"
+            ">"
+            
+            //go to the current function index
+            "[>>>]"
+            
+            //reset the aux bool cell
+            "+"
+            
+            //go to cell 95
+            "[<<<]"
+            
+            //reset the aux bool cell
+            ">>>->+"
+            //At cell 99
+            
+            //go to aux bool cell 53 (minus 46)
+            "<<<<<<<<<<"
+            "<<<<<<<<<<"
+            "<<<<<<<<<<"
+            "<<<<<<<<<<"
+            "<<<<<<"
+            
+            //set aux bool cell 53 to true
+            "+"
+            //change to the case that the input character is not line comment and outside quote
+            
+            //go to cell 67 (add 14)
+            ">>>>>>>>>>"
+            ">>>>"
+            "]"
+        }
+        
+        //go to cell 100 (add 33)
+        ">>>>>>>>>>"
+        ">>>>>>>>>>"
+        ">>>>>>>>>>"
+        ">>>"
+        "]"
+    }
+    
     //reset all bool cells
     {
-        //go to aux cell 53
-        "<<<<<"
-        //if cell 53 is true; set cell 53 to false; set cell 52 to true
-        "[-<+>]"
+        {
+            //go to aux cell 53 (minus 47)
+            "<<<<<<<<<<"
+            "<<<<<<<<<<"
+            "<<<<<<<<<<"
+            "<<<<<<<<<<"
+            "<<<<<<<"
+            //if cell 53 is true; set cell 53 to false; set cell 52 to true
+            "[-<+>]"
+            
+            //go to aux cell 56
+            ">>>"
+            //if cell 56 is true; set cell 56 to false; set cell 55 to true
+            "[-<+>]"
+            
+            //go to aux cell 59
+            ">>>"
+            //if cell 59 is true; set cell 59 to false; set cell 58 to true
+            "[-<+>]"
+            
+            //go to aux cell 62
+            ">>>"
+            //if cell 62 is true; set cell 62 to false; set cell 61 to true
+            "[-<+>]"
+            
+            //go to aux cell 65
+            ">>>"
+            //if cell 65 is true; set cell 65 to false; set cell 64 to true
+            "[-<+>]"
+            
+            //go to aux cell 68
+            ">>>"
+            //if cell 68 is true; set cell 68 to false; set cell 67 to true
+            "[-<+>]"
+        }
         
-        //go to aux cell 56
-        ">>>"
-        //if cell 56 is true; set cell 56 to false; set cell 55 to true
-        "[-<+>]"
-        
-        //go to aux cell 59
-        ">>>"
-        //if cell 59 is true; set cell 59 to false; set cell 58 to true
-        "[-<+>]"
-        
-        //go to aux cell 62
-        ">>>"
-        //if cell 62 is true; set cell 62 to false; set cell 61 to true
-        "[-<+>]"
-        
-        //go to aux cell 65
-        ">>>"
-        //if cell 65 is true; set cell 65 to false; set cell 64 to true
-        "[-<+>]"
-        
-        //go to aux cell 68
-        ">>>"
-        //if cell 68 is true; set cell 68 to false; set cell 67 to true
-        "[-<+>]"
+        {
+            //For function
+            //go to aux cell 102 (add 34)
+            ">>>>>>>>>>"
+            ">>>>>>>>>>"
+            ">>>>>>>>>>"
+            ">>>>"
+            //if cell 102 is true; set cell 102 to false; set cell 100 to true
+            "[-<<+>>]"
+            
+            //go to aux cell 105
+            ">>>"
+            //if cell 105 is true; set cell 105 to false; set cell 103 to true
+            "[-<<+>>]"
+            
+            //go to aux cell 108
+            ">>>"
+            //if cell 108 is true; set cell 108 to false; set cell 106 to true
+            "[-<<+>>]"
+        }
     }
     
     //update the value of input
     {
-        //go to input (cell 49) (minus 19)
+        //go to input (cell 49) (minus 59)
+        "<<<<<<<<<<"
+        "<<<<<<<<<<"
+        "<<<<<<<<<<"
+        "<<<<<<<<<<"
         "<<<<<<<<<<"
         "<<<<<<<<<"
         //clear
