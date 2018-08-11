@@ -34,11 +34,20 @@ void print(vector<int>& array)
             cout<<array[i]<<" ";
         }
         
-        if(i == 24) cout<<endl;
-        if(i == 49) cout<<endl;
-        if(i == 51) cout<<endl;
-        if(i == 54) cout<<endl;
-        if(i == 57) cout<<endl;
+        if(i == 24) cerr<<endl;
+        if(i == 49) cerr<<endl;
+        if(i == 51) cerr<<endl;
+        if(i == 54) cerr<<endl;
+        if(i == 57) cerr<<endl;
+        if(i == 60) cerr<<endl;
+        if(i == 63) cerr<<endl;
+        if(i == 66) cerr<<endl;
+        if(i == 69) cerr<<endl;
+        if(i == 94) cerr<<endl;
+        if(i == 96) cerr<<endl;
+        if(i == 99) cerr<<endl;
+        if(i == 102) cerr<<endl;
+        if(i == 105) cerr<<endl;
     }
     cout<<endl;
 }
@@ -119,6 +128,10 @@ void Run(string code,string input,string output)
     src.close();
     
     //match square bracket
+    for(int i=0;i<binary.size();i++)
+    {
+        bracket.push_back(0);
+    }
     for(int i=0;i<binary.size();i++)
     {
         if(binary[i]==91)
@@ -632,9 +645,11 @@ int main()
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_move_half.cpp","data/v3/bin/binary_move_half.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
     Run("data/v2/bin/next_compiler.txt","data/v3/src/next_compiler.cpp","data/v3/bin/next_compiler.txt");
-    Run("data/v3/bin/next_compiler.txt","data/v3/src/test.cpp","data/v3/bin/test.txt");
     
-    //Run("data/v3/bin/next_compiler.txt","data/v3/src/next_compiler.cpp","data/v3/rbin/next_compiler.txt");
+    //build for v4
+    Run("data/v3/bin/next_compiler.txt","data/v4/src/self_compiler.cpp","data/v4/bin/self_compiler.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/next_compiler.cpp","data/v4/bin/next_compiler.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v3/src/test.cpp","data/v3/bin/test.txt");
     
     return 0;
 }
