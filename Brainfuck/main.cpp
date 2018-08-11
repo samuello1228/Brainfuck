@@ -48,6 +48,7 @@ void print(vector<int>& array)
         if(i == 99) cerr<<endl;
         if(i == 102) cerr<<endl;
         if(i == 105) cerr<<endl;
+        if(i == 108) cerr<<endl;
     }
     cout<<endl;
 }
@@ -644,12 +645,12 @@ int main()
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_is_same_run.cpp","data/v3/bin/binary_is_same_run.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_move_half.cpp","data/v3/bin/binary_move_half.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
-    Run("data/v2/bin/next_compiler.txt","data/v3/src/next_compiler.cpp","data/v3/bin/next_compiler.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v3/src/next_compiler.cpp","data/v3/bin/next_compiler.txt");
     
     //build for v4
-    Run("data/v3/bin/next_compiler.txt","data/v4/src/self_compiler.cpp","data/v4/bin/self_compiler.txt");
-    //Run("data/v3/bin/next_compiler.txt","data/v4/src/next_compiler.cpp","data/v4/bin/next_compiler.txt");
-    //Run("data/v3/bin/next_compiler.txt","data/v3/src/test.cpp","data/v3/bin/test.txt");
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/self_compiler.cpp","data/v4/bin/self_compiler.txt");
+    Run("data/v3/bin/next_compiler.txt","data/v4/src/next_compiler.cpp","data/v4/bin/next_compiler.txt");
+    Run("data/v4/bin/next_compiler.txt","data/v4/src/test.cpp","data/v4/bin/test.txt");
     
     return 0;
 }
