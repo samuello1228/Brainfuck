@@ -30,7 +30,7 @@
 
 //cell 58: bool for the case that the input character is not line comment and inside quote
 //cell 59: similar to cell 53
-//cell 60: asimilar to cell 54
+//cell 60: similar to cell 54
 
 //fill the value of input
 {
