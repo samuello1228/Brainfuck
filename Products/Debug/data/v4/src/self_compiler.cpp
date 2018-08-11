@@ -1338,7 +1338,7 @@
         "1 ]"
     }
     
-    //For further get the first argument,  if cell 63 is true
+    //For further get the first argument, if cell 63 is true
     {
         //go to aux bool cell 63
         "1 >>"
@@ -1368,7 +1368,7 @@
         //if cell 100 is true
         "1 [-"
         
-        //get the first argument
+        //For the case that the first argument is read
         {
             //go to cell 61 (minus 39)
             "1 <<<<<<<<<<"
