@@ -1404,7 +1404,7 @@
             //set it to true
             "1 +"
             
-            //go to cell 61 (minus 38)
+            //go to cell 61
             "1 <"
             "1 ]"
         }
