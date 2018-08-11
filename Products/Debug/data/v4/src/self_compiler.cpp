@@ -69,12 +69,12 @@
 //cell 102: aux cell for cell 100 (continues; not redo any 100 bool if block)
 "1 >>+>"
 
-//cell 103: bool for function 2:
+//cell 103: bool for function 01:
 //cell 104: similar to cell 101
 //cell 105: similar to cell 102
 "1 >>+>"
 
-//cell 106: bool for function 3:
+//cell 106: bool for function 11:
 //cell 107: similar to cell 101
 //cell 108: similar to cell 102
 "1 >>+>"
@@ -111,6 +111,7 @@
         "1 ]"
     }
     
+    ////////////////////////////////////////////////////////////////////////////////////////
     //For the case that the input character is not line comment and outside quote
     {
         //go to cell 52
@@ -383,6 +384,7 @@
         "1 ]"
     }
     
+    ////////////////////////////////////////////////////////////////////////////////////////
     //For the case that the input character is line comment
     {
         //go to cell 55
@@ -505,6 +507,7 @@
         "1 ]"
     }
     
+    ////////////////////////////////////////////////////////////////////////////////////////
     //For the case that the function name is read
     //check whether the input is 0
     {
@@ -1023,6 +1026,7 @@
             
             {
                 //For the case that input is not quote
+                //Assume the input is whitespace
                 //go to else bool cell 22
                 "1 <<"
                 "1 [-"
@@ -1053,6 +1057,7 @@
         "1 ]"
     }
     
+    ////////////////////////////////////////////////////////////////////////////////////////
     //For the case that the first argument is read
     {
         //go to cell 61
@@ -1283,16 +1288,39 @@
                 "1 >>"
                 "1 [-"
                 
-                //go to aux bool cell 65 (add 41)
-                "1 >>>>>>>>>>"
-                "1 >>>>>>>>>>"
-                "1 >>>>>>>>>>"
-                "1 >>>>>>>>>>"
-                "1 >"
+                //continue; not run the following function block
+                {
+                    //go to cell 98 (add 74)
+                    "1 >>>>>>>>>>"
+                    "1 >>>>>>>>>>"
+                    "1 >>>>>>>>>>"
+                    "1 >>>>>>>>>>"
+                    "1 >>>>>>>>>>"
+                    "1 >>>>>>>>>>"
+                    "1 >>>>>>>>>>"
+                    "1 >>>>"
+                    
+                    //go to the function index
+                    "1 [>>>]"
+                    
+                    //set the aux bool cell
+                    "1 <->>+<"
+                    "1 <<<"
+                    
+                    //go to cell 95
+                    "1 [<<<]"
+                }
                 
-                //set aux bool cell 65 to true
-                "1 +"
-                //change to the case that the second argument is read
+                {
+                    //go to aux bool cell 65 (minus 30)
+                    "1 <<<<<<<<<<"
+                    "1 <<<<<<<<<<"
+                    "1 <<<<<<<<<<"
+                    
+                    //set aux bool cell 65 to true
+                    "1 +"
+                    //change to the case that the second argument is read
+                }
                 
                 //go to cell 24 (minus 41)
                 "1 <<<<<<<<<<"
@@ -1357,6 +1385,7 @@
         "1 ]"
     }
     
+    ////////////////////////////////////////////////////////////////////////////////////////
     //For function 1: run the code in the first argument
     {
         //go to function index (cell 100) (add 37)
@@ -1462,6 +1491,7 @@
         "1 ]"
     }
     
+    ////////////////////////////////////////////////////////////////////////////////////////
     //reset all bool cells
     {
         {
