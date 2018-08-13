@@ -1,6 +1,8 @@
 //remove line comment (remove any character between / and newline)
 //output all characters between quotes (if it is not line comment)
 
+//changes: add the code for the case that the input character is line comment
+
 //include NOT_gate
 //include binary_initialize
 //include binary_add_one
@@ -25,12 +27,12 @@
 ">+"
 
 //cell 55: bool for the case that the input character is not line comment and inside quote
-//cell 56: aux cell for cell 55 (continues; not redo any 55 bool if block)
-//cell 57: aux cell for cell 55 (do other 55 bool if block)
+//cell 56: similar to cell 53
+//cell 57: similar to cell 54
 
 //cell 58: bool for the case that the input character is line comment
-//cell 59: aux cell for cell 58 (continues; not redo any 58 bool if block)
-//cell 60: aux cell for cell 58 (do other 58 bool if block)
+//cell 59: similar to cell 53
+//cell 60: similar to cell 54
 
 //fill the value of input
 {
@@ -59,6 +61,7 @@
         "]"
     }
     
+    ////////////////////////////////////////////////////////////////////////////////////////
     //For the case that the input character is not line comment and outside quote
     {
         //go to cell 52
@@ -331,6 +334,7 @@
         "]"
     }
     
+    ////////////////////////////////////////////////////////////////////////////////////////
     //For the case that the input character is not line comment and inside quote
     {
         //go to cell 55
@@ -459,6 +463,7 @@
         "]"
     }
     
+    ////////////////////////////////////////////////////////////////////////////////////////
     //For the case that the input character is line comment
     {
         //go to cell 58
@@ -581,6 +586,7 @@
         "]"
     }
     
+    ////////////////////////////////////////////////////////////////////////////////////////
     //reset all bool cells
     {
         //go to aux cell 53
