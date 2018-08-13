@@ -328,7 +328,7 @@
     
     //update the value of input
     {
-        //go to input (cell 49) (minus 10)
+        //go to input (cell 49) (minus 7)
         "<<<<<<<"
         //clear
         "<<<[<<<]>>[-]>[->[-]>[-]>]<+>"
