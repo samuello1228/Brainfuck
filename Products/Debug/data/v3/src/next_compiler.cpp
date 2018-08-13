@@ -1,7 +1,7 @@
 //remove line comment (remove any character between / and newline)
 //output all characters between quotes (if it is not line comment)
 
-//changes:
+//changes: add block structure for reseting all bool cells
 
 //include NOT_gate
 //include binary_initialize
