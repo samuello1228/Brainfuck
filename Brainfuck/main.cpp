@@ -652,8 +652,11 @@ int main()
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/intermediate_compiler2.cpp","data/v3/bin/intermediate_compiler2.txt");
     //Run("data/v3/bin/intermediate_compiler2.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
     
-    Run("data/v2/bin/next_compiler.txt","data/v3/src/intermediate_compiler3.cpp","data/v3/bin/intermediate_compiler3.txt");
-    Run("data/v3/bin/intermediate_compiler3.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v3/src/intermediate_compiler3.cpp","data/v3/bin/intermediate_compiler3.txt");
+    //Run("data/v3/bin/intermediate_compiler3.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
+    
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/intermediate_compiler4.cpp","data/v3/bin/intermediate_compiler4.txt");
+    Run("data/v3/bin/intermediate_compiler4.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
     
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/next_compiler.cpp","data/v3/bin/next_compiler.txt");
     
