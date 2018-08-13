@@ -1,5 +1,7 @@
 //output all characters between quotes
 
+//changes: add all comments to explain the next_compiler.cpp in v1
+
 //include NOT_gate
 //include binary_initialize
 //include binary_add_one
@@ -24,8 +26,8 @@
 ">+"
 
 //cell 55: bool for the case that the input character is inside quote
-//cell 56: aux cell for cell 55 (continues; not redo any 55 bool if block)
-//cell 57: aux cell for cell 55 (do other 55 bool if block)
+//cell 56: similar to cell 53
+//cell 57: similar to cell 54
 
 //fill the value of input
 {
@@ -54,6 +56,7 @@
         "]"
     }
     
+    ////////////////////////////////////////////////////////////////////////////////////////
     //For the case that the input character is outside quote
     {
         //go to cell 52
@@ -180,6 +183,7 @@
         "]"
     }
     
+    ////////////////////////////////////////////////////////////////////////////////////////
     //For the case that the input character is inside quote
     {
         //go to cell 55
@@ -308,6 +312,7 @@
         "]"
     }
     
+    ////////////////////////////////////////////////////////////////////////////////////////
     //reset all bool cells
     {
         //go to aux cell 53
