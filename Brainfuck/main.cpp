@@ -649,10 +649,12 @@ int main()
     
     //build for v4
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/self_compiler.cpp","data/v4/bin/self_compiler.txt");
-    Run("data/v3/bin/next_compiler.txt","data/v4/src/intermediate_compiler1.cpp","data/v4/bin/intermediate_compiler1.txt");
-    Run("data/v4/bin/intermediate_compiler1.txt","data/v4/src/self_compiler.cpp","data/v4/bin/self_compiler.txt");
-    //Run("data/v3/bin/next_compiler.txt","data/v4/src/next_compiler.cpp","data/v4/bin/next_compiler.txt");
-    //Run("data/v4/bin/next_compiler.txt","data/v4/src/test.cpp","data/v4/bin/test.txt");
+    
+    //Run("data/v3/bin/next_compiler.txt","data/v4/src/intermediate_compiler1.cpp","data/v4/bin/intermediate_compiler1.txt");
+    //Run("data/v4/bin/intermediate_compiler1.txt","data/v4/src/self_compiler.cpp","data/v4/bin/self_compiler.txt");
+    
+    Run("data/v3/bin/next_compiler.txt","data/v4/src/next_compiler.cpp","data/v4/bin/next_compiler.txt");
+    Run("data/v4/bin/next_compiler.txt","data/v4/src/test.cpp","data/v4/bin/test.txt");
     
     return 0;
 }
