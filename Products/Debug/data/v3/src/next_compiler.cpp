@@ -1,6 +1,8 @@
 //remove line comment (remove any character between / and newline)
 //output all characters between quotes (if it is not line comment)
 
+//changes:
+
 //include NOT_gate
 //include binary_initialize
 //include binary_add_one
@@ -1438,56 +1440,82 @@
             "]"
         }
         
-        //For running
-        {
-            //go to cell 67
-            ">>>>>>"
-            
-            //if cell 67 is true
-            "[-"
-            
-            //reset function index
-            //go to cell 98 (add 31)
-            ">>>>>>>>>>"
-            ">>>>>>>>>>"
-            ">>>>>>>>>>"
-            ">"
-            
-            //go to the current function index
-            "[>>>]"
-            
-            //reset the aux bool cell
-            "+"
-            
-            //go to cell 95
-            "[<<<]"
-            
-            //reset the aux bool cell
-            ">>>->+"
-            //At cell 99
-            
-            //go to aux bool cell 53 (minus 46)
-            "<<<<<<<<<<"
-            "<<<<<<<<<<"
-            "<<<<<<<<<<"
-            "<<<<<<<<<<"
-            "<<<<<<"
-            
-            //set aux bool cell 53 to true
-            "+"
-            //change to the case that the input character is not line comment and outside quote
-            
-            //go to cell 67 (add 14)
-            ">>>>>>>>>>"
-            ">>>>"
-            "]"
-        }
+        //For running; do nothing
         
-        //go to cell 100 (add 33)
+        //go to cell 100 (add 39)
         ">>>>>>>>>>"
         ">>>>>>>>>>"
         ">>>>>>>>>>"
-        ">>>"
+        ">>>>>>>>>"
+        "]"
+    }
+    
+    //For further finalize the running, if cell 69 is true
+    {
+        //go to aux bool cell 69 (minus 31)
+        "<<<<<<<<<<"
+        "<<<<<<<<<<"
+        "<<<<<<<<<<"
+        "<"
+        //if cell 69 is true
+        "["
+        //set aux bool cell 69 to false
+        "-"
+        
+        //go to aux bool cell 67
+        "<<"
+        //set aux bool cell 67 to true
+        "+"
+        
+        //go to aux bool cell 69
+        ">>"
+        "]"
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////////////////
+    //For the case that the function is running
+    //finalize the running
+    {
+        //go to cell 67
+        "<<"
+        
+        //if cell 67 is true
+        "[-"
+        
+        //reset function index
+        //go to cell 98 (add 31)
+        ">>>>>>>>>>"
+        ">>>>>>>>>>"
+        ">>>>>>>>>>"
+        ">"
+        
+        //go to the current function index
+        "[>>>]"
+        
+        //reset the aux bool cell
+        "+"
+        
+        //go to cell 95
+        "[<<<]"
+        
+        //reset the aux bool cell
+        ">>>->+"
+        //At cell 99
+        
+        //go to aux bool cell 53 (minus 46)
+        "<<<<<<<<<<"
+        "<<<<<<<<<<"
+        "<<<<<<<<<<"
+        "<<<<<<<<<<"
+        "<<<<<<"
+        
+        //set aux bool cell 53 to true
+        "+"
+        //change to the case that the input character is not line comment and outside quote
+        
+        //go to cell 67 (add 14)
+        ">>>>>>>>>>"
+        ">>>>"
         "]"
     }
     
@@ -1495,12 +1523,9 @@
     //reset all bool cells
     {
         {
-            //go to aux cell 53 (minus 47)
+            //go to aux cell 53 (minus 14)
             "<<<<<<<<<<"
-            "<<<<<<<<<<"
-            "<<<<<<<<<<"
-            "<<<<<<<<<<"
-            "<<<<<<<"
+            "<<<<"
             //if cell 53 is true; set cell 53 to false; set cell 52 to true
             "[-<+>]"
             
