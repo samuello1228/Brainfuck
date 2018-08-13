@@ -644,13 +644,16 @@ int main()
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_is_same_initialize.cpp","data/v3/bin/binary_is_same_initialize.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_is_same_run.cpp","data/v3/bin/binary_is_same_run.txt");
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/binary_move_half.cpp","data/v3/bin/binary_move_half.txt");
-    Run("data/v2/bin/next_compiler.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
     
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/intermediate_compiler1.cpp","data/v3/bin/intermediate_compiler1.txt");
     //Run("data/v3/bin/intermediate_compiler1.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
     
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/intermediate_compiler2.cpp","data/v3/bin/intermediate_compiler2.txt");
     //Run("data/v3/bin/intermediate_compiler2.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
+    
+    Run("data/v2/bin/next_compiler.txt","data/v3/src/intermediate_compiler3.cpp","data/v3/bin/intermediate_compiler3.txt");
+    Run("data/v3/bin/intermediate_compiler3.txt","data/v3/src/self_compiler.cpp","data/v3/bin/self_compiler.txt");
     
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/next_compiler.cpp","data/v3/bin/next_compiler.txt");
     
