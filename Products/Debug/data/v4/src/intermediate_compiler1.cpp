@@ -1770,56 +1770,82 @@
             "1 ]"
         }
         
-        //For running
-        {
-            //go to cell 67
-            "1 >>>>>>"
-            
-            //if cell 67 is true
-            "1 [-"
-            
-            //reset function index
-            //go to cell 98 (add 31)
-            "1 >>>>>>>>>>"
-            "1 >>>>>>>>>>"
-            "1 >>>>>>>>>>"
-            "1 >"
-            
-            //go to the current function index
-            "1 [>>>]"
-            
-            //reset the aux bool cell
-            "1 +"
-            
-            //go to cell 95
-            "1 [<<<]"
-            
-            //reset the aux bool cell
-            "1 >>>->+"
-            //At cell 99
-            
-            //go to aux bool cell 53 (minus 46)
-            "1 <<<<<<<<<<"
-            "1 <<<<<<<<<<"
-            "1 <<<<<<<<<<"
-            "1 <<<<<<<<<<"
-            "1 <<<<<<"
-            
-            //set aux bool cell 53 to true
-            "1 +"
-            //change to the case that the input character is not line comment and outside quote
-            
-            //go to cell 67 (add 14)
-            "1 >>>>>>>>>>"
-            "1 >>>>"
-            "1 ]"
-        }
+        //For running; do nothing
         
-        //go to cell 100 (add 33)
+        //go to cell 100 (add 39)
         "1 >>>>>>>>>>"
         "1 >>>>>>>>>>"
         "1 >>>>>>>>>>"
-        "1 >>>"
+        "1 >>>>>>>>>"
+        "1 ]"
+    }
+    
+    //For further finalize the running, if cell 69 is true
+    {
+        //go to aux bool cell 69 (minus 31)
+        "1 <<<<<<<<<<"
+        "1 <<<<<<<<<<"
+        "1 <<<<<<<<<<"
+        "1 <"
+        //if cell 69 is true
+        "1 ["
+        //set aux bool cell 69 to false
+        "1 -"
+        
+        //go to aux bool cell 67
+        "1 <<"
+        //set aux bool cell 67 to true
+        "1 +"
+        
+        //go to aux bool cell 69
+        "1 >>"
+        "1 ]"
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////////////////
+    //For the case that the function is running
+    //finalize the running
+    {
+        //go to cell 67
+        "1 <<"
+        
+        //if cell 67 is true
+        "1 [-"
+        
+        //reset function index
+        //go to cell 98 (add 31)
+        "1 >>>>>>>>>>"
+        "1 >>>>>>>>>>"
+        "1 >>>>>>>>>>"
+        "1 >"
+        
+        //go to the current function index
+        "1 [>>>]"
+        
+        //reset the aux bool cell
+        "1 +"
+        
+        //go to cell 95
+        "1 [<<<]"
+        
+        //reset the aux bool cell
+        "1 >>>->+"
+        //At cell 99
+        
+        //go to aux bool cell 53 (minus 46)
+        "1 <<<<<<<<<<"
+        "1 <<<<<<<<<<"
+        "1 <<<<<<<<<<"
+        "1 <<<<<<<<<<"
+        "1 <<<<<<"
+        
+        //set aux bool cell 53 to true
+        "1 +"
+        //change to the case that the input character is not line comment and outside quote
+        
+        //go to cell 67 (add 14)
+        "1 >>>>>>>>>>"
+        "1 >>>>"
         "1 ]"
     }
     
@@ -1827,12 +1853,9 @@
     //reset all bool cells
     {
         {
-            //go to aux cell 53 (minus 47)
+            //go to aux cell 53 (minus 14)
             "1 <<<<<<<<<<"
-            "1 <<<<<<<<<<"
-            "1 <<<<<<<<<<"
-            "1 <<<<<<<<<<"
-            "1 <<<<<<<"
+            "1 <<<<"
             //if cell 53 is true; set cell 53 to false; set cell 52 to true
             "1 [-<+>]"
             
