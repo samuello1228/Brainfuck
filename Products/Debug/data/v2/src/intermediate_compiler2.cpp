@@ -1,7 +1,7 @@
 //remove line comment (remove any character between / and newline)
 //output all characters between quotes (if it is not line comment)
 
-//changes: add the code for checking whether the input is /, in the case that the input character is not line comment and outside quote
+//changes: add the code for checking whether the input is /, in the case that the input character is not line comment and outside quote (cannot run)
 
 //include NOT_gate
 //include binary_initialize
