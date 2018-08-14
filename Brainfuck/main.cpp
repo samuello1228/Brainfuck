@@ -633,7 +633,7 @@ int main()
     //Run("data/v1/bin/next_compiler.txt","data/v2/src/intermediate_compiler2.cpp","data/v2/bin/intermediate_compiler2.txt");
     //Run("data/v2/bin/intermediate_compiler2.txt","data/v2/src/self_compiler.cpp","data/v2/bin/self_compiler.txt");
     
-    Run("data/v1/bin/next_compiler.txt","data/v2/src/next_compiler.cpp","data/v2/bin/next_compiler.txt");
+    //Run("data/v1/bin/next_compiler.txt","data/v2/src/next_compiler.cpp","data/v2/bin/next_compiler.txt");
     
     //rebuild for v2
     //Run("data/v2/bin/next_compiler.txt","data/v2/src/self_compiler.cpp","data/v2/rbin/self_compiler.txt");
@@ -674,7 +674,7 @@ int main()
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/next_compiler.cpp","data/v3/bin/next_compiler.txt");
     
     //build for v4
-    //Run("data/v3/bin/next_compiler.txt","data/v4/src/self_compiler.cpp","data/v4/bin/self_compiler.txt");
+    Run("data/v3/bin/next_compiler.txt","data/v4/src/self_compiler.cpp","data/v4/bin/self_compiler.txt");
     
     //Run("data/v3/bin/next_compiler.txt","data/v4/src/intermediate_compiler1.cpp","data/v4/bin/intermediate_compiler1.txt");
     //Run("data/v4/bin/intermediate_compiler1.txt","data/v4/src/self_compiler.cpp","data/v4/bin/self_compiler.txt");
