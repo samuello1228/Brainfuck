@@ -43,12 +43,15 @@ void print(vector<int>& array)
         if(i == 63) cerr<<endl;
         if(i == 66) cerr<<endl;
         if(i == 69) cerr<<endl;
-        if(i == 94) cerr<<endl;
-        if(i == 96) cerr<<endl;
-        if(i == 99) cerr<<endl;
-        if(i == 102) cerr<<endl;
-        if(i == 105) cerr<<endl;
-        if(i == 108) cerr<<endl;
+        if(i == 72) cerr<<endl;
+        if(i == 103) cerr<<endl;
+        if(i == 134) cerr<<endl;
+        if(i == 165) cerr<<endl;
+        if(i == 167) cerr<<endl;
+        if(i == 170) cerr<<endl;
+        if(i == 173) cerr<<endl;
+        if(i == 176) cerr<<endl;
+        if(i == 179) cerr<<endl;
     }
     cout<<endl;
 }

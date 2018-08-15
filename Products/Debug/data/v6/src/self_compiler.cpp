@@ -1394,7 +1394,7 @@
             //if cell 61 is true
             "1 [-"
             
-            //copy cell 50 to cell 72
+            //copy cell 50 to temp cell 3 (cell 72)
             {
                 //go to cell 50 (minus 11) (1011)
                 "01 < 1101"
@@ -1701,7 +1701,7 @@
                 //subtract one
                 "1 <[<<<]<-<<<<[->>>>+>+<<<<<]+>>>>[-<<<<->>>>]<<<<[->>->-<<<]>>>>>[-<<<<<+>>>>>]+>[>+>->]"
                 
-                //go to cell 72 (minus 31) (11111)
+                //go to temp cell 3 (cell 72) (minus 31) (11111)
                 "01 < 11111"
                 
                 //output
@@ -1711,9 +1711,9 @@
                 "01 > 00111"
                 "1 ]"
                 
-                //go to cell 72 (minus 28) (11100)
+                //go to temp cell 3 (cell 72) (minus 28) (11100)
                 "01 < 00111"
-                //clear cell 72
+                //clear
                 "1 [-]"
             }
             
