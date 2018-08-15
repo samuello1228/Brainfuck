@@ -703,11 +703,11 @@ int main()
     
     //build for v6
     //Run("data/v5/bin/next_compiler.txt","data/v6/src/self_compiler.cpp","data/v6/bin/self_compiler.txt");
-    Run("data/v5/bin/next_compiler.txt","data/v6/src/intermediate_compiler1.cpp","data/v6/bin/intermediate_compiler1.txt");
+    //Run("data/v5/bin/next_compiler.txt","data/v6/src/intermediate_compiler1.cpp","data/v6/bin/intermediate_compiler1.txt");
     
-    //Run("data/v4/bin/next_compiler.txt","data/v5/src/next_compiler.cpp","data/v5/bin/next_compiler.txt");
-    //Run("data/v5/bin/next_compiler.txt","data/v5/src/self_compiler.cpp","data/v5/bin/self_compiler.txt");
-    //Run("data/v5/bin/next_compiler.txt","data/v5/src/test.cpp","data/v5/bin/test.txt");
+    Run("data/v5/bin/next_compiler.txt","data/v6/src/next_compiler.cpp","data/v6/bin/next_compiler.txt");
+    //Run("data/v6/bin/next_compiler.txt","data/v6/src/self_compiler.cpp","data/v6/bin/self_compiler.txt");
+    Run("data/v6/bin/next_compiler.txt","data/v6/src/test.cpp","data/v6/bin/test.txt");
     
     return 0;
 }
