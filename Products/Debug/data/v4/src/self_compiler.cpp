@@ -1372,6 +1372,7 @@
             "1 >>"
             //set it to true
             "1 +"
+            //change to the case that the first argument is read
             
             //go to cell 61
             "1 <"
