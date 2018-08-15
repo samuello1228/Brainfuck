@@ -671,7 +671,7 @@ int main()
     //Run("data/v2/bin/next_compiler.txt","data/v3/src/intermediate_compiler6.cpp","data/v3/bin/intermediate_compiler6.txt");
     //Run("data/v3/bin/intermediate_compiler6.txt","data/v4/src/self_compiler.cpp","data/v4/bin/self_compiler.txt");
     
-    Run("data/v2/bin/next_compiler.txt","data/v3/src/next_compiler.cpp","data/v3/bin/next_compiler.txt");
+    //Run("data/v2/bin/next_compiler.txt","data/v3/src/next_compiler.cpp","data/v3/bin/next_compiler.txt");
     
     //build for v4
     Run("data/v3/bin/next_compiler.txt","data/v4/src/self_compiler.cpp","data/v4/bin/self_compiler.txt");
