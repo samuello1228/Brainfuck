@@ -1317,7 +1317,7 @@
     ////////////////////////////////////////////////////////////////////////////////////////
     //For function 1: run the code in the first argument
     {
-        //go to function index (cell 100) (add 34) (100010)
+        //go to function 1 (cell 100) (add 34) (100010)
         "01 > 010001"
         
         //if cell 100 is true
@@ -1362,7 +1362,7 @@
     ////////////////////////////////////////////////////////////////////////////////////////
     //For function 01: run a single code, for n times, e.g. "01 + 111"
     {
-        //go to function index (cell 103)
+        //go to function 01 (cell 103)
         "1 >>>"
         
         //if cell 103 is true
@@ -1693,8 +1693,9 @@
                 "01 < 01001"
                 "1 ]"
                 
-                //clear cell 109
+                //go to cell 109 (add 18) (10010)
                 "01 > 01001"
+                //clear cell 109
                 "1 [-]"
             }
             
