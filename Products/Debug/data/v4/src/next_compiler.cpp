@@ -1682,6 +1682,7 @@
             "1 >>"
             //set it to true
             "1 +"
+            //change to the case that the first argument is read
             
             //go to cell 61
             "1 <"
@@ -1763,6 +1764,7 @@
             "1 >"
             //set it to true
             "1 +"
+            //change to the case that the first argument is read
             
             //go to cell 61 (minus 38)
             "1 <"
@@ -1880,6 +1882,7 @@
                         "1 <<<<<<<<<"
                         //set it to true
                         "1 +"
+                        //change to the case that the second argument is read
                     }
                     
                     //go to cell 24 (minus 41)
@@ -2061,6 +2064,7 @@
                         "1 <<<<<<<<<"
                         //set it to true
                         "1 +"
+                        //change to the case that the second argument is read
                     }
                     
                     //go to cell 24 (minus 41)
