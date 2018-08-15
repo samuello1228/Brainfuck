@@ -1341,7 +1341,7 @@
     ////////////////////////////////////////////////////////////////////////////////////////
     //For function 1: run the code in the first argument
     {
-        //go to function index (cell 100) (add 37)
+        //go to function 1 (cell 100) (add 37)
         ">>>>>>>>>>"
         ">>>>>>>>>>"
         ">>>>>>>>>>"
