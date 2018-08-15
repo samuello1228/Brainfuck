@@ -61,10 +61,10 @@
 //cell 96: no use
 "1 >>"
 
-//cell 97: no use
+//cell 97: initial value 1
 //cell 98: initial value 0
-//cell 99: initial value 1
-"1 >>>+"
+//cell 99: no use
+"1 >+>>"
 
 //cell 100: bool for function 1: run the code in the first argument
 //cell 101: aux bool cell, the NOT gate of cell 100
@@ -894,10 +894,10 @@
             "1 [>>>]"
             
             //set zero
-            "1 +>-"
+            "1 +<->"
             
             //set one
-            "1 >>->+<<<<"
+            "1 >>+>-<<<"
             
             //go to cell 95
             "1 [<<<]"
@@ -980,49 +980,24 @@
                 "1 >>"
                 "1 [-"
                 
-                {
-                    //go to aux bool cell 67 (add 43)
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>"
-                    
-                    //set aux bool cell 67 to true
-                    "1 +"
-                    //change to the case that the function is running
-                    //run it immediately
-                }
+                //go to aux bool cell 67 (add 43)
+                "1 >>>>>>>>>>"
+                "1 >>>>>>>>>>"
+                "1 >>>>>>>>>>"
+                "1 >>>>>>>>>>"
+                "1 >>>"
                 
-                {
-                    //change the function index to run it immediately
-                    //For the case that the function has no argument
-                    //go to cell 98 (add 31)
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >"
-                    
-                    //go to the current function index
-                    "1 [>>>]"
-                    
-                    //set it run immediately
-                    "1 >-<<+>"
-                    
-                    //go to cell 95
-                    "1 <<<"
-                    "1 [<<<]"
-                }
+                //set aux bool cell 67 to true
+                "1 +"
+                //change to the case that the function is running
+                //run it immediately
                 
-                //go to cell 24 (minus 71)
+                //go to cell 24 (minus 43)
                 "1 <<<<<<<<<<"
                 "1 <<<<<<<<<<"
                 "1 <<<<<<<<<<"
                 "1 <<<<<<<<<<"
-                "1 <<<<<<<<<<"
-                "1 <<<<<<<<<<"
-                "1 <<<<<<<<<<"
-                "1 <"
+                "1 <<<"
                 "1 ]"
             }
             
@@ -1290,39 +1265,15 @@
                 "1 >>"
                 "1 [-"
                 
-                //continue; not run the following function block
-                {
-                    //go to cell 98 (add 74)
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>>"
-                    
-                    //go to the function index
-                    "1 [>>>]"
-                    
-                    //set the aux bool cell
-                    "1 <->>+<"
-                    "1 <<<"
-                    
-                    //go to cell 95
-                    "1 [<<<]"
-                }
-                
-                {
-                    //go to aux bool cell 65 (minus 30)
-                    "1 <<<<<<<<<<"
-                    "1 <<<<<<<<<<"
-                    "1 <<<<<<<<<<"
-                    
-                    //set aux bool cell 65 to true
-                    "1 +"
-                    //change to the case that the second argument is read
-                }
+                //go to aux bool cell 65 (add 41)
+                "1 >>>>>>>>>>"
+                "1 >>>>>>>>>>"
+                "1 >>>>>>>>>>"
+                "1 >>>>>>>>>>"
+                "1 >"
+                //set aux bool cell 65 to true
+                "1 +"
+                //change to the case that the second argument is read
                 
                 //go to cell 24 (minus 41)
                 "1 <<<<<<<<<<"
@@ -1619,39 +1570,15 @@
                 "1 >>"
                 "1 [-"
                 
-                //continue; not run the following function block
-                {
-                    //go to cell 98 (add 74)
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>>>>>>>>"
-                    "1 >>>>"
-                    
-                    //go to the function index
-                    "1 [>>>]"
-                    
-                    //set the aux bool cell
-                    "1 <->>+<"
-                    "1 <<<"
-                    
-                    //go to cell 95
-                    "1 [<<<]"
-                }
-                
-                {
-                    //go to aux bool cell 68 (minus 27)
-                    "1 <<<<<<<<<<"
-                    "1 <<<<<<<<<<"
-                    "1 <<<<<<<"
-                    
-                    //set aux bool cell 68 to true
-                    "1 +"
-                    //change to the case that the third argument is read
-                }
+                //go to aux bool cell 68 (add 44)
+                "1 >>>>>>>>>>"
+                "1 >>>>>>>>>>"
+                "1 >>>>>>>>>>"
+                "1 >>>>>>>>>>"
+                "1 >>>>"
+                //set aux bool cell 68 to true
+                "1 +"
+                //change to the case that the third argument is read
                 
                 //go to cell 24 (minus 44)
                 "1 <<<<<<<<<<"
@@ -1746,22 +1673,9 @@
             //output
             "1 ."
             
-            //go to aux bool cell 102 (add 52)
-            "1 >>>>>>>>>>"
-            "1 >>>>>>>>>>"
-            "1 >>>>>>>>>>"
-            "1 >>>>>>>>>>"
+            //go to aux bool cell 62 (add 12)
             "1 >>>>>>>>>>"
             "1 >>"
-            
-            //set to true
-            "1 +"
-            
-            //go to aux bool cell 62 (minus 40)
-            "1 <<<<<<<<<<"
-            "1 <<<<<<<<<<"
-            "1 <<<<<<<<<<"
-            "1 <<<<<<<<<<"
             //set it to true
             "1 +"
             
@@ -1772,11 +1686,17 @@
         
         //For running; do nothing
         
-        //go to cell 100 (add 39)
+        //go to aux bool cell 102 (add 41)
         "1 >>>>>>>>>>"
         "1 >>>>>>>>>>"
         "1 >>>>>>>>>>"
-        "1 >>>>>>>>>"
+        "1 >>>>>>>>>>"
+        "1 >"
+        //set it to true
+        "1 +"
+        
+        //go to cell 100
+        "1 <<"
         "1 ]"
     }
     
@@ -1823,22 +1743,21 @@
         "1 [>>>]"
         
         //reset the aux bool cell
-        "1 +"
+        "1 +>-<"
         
         //go to cell 95
         "1 [<<<]"
         
         //reset the aux bool cell
-        "1 >>>->+"
-        //At cell 99
+        "1 >>+>-"
+        //At cell 98
         
-        //go to aux bool cell 53 (minus 46)
+        //go to aux bool cell 53 (minus 45)
         "1 <<<<<<<<<<"
         "1 <<<<<<<<<<"
         "1 <<<<<<<<<<"
         "1 <<<<<<<<<<"
-        "1 <<<<<<"
-        
+        "1 <<<<<"
         //set aux bool cell 53 to true
         "1 +"
         //change to the case that the input character is not line comment and outside quote
