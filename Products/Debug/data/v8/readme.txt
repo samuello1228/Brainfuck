@@ -11,4 +11,10 @@ n is 9 bit
 function 11: output the code in the first argument
 using the current empty cell to output at runtime
 
-function 001: run is_same
+function 001: output a single code, for n times
+using the current empty cell to output at runtime
+n is 9 bit
+
+function 101: check whether the input and the first argument are the same
+initial at the input cell (cell 49)
+final at cell 24
