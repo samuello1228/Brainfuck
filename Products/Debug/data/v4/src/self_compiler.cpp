@@ -1,7 +1,7 @@
 //remove line comment (remove any character between / and newline)
 //output all characters between quotes (if it is not line comment)
 
-//changes: add block structure for reseting all bool cells
+//changes: use function 1
 
 //include NOT_gate
 //include binary_initialize
@@ -692,7 +692,7 @@
         //if cell 58 is true
         "1 [-"
         
-        //check whether the input is 0
+        //check whether the input is 1
         {
             {
                 //go to input (cell 49)

@@ -593,7 +593,7 @@
         //if cell 58 is true
         "1 [-"
         
-        //check whether the input is 0
+        //check whether the input is 1
         {
             {
                 //go to input (cell 49)
