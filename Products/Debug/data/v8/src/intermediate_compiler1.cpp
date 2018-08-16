@@ -114,7 +114,7 @@
 
 //cell 183: bool for function 101: check whether the input and the first argument are the same
 //initial at the input cell (cell 49)
-//final at cell 24
+//final at cell 22
 //cell 184: similar to cell 172
 //cell 185: similar to cell 173
 "1 >>+>"
@@ -161,16 +161,7 @@
             
             //check whether the input is / (101111)
             "101 111101"
-            //At cell 24
-            
-            //go to the compare result (cell 22)
-            "1 <<"
-            //copy it to cell 23 and 24
-            "1 [->+>+<<]"
-            
-            //go to cell 22
-            //cell 22 is NOT gate of cell 23
-            "1 +>[-<->]<"
+            //At cell 22
             
             {
                 //For the case that input is /
@@ -248,16 +239,7 @@
             
             //check whether the input is quote (100010)
             "101 010001"
-            //At cell 24
-            
-            //go to the compare result (cell 22)
-            "1 <<"
-            //copy it to cell 23 and 24
-            "1 [->+>+<<]"
-            
-            //go to cell 22
-            //cell 22 is NOT gate of cell 23
-            "1 +>[-<->]<"
+            //At cell 22
             
             {
                 //For the case that input is quote
@@ -316,16 +298,7 @@
             
             //check whether the input is newline (1010)
             "101 0101"
-            //At cell 24
-            
-            //go to the compare result (cell 22)
-            "1 <<"
-            //copy it to cell 23 and 24
-            "1 [->+>+<<]"
-            
-            //go to cell 22
-            //cell 22 is NOT gate of cell 23
-            "1 +>[-<->]<"
+            //At cell 22
             
             {
                 //For the case that input is newline
@@ -385,16 +358,7 @@
             
             //check whether the input is 0 (110000)
             "101 000011"
-            //At cell 24
-            
-            //go to the compare result (cell 22)
-            "1 <<"
-            //copy it to cell 23 and 24
-            "1 [->+>+<<]"
-            
-            //go to cell 22
-            //cell 22 is NOT gate of cell 23
-            "1 +>[-<->]<"
+            //At cell 22
             
             {
                 //For the case that input is 0
@@ -493,16 +457,7 @@
             
             //check whether the input is 1 (110001)
             "101 100011"
-            //At cell 24
-            
-            //go to the compare result (cell 22)
-            "1 <<"
-            //copy it to cell 23 and 24
-            "1 [->+>+<<]"
-            
-            //go to cell 22
-            //cell 22 is NOT gate of cell 23
-            "1 +>[-<->]<"
+            //At cell 22
             
             {
                 //For the case that input is 1
@@ -639,16 +594,7 @@
             
             //check whether the input is quote (100010)
             "101 010001"
-            //At cell 24
-            
-            //go to the compare result (cell 22)
-            "1 <<"
-            //copy it to cell 23 and 24
-            "1 [->+>+<<]"
-            
-            //go to cell 22
-            //cell 22 is NOT gate of cell 23
-            "1 +>[-<->]<"
+            //At cell 22
             
             {
                 //For the case that input is quote
@@ -708,16 +654,7 @@
             
             //check whether the input is quote (100010)
             "101 010001"
-            //At cell 24
-            
-            //go to the compare result (cell 22)
-            "1 <<"
-            //copy it to cell 23 and 24
-            "1 [->+>+<<]"
-            
-            //go to cell 22
-            //cell 22 is NOT gate of cell 23
-            "1 +>[-<->]<"
+            //At cell 22
             
             {
                 //For the case that input is quote
@@ -796,16 +733,7 @@
             
             //check whether the input is whitespace (100000)
             "101 000001"
-            //At cell 24
-            
-            //go to the compare result (cell 22)
-            "1 <<"
-            //copy it to cell 23 and 24
-            "1 [->+>+<<]"
-            
-            //go to cell 22
-            //cell 22 is NOT gate of cell 23
-            "1 +>[-<->]<"
+            //At cell 22
             
             {
                 //For the case that input is whitespace
@@ -882,16 +810,7 @@
             
             //check whether the input is quote (100010)
             "101 010001"
-            //At cell 24
-            
-            //go to the compare result (cell 22)
-            "1 <<"
-            //copy it to cell 23 and 24
-            "1 [->+>+<<]"
-            
-            //go to cell 22
-            //cell 22 is NOT gate of cell 23
-            "1 +>[-<->]<"
+            //At cell 22
             
             {
                 //For the case that input is quote
@@ -969,16 +888,7 @@
             
             //check whether the input is whitespace (100000)
             "101 000001"
-            //At cell 24
-            
-            //go to the compare result (cell 22)
-            "1 <<"
-            //copy it to cell 23 and 24
-            "1 [->+>+<<]"
-            
-            //go to cell 22
-            //cell 22 is NOT gate of cell 23
-            "1 +>[-<->]<"
+            //At cell 22
             
             {
                 //For the case that input is whitespace
@@ -1150,16 +1060,7 @@
                 
                 //check whether the input is 0 (110000)
                 "101 000011"
-                //At cell 24
-                
-                //go to the compare result (cell 22)
-                "1 <<"
-                //copy it to cell 23 and 24
-                "1 [->+>+<<]"
-                
-                //go to cell 22
-                //cell 22 is NOT gate of cell 23
-                "1 +>[-<->]<"
+                //At cell 22
                 
                 {
                     //For the case that input is 0
@@ -1258,16 +1159,7 @@
                 
                 //check whether the input is 1 (110001)
                 "101 100011"
-                //At cell 24
-                
-                //go to the compare result (cell 22)
-                "1 <<"
-                //copy it to cell 23 and 24
-                "1 [->+>+<<]"
-                
-                //go to cell 22
-                //cell 22 is NOT gate of cell 23
-                "1 +>[-<->]<"
+                //At cell 22
                 
                 {
                     //For the case that input is 1
@@ -1612,16 +1504,7 @@
                 
                 //check whether the input is 0 (110000)
                 "101 000011"
-                //At cell 24
-                
-                //go to the compare result (cell 22)
-                "1 <<"
-                //copy it to cell 23 and 24
-                "1 [->+>+<<]"
-                
-                //go to cell 22
-                //cell 22 is NOT gate of cell 23
-                "1 +>[-<->]<"
+                //At cell 22
                 
                 {
                     //For the case that input is 0
@@ -1720,16 +1603,7 @@
                 
                 //check whether the input is 1 (110001)
                 "101 100011"
-                //At cell 24
-                
-                //go to the compare result (cell 22)
-                "1 <<"
-                //copy it to cell 23 and 24
-                "1 [->+>+<<]"
-                
-                //go to cell 22
-                //cell 22 is NOT gate of cell 23
-                "1 +>[-<->]<"
+                //At cell 22
                 
                 {
                     //For the case that input is 1
@@ -1894,16 +1768,7 @@
                 
                 //check whether the input is 0 (110000)
                 "101 000011"
-                //At cell 24
-                
-                //go to the compare result (cell 22)
-                "1 <<"
-                //copy it to cell 23 and 24
-                "1 [->+>+<<]"
-                
-                //go to cell 22
-                //cell 22 is NOT gate of cell 23
-                "1 +>[-<->]<"
+                //At cell 22
                 
                 {
                     //For the case that input is 0
@@ -2002,16 +1867,7 @@
                 
                 //check whether the input is 1 (110001)
                 "101 100011"
-                //At cell 24
-                
-                //go to the compare result (cell 22)
-                "1 <<"
-                //copy it to cell 23 and 24
-                "1 [->+>+<<]"
-                
-                //go to cell 22
-                //cell 22 is NOT gate of cell 23
-                "1 +>[-<->]<"
+                //At cell 22
                 
                 {
                     //For the case that input is 1
@@ -2174,6 +2030,16 @@
                 "001 < 01101"
                 //output running is_same
                 "11 >+>>[->[-<<+>[-<->]<[->+<]>>]>[-<<<+>[-<->]<[->+<]>>>]<<[-<<[-]>>]<<[->>>+<<<]>>+>>>]"
+            }
+            
+            //output the code for producing if-else compare result at cell 24 and cell 22 respectively
+            {
+                //output the code for going to cell 22
+                "11 <<"
+                //output the code for copying cell 22 to cell 23 and 24
+                "11 [->+>+<<]"
+                //output the code for setting that cell 22 is NOT gate of cell 23
+                "11 +>[-<->]<"
             }
             
             {
