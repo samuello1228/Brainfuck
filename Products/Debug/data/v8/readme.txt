@@ -17,4 +17,4 @@ n is 9 bit
 
 function 101: check whether the input and the first argument are the same
 initial at the input cell (cell 49)
-final at cell 24
+final at cell 22

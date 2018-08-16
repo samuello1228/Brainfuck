@@ -114,7 +114,7 @@
 
 //cell 183: bool for function 101: check whether the input and the first argument are the same
 //initial at the input cell (cell 49)
-//final at cell 24
+//final at cell 22
 //cell 184: similar to cell 172
 //cell 185: similar to cell 173
 "1 >>+>"
@@ -2668,6 +2668,16 @@
                 "001 < 01101"
                 //output running is_same
                 "11 >+>>[->[-<<+>[-<->]<[->+<]>>]>[-<<<+>[-<->]<[->+<]>>>]<<[-<<[-]>>]<<[->>>+<<<]>>+>>>]"
+            }
+            
+            //output the code for producing if-else compare result at cell 24 and cell 22 respectively
+            {
+                //output the code for going to cell 22
+                "11 <<"
+                //output the code for copy cell 22 to cell 23 and 24
+                "11 [->+>+<<]"
+                //output the code for setting that cell 22 is NOT gate of cell 23
+                "11 +>[-<->]<"
             }
             
             {
