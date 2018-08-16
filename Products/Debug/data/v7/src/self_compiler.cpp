@@ -1827,7 +1827,7 @@
             {
                 //go to temp cell 3 (cell 72) (minus 28) (10111)
                 "01 < 00111"
-                //set it to . (46) (add 101011)
+                //set it to . (46)
                 "1 +++"
                 //output .
                 "1 ."
