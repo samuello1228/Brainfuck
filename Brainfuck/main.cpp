@@ -717,8 +717,8 @@ int main()
     //Run("data/v7/bin/next_compiler.txt","data/v7/src/test.cpp","data/v7/bin/test.txt");
     
     //build for v8
-    Run("data/v7/bin/next_compiler.txt","data/v8/src/self_compiler.cpp","data/v8/bin/self_compiler.txt");
-    //Run("data/v7/bin/next_compiler.txt","data/v8/src/intermediate_compiler1.cpp","data/v8/bin/intermediate_compiler1.txt");
+    //Run("data/v7/bin/next_compiler.txt","data/v8/src/self_compiler.cpp","data/v8/bin/self_compiler.txt");
+    Run("data/v7/bin/next_compiler.txt","data/v8/src/intermediate_compiler1.cpp","data/v8/bin/intermediate_compiler1.txt");
     
     return 0;
 }
