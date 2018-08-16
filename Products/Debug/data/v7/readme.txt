@@ -10,3 +10,7 @@ n is 9 bit
 
 function 11: output the code in the first argument
 using the current empty cell to output at runtime
+
+function 001: output a single code, for n times
+using the current empty cell to output at runtime
+n is 9 bit

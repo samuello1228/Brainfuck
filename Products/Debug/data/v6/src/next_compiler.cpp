@@ -106,6 +106,7 @@
 "1 >>+>"
 
 //cell 180: bool for function 001: output a single code, for n times
+//using the current empty cell to output at runtime
 //cell 181: similar to cell 172
 //cell 182: similar to cell 173
 "1 >>+>"
