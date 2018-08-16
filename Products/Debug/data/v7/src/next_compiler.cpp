@@ -2674,7 +2674,7 @@
             {
                 //output the code for going to cell 22
                 "11 <<"
-                //output the code for copy cell 22 to cell 23 and 24
+                //output the code for copying cell 22 to cell 23 and 24
                 "11 [->+>+<<]"
                 //output the code for setting that cell 22 is NOT gate of cell 23
                 "11 +>[-<->]<"
