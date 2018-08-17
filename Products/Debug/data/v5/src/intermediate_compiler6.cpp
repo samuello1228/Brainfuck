@@ -1528,114 +1528,15 @@
                 
                 {
                     //For the case that input is not 0
+                    //Assume the input is 1
                     //go to else bool cell 22
                     "1 <<"
                     "1 [-"
                     
-                    //go to aux bool cell 66 (add 44) (101100)
-                    "01 > 001101"
-                    //set aux bool cell 66 to true
-                    "1 +"
-                    //change to the case that the second argument is read
-                    //further checking
-                    
-                    //go to cell 22 (minus 44) (101100)
-                    "01 < 001101"
-                    "1 ]"
-                }
-            }
-            
-            //go to cell 64 (add 42) (101010)
-            "01 > 010101"
-            "1 ]"
-        }
-        
-        //For further checking whether the input character is 1, if cell 66 is true
-        {
-            //go to aux bool cell 66
-            "1 >>"
-            //if cell 66 is true
-            "1 ["
-            //set aux bool cell 66 to false
-            "1 -"
-            
-            //go to aux bool cell 64
-            "1 <<"
-            //set aux bool cell 64 to true
-            "1 +"
-            
-            //go to aux bool cell 66
-            "1 >>"
-            "1 ]"
-        }
-        
-        //For the case that the second argument is read
-        //Further check whether the input is 1
-        {
-            //go to cell 64
-            "1 <<"
-            //if cell 64 is true
-            "1 [-"
-            
-            //check whether the input is 1
-            {
-                {
-                    //go to input (cell 49) (minus 15) (1111)
-                    "01 < 1111"
-                    
-                    //copy to cell 23
-                    //k = 23 - 49 = -26
-                    "1 <<<[->[-<+>>>"
-                    "01 < 01011"
-                    "1 +"
-                    "01 > 01011"
-                    "1 <<]<[->+<]+<<<]>>>[>>>]"
-                    //At cell 49
-                }
-                
-                {
-                    //go to cell 7 (minus 42) (101010)
-                    "01 < 010101"
-                    
-                    //set to 34 for 1 (00110001)
-                    "1 +"
-                    "1 >>>+"
-                    "1 >>>"
-                    "1 >>>"
-                    "1 >>>"
-                    "1 >>>+"
-                    //At cell 22
-                }
-                
-                {
-                    //go to is_same (cell 0) (minus 22) (10110)
-                    "01 < 01101"
-                    //run is_same
-                    "1 >+>>[->[-<<+>[-<->]<[->+<]>>]>[-<<<+>[-<->]<[->+<]>>>]<<[-<<[-]>>]<<[->>>+<<<]>>+>>>]"
-                    //At cell 24
-                }
-            }
-            
-            {
-                //go to the compare result (cell 22)
-                "1 <<"
-                //copy it to cell 23 and 24
-                "1 [->+>+<<]"
-                
-                //go to cell 22
-                //cell 22 is NOT gate of cell 23
-                "1 +>[-<->]<"
-                
-                {
-                    //For the case that input is 1
-                    //go to if bool cell (cell 24)
-                    "1 >>"
-                    "1 [-"
-                    
                     //set the temp binary 1 (add bit 1)
                     {
-                        //go to aux bool cell 100 (add 76) (1001100)
-                        "01 > 0011001"
+                        //go to aux bool cell 100 (add 78) (1001110)
+                        "01 > 0111001"
                         
                         //go to leftmost boundary of temp binary 1
                         "1 [<<<]"
@@ -1664,16 +1565,8 @@
                         //change to the case that the second argument is read
                     }
                     
-                    //go to cell 24 (minus 41) (101001)
-                    "01 < 100101"
-                    "1 ]"
-                }
-                
-                {
-                    //For the case that input is not 1
-                    //go to else bool cell 22
-                    "1 <<"
-                    "1 [-"
+                    //go to cell 22 (minus 43) (101011)
+                    "01 < 110101"
                     "1 ]"
                 }
             }
